@@ -1,0 +1,15 @@
+"UnlitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/vgui/numbers_plate6"
+	"$additive" "1"
+	$model 1
+	
+	Proxies // proxies are listed inside this block
+	{
+		snow_fesiug_ammo
+		{
+			resultVar 2
+			prefixstring "snowysnowtime/hce/rifles/assaultrifle/vgui/numbers_plate__"
+		}
+	}
+}

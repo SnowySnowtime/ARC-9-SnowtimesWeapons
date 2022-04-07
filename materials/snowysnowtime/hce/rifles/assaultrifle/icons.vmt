@@ -1,0 +1,11 @@
+"UnlitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/display_fp"
+	"$color2" "[.3294117647058824 1.333333333333333 1.662745098039216]"
+	"$detail" "snowysnowtime/hce/rifles/assaultrifle/display_fp"
+	"$detailscale" "1"
+	"$detailblendmode" 1
+	"$detailblendfactor" "5"
+	"$additive" 1
+	$model 1
+}
