@@ -2,11 +2,10 @@
 {
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/ar"
 	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/ar_n"
-	"$detail"   "snowysnowtime/details/cyborg_detail"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
-	"$detailscale" "16"
-	"$detailblendmode" "0"
-	"$detailblendfactor" "0.3"
+	"$detailscale" "5"
+	$detailblendmode 1
+    $detailblendfactor 10
 	"$color2" "[0.87 0.87 0.87]"
 	"$phong" "1" 
 	"$phongboost" "2"
@@ -30,6 +29,12 @@
 		drc_ReflectionTint
 		{
 			resultVar $envmaptint
+		}
+		CustomCamo
+		{
+			camoTexture $detail
+			camoScale $detailscale
+			blend $detailblendfactor
 		}
 	}
 }

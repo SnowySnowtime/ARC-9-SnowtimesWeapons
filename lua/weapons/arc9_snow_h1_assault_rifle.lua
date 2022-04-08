@@ -33,6 +33,7 @@ SWEP.WorldModelOffset = {
 	Ang = Angle(0, 0, 180),
 	Scale = 1
 }
+SWEP.Slot = 2
 -- SWEP.Material = ""
 SWEP.NoTPIK = false
 
@@ -66,24 +67,23 @@ SWEP.BodyDamageMults = {
 }
 
 	-- Phys Bullets --
-SWEP.AlwaysPhysBullet = false
+SWEP.AlwaysPhysBullet = true
 SWEP.BulletGuidance = false
 SWEP.BulletGuidanceAmount = 15000
-SWEP.FancyBullets = false
+SWEP.FancyBullets = true
 SWEP.NeverPhysBullet = false
 SWEP.PhysBulletDontInheritPlayerVelocity = false
-SWEP.PhysBulletDrag = 1
-SWEP.PhysBulletGravity = 1
+SWEP.PhysBulletDrag = 0
+SWEP.PhysBulletGravity = 0
 SWEP.PhysBulletModel = nil
 SWEP.PhysBulletModelStick = nil
 SWEP.PhysBulletMuzzleVelocity = 150000
 	
 	-- Tracers --
-SWEP.TracerColor = Color(255, 255, 255)
+SWEP.TracerColor = Color(255, 255, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerFinalMag = 0
 SWEP.TracerNum = 1
-SWEP.TracerSize = 1
 
 	-- Magazine --
 SWEP.Ammo = "AR2"
@@ -136,16 +136,16 @@ SWEP.RunAwayBurst = true
 
 	-- Recoil --
 SWEP.RecoilSeed = nil
-SWEP.RecoilPatternDrift = 12
+SWEP.RecoilPatternDrift = 5
 SWEP.RecoilLookupTable = nil
 -- SWEP.RecoilLookupTable = {
 --     15,
 --     3,
 -- }
 SWEP.PushBackForce = 0 
-SWEP.Recoil = 1
+SWEP.Recoil = 0.5
 SWEP.RecoilAutoControl = 1
-SWEP.RecoilDissipationRate = 60
+SWEP.RecoilDissipationRate = 80
 SWEP.RecoilLookupTableOverrun = nil
 SWEP.RecoilRandomSide = 0.1
 SWEP.RecoilRandomUp = 0.01
@@ -160,7 +160,7 @@ SWEP.RumbleLight = 30000
 SWEP.RecoilKick = 1
 SWEP.UseVisualRecoil = false
 SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-SWEP.VisualRecoilHipFire = true
+SWEP.VisualRecoilHipFire = false
 SWEP.VisualRecoilMult = 1
 SWEP.VisualRecoilPunch = 1.5
 SWEP.VisualRecoilRoll = 0.23
@@ -213,7 +213,7 @@ SWEP.SpeedMultMelee = 0.75
 SWEP.SpeedMultShooting = 0.9
 SWEP.SpeedMultSights = 0.75
 SWEP.SprintToFireTime = 0.25
-SWEP.Sway = 1
+SWEP.Sway = 0
 SWEP.SwayMultSights = 0.5
 
 	-- Melee --
@@ -404,42 +404,14 @@ SWEP.RejectAttachments = {
 
 -- The big one
 SWEP.Attachments = {
---     [1] = {
---         PrintName = "",
---         DefaultName = "No Attachment",
---         DefaultIcon = Material(""),
---         InstalledElements = {""}, -- list of elements to activate when something is installed here
---         UnInstalledElements = {""},
---         RequireElements = {}, -- {{a and b}, or {c and d and e}, or f}
---         -- list of "strings" or {"lists", "of", "strings"}.
---         -- one of these must all be enabled for this to be valid.
---         ExcludeElements = {},
---         -- same but for exclusion.
---         Integral = false, -- cannot be removed
---         Category = "", -- single or {"list", "of", "values"}
---         InstallSound = "",
---         Bone = "",
---         Pos = Vector(0, 0, 0),
---         Ang = Angle(0, 0, 0),
---         CorrectiveAng = Angle(0, 0, 0), -- sometimes, the autosolver needs a little help. Try (-1, -1, 0)
---         Scale = 1,
---         Icon_Offset = Vector(0, 0, 0),
---         KeepBaseIrons = false,
---         ExtraSightDistance = 0,
---         Installed = nil,
---         MergeSlots = {}, // merge this slot with another
---         SubAttachments = {
---             {
---                 Installed = nil,
---                 SubAttachments = {}
---             },
---             {
---                 Installed = nil,
---                 SubAttachments = {}
---             }
---         }
---     }
--- }
+    {
+        PrintName = "Cosmetic",
+        DefaultCompactName = "Factory Issue",
+        Bone = "frame display",
+        Pos = Vector(5.8, 0, 1.15),
+        Ang = Angle(0, 0, 0),
+        Category = "universal_camo",
+    },
 }
 
 SWEP.Animations = {
