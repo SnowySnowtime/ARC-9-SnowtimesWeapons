@@ -4,6 +4,7 @@ $include bonemerge.qci
 $bodygroup "studio"
 {
 	studio "c_fp_cear.smd"
+	studio "c_fp_cear_camo.smd"
 	studio "c_fp_cea_ar.smd"
 }
 
@@ -12,13 +13,13 @@ $cdmaterials "snowysnowtime/hcea/rifles/assaultrifle"
 
 $texturegroup "skinfamilies"
 {
-    { "gun" "composite" "grip" }
-    { "gold" "gold" "goldgrip" }
-    { "gj" "gj" "gjgrip" }
-    { "gun" "lucky_composite" "luckygrip"   }
-    { "squirt" "squirt" "squirtgrip"  }
-    { "gun" "desert_composite" "desertgrip"  }
-    { "wl" "wl" "wlgrip"  }
+    { "gun" "composite" "grip" "grippy" }
+    { "gold" "gold" "grip" "grippy" }
+    { "gj_dark" "gj" "gjgrip" "gjgrip" }
+    { "gun" "lucky_composite" "luckygrip" "grippy" }
+    { "squirt" "squirt" "squirtgrip" "squirtgrip"  }
+    { "gun" "desert_composite" "desertgrip" "grippy"  }
+    { "wl" "wl" "wlgrip" "grippy"  }
 }
 
 $surfaceprop "default"

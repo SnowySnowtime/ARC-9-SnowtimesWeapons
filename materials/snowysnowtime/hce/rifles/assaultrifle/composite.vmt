@@ -1,12 +1,12 @@
 "VertexLitGeneric"
 {
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/ar"
-	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/ar_n"
+	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$detailscale" "5"
-	$detailblendmode 1
-    $detailblendfactor 10
-	"$color2" "[0.87 0.87 0.87]"
+	$detailblendmode 4
+    $detailblendfactor 1
+	"$color2" "[1 1 1]"
 	"$phong" "1" 
 	"$phongboost" "2"
 	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/ar_exp"
@@ -22,19 +22,13 @@
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
-	"$cubemappower"	1
+	"$cubemappower"	0.7
 
 	Proxies
 	{
 		drc_ReflectionTint
 		{
 			resultVar $envmaptint
-		}
-		CustomCamo
-		{
-			camoTexture $detail
-			camoScale $detailscale
-			blend $detailblendfactor
 		}
 	}
 }

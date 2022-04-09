@@ -14,9 +14,9 @@
 	"$rimlight"	1
 	"$rimlightpower"	10
 	"$rimmask"	1
-	"$envmap" "snowysnowtime/cyborg_reflection_armor"
+	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
 	"$envmaptint" "[ 1 1 1 ]"
-	"$cubemaptint"	"[ 0 0 0 ]"
+	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$cubemappower"	0.7
 

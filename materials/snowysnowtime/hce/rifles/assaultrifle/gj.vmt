@@ -7,7 +7,7 @@
 	"$detailscale" "16"
 	"$detailblendmode" "0"
 	"$detailblendfactor" "0.3"
-	"$color2" "[0.87 0.87 0.87]"
+	"$color2" "[1 1 1]"
 	"$phong" "1" 
 	"$phongboost" "2"
 	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/gj_exp"

@@ -56,5 +56,5 @@ sound.Add(
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
-    sound = "hce/ar_deploy.wav"
+    sound = "hce/ar_deploy_new.wav"
 })

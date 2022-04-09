@@ -14,7 +14,7 @@ SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
 	Mechanism = "Gas-Operated",
-	Country = "Mars",
+	Planet = "Mars",
 	Year = 2525
 }
 SWEP.Credits = {
@@ -354,32 +354,24 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    -- ["bg_name"] = {
-    --     Bodygroups = {
-    --         {1, 1}
-    --     },
-    --     Bonemods = {
-    --         ["body"] = {
-    --             Pos = Vector(0, 0, 0),
-    --             Ang = Angle(0, 0, 0),
-    --             Scale = 1,
-    --         }
-    --     },
-    --     PoseParameters = {
-    --         ["blople"] = 0.5
-    --     },
-    --     Models = {
-    --         {
-    --             Model = "",
-    --             Scale = 1,
-    --             Pos = Vector(0, 0, 0),
-    --             Ang = Angle(0, 0, 0),
-    --             Bone = "",
-    --             ScaleVector = Vector(1, 1, 1)
-    --         }
-    --     }
-    --     -- Other attachment parameters work here
-    -- }
+    ["skin_cear1"] = {
+        Skin = 1,
+    },
+	["skin_cear2"] = {
+        Skin = 2,
+    },
+	["skin_cear3"] = {
+        Skin = 3,
+    },
+	["skin_cear4"] = {
+        Skin = 4,
+    },
+	["skin_cear5"] = {
+        Skin = 5,
+    },
+	["skin_cear6"] = {
+        Skin = 6,
+    },
 }
 
 -- Use to override attachment table entry data.
@@ -402,6 +394,9 @@ SWEP.RejectAttachments = {
     -- ["att_name"] = true
 }
 
+SWEP.CustomCamoTexture = "snowysnowtime/camos/camo483"
+SWEP.CustomCamoScale = 6
+
 -- The big one
 SWEP.Attachments = {
     {
@@ -410,14 +405,38 @@ SWEP.Attachments = {
         Bone = "frame display",
         Pos = Vector(5.8, 0, 1.15),
         Ang = Angle(0, 0, 0),
-        Category = "universal_camo",
+        Category = {"universal_camo","halo_skins"},
     },
 }
 
+SWEP.Hook_ModifyBodygroups = function(self, data)
+
+    local vm = data.model
+    local attached = data.elements
+	
+    if attached["universal_camo"] then
+        vm:SetBodygroup(0,1)
+    end
+
+end
+
 SWEP.Animations = {
-    ["idle"] = {
-        Source = "idle",
+	["draw"] = {
+        Source = "draw",
         Mult = 1,
+		EventTable = {
+            {
+                t = 0.385, -- in seconds
+                s = "arc9.cear.deploy", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["holster"] = {
+        Source = "draw",
+        Reverse = true,
+		Time = 0.5,
     },
     ["reload"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"

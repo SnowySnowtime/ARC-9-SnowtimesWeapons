@@ -1,7 +1,7 @@
 "VertexLitGeneric"
 {
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/lucky"
-	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/ar_n"
+	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$detail"   "snowysnowtime/details/cyborg_detail"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$detailscale" "16"
@@ -20,7 +20,7 @@
 	"$rimmask"	1
 	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
 	"$envmaptint" "[ 1 1 1 ]"
-	"$cubemaptint"	"[ 0.6 1 0.6 ]"
+	"$cubemaptint"	"[ 0.4 1.5 0.65 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
 	"$cubemappower"	1

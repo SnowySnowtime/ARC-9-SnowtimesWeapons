@@ -1,7 +1,7 @@
 "VertexLitGeneric"
 {
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/desert"
-	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/ar_n"
+	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$detail"   "snowysnowtime/details/cyborg_detail"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$detailscale" "16"
@@ -23,7 +23,7 @@
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
-	"$cubemappower"	1
+	"$cubemappower"	0.7
 
 	Proxies
 	{

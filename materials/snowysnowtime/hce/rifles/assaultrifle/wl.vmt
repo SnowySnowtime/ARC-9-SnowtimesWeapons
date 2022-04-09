@@ -1,13 +1,12 @@
 "VertexLitGeneric"
 {
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/woodland"
-	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/ar_n"
+	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$detail"   "snowysnowtime/details/cyborg_detail"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$detailscale" "16"
 	"$detailblendmode" "0"
 	"$detailblendfactor" "0.3"
-	"$color2" "[0.87 0.87 0.87]"
 	"$phong" "1" 
 	"$phongboost" "2"
 	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/ar_exp"
@@ -23,7 +22,7 @@
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
-	"$cubemappower"	1
+	"$cubemappower"	0.7
 
 	Proxies
 	{
