@@ -1,0 +1,341 @@
+$animation "ref" "tf2_anims\ref_idle.smd" {
+	fps 30
+}
+$animation "fire_ref" "tf2_anims\fire_ref.smd" {
+	fps 30
+}
+$animation "fire_ads_ref" "tf2_anims\fire_ads_ref.smd" {
+	fps 30
+}
+$animation "idle_layer" "tf2_anims\idle_anim_autoplay.smd" fps 30 subtract idle_layer 0
+$sequence "idler" idle_layer fps 30 loop delta
+$animation "fire_layer" "tf2_anims\attack_anim.smd" fps 30 subtract fire_layer 0
+$sequence "firer" fire_layer fps 30 loop delta
+$animation "fire_ads_layer" "tf2_anims\attack_ads_anim.smd" fps 30 subtract fire_ads_layer 0
+$sequence "firer_ads" fire_ads_layer fps 30 loop delta
+
+$sequence "reference" {
+	"tf2_anims\!basepose.smd"
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+}
+
+$sequence "idle" {
+	"ref"
+	activity "ACT_VM_IDLE" 1
+	addlayer idler
+	fadein 0.15
+	fadeout 0.15
+	rotate -90
+	fps 30
+}
+
+$sequence "fire" {
+	"fire_ref"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	addlayer firer
+	fadein 0
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "fire_ads" {
+	"fire_ads_ref"
+	activity "ACT_VM_PRIMARYATTACK_ADS" 1
+	addlayer firer_ads
+	fadein 0
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "reload_seq" {
+	"tf2_anims\@reload_seq.smd"
+	activity "ACT_VM_RELOAD" 1
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 34 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_FILLAMMO 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 50 "arc9.tfg2.reload_handgrab" }
+	{ event AE_WPN_READYTOFIRE 55 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "reload_empty_seq" {
+	"tf2_anims\@reload_empty_seq.smd"
+	activity "ACT_VM_RELOADEMPTY" 10000
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 35 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_2 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 56 "arc9.tfg2.reload_empty_charge" }
+	{ event AE_WPN_FILLAMMO 62 "" }
+	{ event AE_WPN_RUMBLE 62 "reload_pilot_small" }
+	{ event AE_WPN_READYTOFIRE 72 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "reload_empty_seq_rare" {
+	"tf2_anims\@reload_empty_seq_02.smd"
+	activity "ACT_VM_RELOADEMPTY_RARE" 10000
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 35 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_2 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 56 "arc9.tfg2.reload_empty_charge" }
+	{ event AE_WPN_FILLAMMO 62 "" }
+	{ event AE_WPN_RUMBLE 62 "reload_pilot_small" }
+	{ event AE_WPN_READYTOFIRE 72 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "draw_seq" {
+	"tf2_anims\@draw_seq.smd"
+	activity "ACT_VM_DRAW" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.equip" }
+	{ event AE_WPN_READYTOFIRE 17 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "holster_seq" {
+	"tf2_anims\@holster_seq.smd"
+	activity "ACT_VM_HOLSTER" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.unequip" }
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+}
+
+$sequence "sprint_seq" {
+	"tf2_anims\@sprint_seq.smd"
+	activity "ACT_VM_SPRINT" 1
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+	loop
+}
+
+$animation "apex_ref" "apex_anims\ref_idle.smd" {
+	fps 30
+}
+$animation "apex_fire_ref" "apex_anims\fire_ref.smd" {
+	fps 30
+}
+$animation "apex_fire_ads_ref" "apex_anims\fire_ads_ref.smd" {
+	fps 30
+}
+$animation "apex_idle_layer" "apex_anims\idle_0.smd" fps 30 subtract apex_idle_layer 0
+$sequence "apex_idler" apex_idle_layer fps 30 loop delta
+$animation "apex_fire_layer" "apex_anims\fire_0.smd" fps 30 subtract apex_fire_layer 0
+$sequence "apex_firer" apex_fire_layer fps 30 loop delta
+$animation "apex_fire_ads_layer" "apex_anims\fire_1.smd" fps 30 subtract apex_fire_ads_layer 0
+$sequence "apex_firer_ads" apex_fire_ads_layer fps 30 loop delta
+$animation "apex_fire_ads_layer2" "apex_anims\fire_3.smd" fps 30 subtract apex_fire_ads_layer2 0
+$sequence "apex_firer_ads2" apex_fire_ads_layer2 fps 30 loop delta
+
+$sequence "apex_reference" {
+	"apex_anims\!basepose.smd"
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_idle" {
+	"apex_ref"
+	activity "apex_ACT_VM_IDLE" 1
+	addlayer apex_idler
+	fadein 0.15
+	fadeout 0.15
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_fire" {
+	"apex_fire_ref"
+	activity "apex_ACT_VM_PRIMARYATTACK" 1
+	addlayer apex_firer
+	fadein 0
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_fire_ads" {
+	"apex_fire_ads_ref"
+	activity "apex_ACT_VM_PRIMARYATTACK_ADS" 1
+	addlayer apex_firer_ads
+	fadein 0
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_fire_ads2" {
+	"apex_fire_ads_ref"
+	activity "apex_ACT_VM_PRIMARYATTACK_ADS" 1
+	addlayer apex_firer_ads2
+	fadein 0
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_reload_seq" {
+	"apex_anims\@reload.smd"
+	activity "apex_ACT_VM_RELOAD" 1
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 34 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_FILLAMMO 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 50 "arc9.tfg2.reload_handgrab" }
+	{ event AE_WPN_READYTOFIRE 55 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_reload_empty_seq" {
+	"apex_anims\@reload_empty.smd"
+	activity "apex_ACT_VM_RELOADEMPTY" 10000
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 35 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_2 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 56 "Wpn_G2A4_Reload_Empty_Charge" }
+	{ event AE_WPN_FILLAMMO 62 "" }
+	{ event AE_WPN_RUMBLE 62 "reload_pilot_small" }
+	{ event AE_WPN_READYTOFIRE 72 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_reload_empty_seq_rare" {
+	"apex_anims\@reload_empty_rare.smd"
+	activity "apex_ACT_VM_RELOADEMPTY_RARE" 10000
+	{ event AE_WPN_CLIPBODYGROUP_HIDE 33 "" }
+	{ event AE_WPN_CLIPBODYGROUP_SHOW 35 "" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.reload_empty_grabmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_1 21 "" }
+	{ event AE_CL_PLAYSOUND 19 "arc9.tfg2.reload_empty_ejectmag" }
+	{ event AE_WPN_RUMBLE 21 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 38 "arc9.tfg2.reload_empty_insertmag" }
+	{ event AE_WPN_RELOAD_MILESTONE_2 46 "" }
+	{ event AE_WPN_RUMBLE 46 "reload_pilot_large" }
+	{ event AE_CL_PLAYSOUND 56 "Wpn_G2A4_Reload_Empty_Charge" }
+	{ event AE_WPN_FILLAMMO 62 "" }
+	{ event AE_WPN_RUMBLE 62 "reload_pilot_small" }
+	{ event AE_WPN_READYTOFIRE 72 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_draw_seq" {
+	"apex_anims\@draw.smd"
+	activity "apex_ACT_VM_DRAW" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.equip" }
+	{ event AE_WPN_READYTOFIRE 17 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_draw_first" {
+	"apex_anims\@drawfirst.smd"
+	activity "apex_ACT_VM_DRAW_FIRST" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.equip" }
+	{ event AE_WPN_READYTOFIRE 17 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_draw_first_idiot" {
+	"apex_anims\@drawfirst_rare_idiot.smd"
+	activity "apex_ACT_VM_DRAW_FIRST_RARE" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.equip" }
+	{ event AE_WPN_READYTOFIRE 17 "" }
+	fadein 0.2
+	fadeout 0.2
+	node "twohanded"
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_holster_seq" {
+	"apex_anims\@holster.smd"
+	activity "apex_ACT_VM_HOLSTER" 1
+	{ event AE_CL_PLAYSOUND 0 "arc9.tfg2.unequip" }
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+}
+
+$sequence "apex_sprint_seq" {
+	"apex_anims\@sprint.smd"
+	activity "apex_ACT_VM_SPRINT" 1
+	fadein 0.2
+	fadeout 0.2
+	rotate -90
+	fps 30
+	loop
+}

@@ -1,6 +1,5 @@
 	-- Halo CE --
 		-- Halo Assault Rifle
-
 sound.Add( {
 	name = "arc9.cear.bolt1",
 	channel = CHAN_AUTO,
@@ -57,4 +56,69 @@ sound.Add(
     volume = 1.0,
     soundlevel = 80,
     sound = "hce/ar_deploy_new.wav"
+})
+
+-- Titanfall 2
+	-- G2A5
+sound.Add(
+{
+    name = "arc9.tfg2.reload_empty_grabmag",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_grabmag.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.reload_empty_ejectmag",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_ejectmag.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.reload_empty_insertmag",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_insertmag.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.reload_handgrab",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_handgrab.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.reload_empty_charge",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_charge.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.equip",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_grabmag.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfg2.unequip",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_grabmag.wav"}
 })

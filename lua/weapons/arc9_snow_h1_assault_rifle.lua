@@ -1,6 +1,6 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
-SWEP.Category = "ARC-9 | Snowtime's Armory"
+SWEP.Category = "ARC-9 - Snowtime's Armory"
 
 	-- Spawn Checks --
 SWEP.Spawnable = true
@@ -79,25 +79,30 @@ SWEP.PhysBulletModel = nil
 SWEP.PhysBulletModelStick = nil
 SWEP.PhysBulletMuzzleVelocity = 150000
 	
-	-- Tracers --
+	-- Tracers/Effects --
 SWEP.TracerColor = Color(255, 255, 0)
 SWEP.TracerEffect = "ARC9_tracer"
-SWEP.TracerFinalMag = 0
 SWEP.TracerNum = 1
+--SWEP.MuzzleEffect = "muzzleflash_4"
+SWEP.MuzzleParticle = "astw2_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+
+SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
+SWEP.CaseEffectQCA = 2 -- which attachment to put the case effect on
+SWEP.ProceduralViewQCA = 1
 
 	-- Magazine --
 SWEP.Ammo = "AR2"
 SWEP.AmmoPerShot = 1
 SWEP.AutoReload = false
 SWEP.BottomlessClip = false
-SWEP.CanFireUnderwater = false
+SWEP.CanFireUnderwater = true
 SWEP.ChamberSize = 0 -- Halo Weapons DONT chamber rounds. PLEASE dont fucking enable this.
 SWEP.ClipSize = 60
 SWEP.Disposable = false
 SWEP.DropMagazineAmount = 1
-SWEP.DropMagazineModel = nil
-SWEP.DropMagazineSounds = {}
-SWEP.DropMagazineTime = 0.25
+SWEP.DropMagazineModel = "models/snowysnowtime/arc9/hce/rifles/ar_mag.mdl"
+SWEP.DropMagazineSounds = {"arc9.cear.deploy"}
+SWEP.DropMagazineTime = 1
 SWEP.ForceDefaultClip = nil
 SWEP.HybridReload = false
 SWEP.InfiniteAmmo = false
@@ -135,8 +140,8 @@ SWEP.PostBurstDelay = 0.25
 SWEP.RunAwayBurst = true
 
 	-- Recoil --
-SWEP.RecoilSeed = nil
-SWEP.RecoilPatternDrift = 5
+SWEP.RecoilSeed = 035902
+SWEP.RecoilPatternDrift = 15
 SWEP.RecoilLookupTable = nil
 -- SWEP.RecoilLookupTable = {
 --     15,
@@ -147,7 +152,7 @@ SWEP.Recoil = 0.5
 SWEP.RecoilAutoControl = 1
 SWEP.RecoilDissipationRate = 80
 SWEP.RecoilLookupTableOverrun = nil
-SWEP.RecoilRandomSide = 0.1
+SWEP.RecoilRandomSide = 0.15
 SWEP.RecoilRandomUp = 0.01
 SWEP.RecoilResetTime = 0.1
 SWEP.RecoilSide = 0.5
@@ -168,7 +173,7 @@ SWEP.VisualRecoilSide = 0.05
 SWEP.VisualRecoilUp = 0.01
 
 	-- Spread --
-SWEP.Spread = 0
+SWEP.Spread = 0.005
 SWEP.UsePelletSpread = false
 SWEP.PelletSpread = 0.2
 SWEP.PelletSpreadPattern = {}
@@ -190,7 +195,7 @@ SWEP.SpreadAddCrouch = 0
 SWEP.SpreadAddHipFire = 0
 SWEP.SpreadAddMidAir = 0
 SWEP.SpreadAddMove = 0
-SWEP.SpreadAddRecoil = 0
+SWEP.SpreadAddRecoil = 0.065
 SWEP.SpreadAddSighted = 0
 
 	-- Handling --
@@ -282,23 +287,23 @@ SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
     Pos = Vector(-1, 15, -4),
     Ang = Angle(0, 0, -35),
 }
-SWEP.HasSights = true
+SWEP.HasSights = false
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-4, 1, -4)
 SWEP.CrouchAng = Angle(0, 0, -30)
 SWEP.RestPos = Vector(0.532, -6, 0)
 SWEP.RestAng = Angle(-4.633, 36.881, 0)
-SWEP.SprintPos = nil
-SWEP.SprintAng = nil
+SWEP.SprintPos = Vector(1.5,-1,1)
+SWEP.SprintAng = Angle(25,-10,-5)
 SWEP.TraversalSprintPos = Vector(2, 3, -13)
 SWEP.TraversalSprintAng = Angle(0, 75, 0)
-SWEP.HolsterPos = Vector(0, 0, -5)
-SWEP.HolsterAng = Angle(0, -15, 25)
+SWEP.HolsterPos = Vector(0, 0, 0)
+SWEP.HolsterAng = Angle(0, 0, 0)
 
 SWEP.SprintMidPoint = {
-    Pos = Vector(4, 2, -4),
-    Ang = Angle(0, 5, -15)
+    Pos = Vector(0,0,0),
+    Ang = Angle(0, 0,0)
 }
 
 SWEP.CustomizeAng = Angle(90, 0, 0)
