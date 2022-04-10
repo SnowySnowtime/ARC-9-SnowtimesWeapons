@@ -5,13 +5,14 @@ local ATT = {}
 ATT.PrintName = "G7 Scout"
 ATT.FullColorIcon = true
 ATT.CompactName = "G7 Scout"
-ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
-ATT.Bonemerge = true
+-- ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
+-- ATT.Bonemerge = true
 ATT.Icon = Material("snowysnowtime/camos/camo_1")
 ATT.Category = "apex_g2"
-ATT.Description = [[A later variant of the renowned G2A5 which was simplified to be mass produced.]]
+ATT.Description = [[A later variant of the renowned G2A5 which was simplified to be mass produced.
+
+This conversion supports the usage of Camos.]]
 ATT.MenuCategory = "ARC-9 - Apex Legends"
-ATT.Folder = "Weapon Skins"
 
 ARC9.LoadAttachment(ATT, "tfg2_apex01")
 
@@ -575,6 +576,20 @@ ATT.CustomCamoTexture = "snowysnowtime/camos/camo326"
 ATT.Folder = "TF|2/FLAT"
 
 ARC9.LoadAttachment(ATT, "camo_tfcamo326")
+
+ATT = {}
+
+ATT.PrintName = "Ice"
+ATT.FullColorIcon = true
+ATT.CompactName = "Ice"
+ATT.Icon = Material("snowysnowtime/camos/camo640")
+ATT.Category = "universal_camo"
+ATT.Description = [[Titanfall 2 Camo.]]
+ATT.MenuCategory = "ARC-9 - Camos"
+ATT.CustomCamoTexture = "snowysnowtime/camos/camo640"
+ATT.Folder = "TF|2/APEXPATTERN"
+
+ARC9.LoadAttachment(ATT, "camo_tfcamo329")
 
 -- Jokes
 

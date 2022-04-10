@@ -8,10 +8,6 @@ $bodygroup "2"
 {
 	studio "g7_apex 3.smd"
 }
-$bodygroup "3"
-{
-	studio "g7_apex 4.smd"
-}
 
 $surfaceprop "default"
 

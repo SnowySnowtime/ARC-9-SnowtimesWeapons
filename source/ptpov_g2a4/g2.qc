@@ -3,12 +3,13 @@ $modelname "c_g2a4.mdl"
 $bodygroup "body"
 {
 	studio "tf_g2 1.smd"
-	studio "tf_g2 noskin.smd"
+	studio "apex_g7 1.smd"
 	blank
 }
 $bodygroup "2"
 {
 	studio "tf_g2 2.smd"
+	studio "g7_apex 3.smd"
 	blank
 }
 $bodygroup "3"

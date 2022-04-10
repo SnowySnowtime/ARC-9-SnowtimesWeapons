@@ -8,20 +8,17 @@ SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
 SWEP.PrintName = "#tf2g2a4"
-SWEP.TrueName = "MA5B ICWS"
+SWEP.TrueName = "G2A5"
 SWEP.Class = "Marksman Rifle"
 SWEP.Trivia = {
-	Manufacturer = "Misriah Armory",
-	Calibre = "7.62x51mm M118 FMJ-AP",
-	Mechanism = "Gas-Operated",
-	Planet = "Mars",
-	Year = 2525
+	Manufacturer = "Lastimosa Armory",
+	Calibre = "6.19x97mm"
 }
 SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.]]
+SWEP.Description = [[The G2A5 is a semi-automatic Battle Rifle/Marksman Rifle serving as the successor to the G2A4.]]
 
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
@@ -138,13 +135,13 @@ SWEP.RecoilLookupTable = nil
 --     3,
 -- }
 SWEP.PushBackForce = 0 
-SWEP.Recoil = 0.5
+SWEP.Recoil = 2
 SWEP.RecoilAutoControl = 1
 SWEP.RecoilDissipationRate = 80
 SWEP.RecoilLookupTableOverrun = nil
 SWEP.RecoilRandomSide = 0.15
-SWEP.RecoilRandomUp = 0.01
-SWEP.RecoilResetTime = 0.1
+SWEP.RecoilRandomUp = 0.0
+SWEP.RecoilResetTime = 0.25
 SWEP.RecoilSide = 0.5
 SWEP.RecoilUp = 0.5
 SWEP.RumbleDuration = 0.12
@@ -153,14 +150,14 @@ SWEP.RumbleLight = 30000
 
 	-- Visual Recoil --
 SWEP.RecoilKick = 1
-SWEP.UseVisualRecoil = false
+SWEP.UseVisualRecoil = true
 SWEP.VisualRecoilCenter = Vector(2, 4, 2)
 SWEP.VisualRecoilHipFire = false
-SWEP.VisualRecoilMult = 1
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilRoll = 0.23
-SWEP.VisualRecoilSide = 0.05
-SWEP.VisualRecoilUp = 0.01
+SWEP.VisualRecoilMult = 4
+SWEP.VisualRecoilPunch = 4
+SWEP.VisualRecoilRoll = 1
+SWEP.VisualRecoilSide = 0.025
+SWEP.VisualRecoilUp = 1
 
 	-- Spread --
 SWEP.Spread = 0.005
@@ -371,7 +368,7 @@ SWEP.Attachments = {
         Category = {"universal_camo"},
     },
 	{
-        PrintName = "Conversion",
+        PrintName = "Conversions  /  Skins",
         DefaultCompactName = "G2A5",
         Bone = "def_c_base",
         Pos = Vector(0, -2.5, 8),
@@ -422,7 +419,7 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local attached = data.elements
 	
     if attached["apex_g2"] then
-        vm:SetBodygroup(0,2)
+        vm:SetBodygroup(0,1)
         vm:SetBodygroup(1,1)
         vm:SetBodygroup(2,1)
     end
@@ -503,8 +500,9 @@ SWEP.Animations = {
         },
     },
 	["apex_draw"] = {
-        Source = "apex_draw_seq",
-        Time = 0.75,
+        Source = {"apex_draw_first","apex_draw_seq"},
+		RareSource = "apex_draw_first_idiot", -- Has a small chance to play instead of normal source
+		RareSourceChance = 0.005, -- chance that rare source will play
 		EventTable = {
         },
     },
