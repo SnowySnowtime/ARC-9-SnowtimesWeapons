@@ -18,6 +18,23 @@ ARC9.LoadAttachment(ATT, "tfg2_apex01")
 
 ATT = {}
 
+ATT.PrintName = "G2A5 Mastery"
+ATT.FullColorIcon = true
+ATT.CompactName = "Mastery"
+-- ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
+-- ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_g2"
+ATT.Description = [[A variant of the G2A5 meant for the most elite of the elite.
+If you have this, you are a master G2 user.
+
+This Mastery skin does not support Camos.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+
+ARC9.LoadAttachment(ATT, "tfg2_apex02")
+
+ATT = {}
+
 ATT.PrintName = "R99"
 ATT.FullColorIcon = true
 ATT.CompactName = "R99"

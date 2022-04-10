@@ -408,7 +408,7 @@ SWEP.ReloadHideBoneTables = {
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
 
-    if elements["apex_g2"] then
+    if elements["tfg2_apex01"] then
         return "apex_" ..anim
     end
 end
@@ -418,10 +418,14 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local vm = data.model
     local attached = data.elements
 	
-    if attached["apex_g2"] then
+    if attached["tfg2_apex01"] then
         vm:SetBodygroup(0,1)
         vm:SetBodygroup(1,1)
         vm:SetBodygroup(2,1)
+	elseif attached["tfg2_apex02"] then
+		vm:SetBodygroup(0,3)
+        vm:SetBodygroup(1,3)
+        vm:SetBodygroup(2,2)
     end
 
 end
@@ -461,7 +465,7 @@ SWEP.Animations = {
 	["reload_empty"] = {
         Source = {"reload_empty_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
 		RareSource = "reload_empty_seq_rare", -- Has a small chance to play instead of normal source
-		RareSourceChance = 0.05, -- chance that rare source will play
+		RareSourceChance = 0.005, -- chance that rare source will play
         Mult = 1, -- multiplies time
         EventTable = {
 			{hide = 0, t = 0},
@@ -501,8 +505,8 @@ SWEP.Animations = {
     },
 	["apex_draw"] = {
         Source = {"apex_draw_first","apex_draw_seq"},
-		RareSource = "apex_draw_first_idiot", -- Has a small chance to play instead of normal source
-		RareSourceChance = 0.005, -- chance that rare source will play
+		RareSource = "apex_draw_first_idiot", -- This fucking thing SUCKS to get as a draw animation. but its funny, so lets just make it REALLY rare.
+		RareSourceChance = 0.001, -- chance that rare source will play
 		EventTable = {
         },
     },

@@ -5,17 +5,20 @@ $bodygroup "body"
 	studio "tf_g2 1.smd"
 	studio "apex_g7 1.smd"
 	blank
+	studio "tf_g2master.smd"
 }
 $bodygroup "2"
 {
 	studio "tf_g2 2.smd"
 	studio "g7_apex 3.smd"
 	blank
+	studio "tf_g2master2.smd"
 }
 $bodygroup "3"
 {
 	studio "tf_g2 mag.smd"
 	studio "g7_apex 4.smd"
+	studio "tf_g2master3.smd"
 }
 $surfaceprop "default"
 
