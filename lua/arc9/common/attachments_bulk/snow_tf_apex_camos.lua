@@ -16,6 +16,56 @@ ATT.MenuCategory = "ARC-9 - Apex Legends"
 
 ARC9.LoadAttachment(ATT, "tfg2_apex01")
 
+ATT = {}
+
+ATT.PrintName = "R99"
+ATT.FullColorIcon = true
+ATT.CompactName = "R99"
+ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_apex.mdl"
+ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_r97"
+ATT.Description = [[A successor to the popular R-97CN.
+
+This conversion supports the usage of Camos.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+
+ARC9.LoadAttachment(ATT, "tfr97_apex01")
+
+ATT = {}
+
+ATT.PrintName = "R99 LEG06"
+ATT.FullColorIcon = true
+ATT.CompactName = "legend06"
+ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_legendary06_apex.mdl"
+ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_r97"
+ATT.Description = [[A successor to the popular R-97CN.
+This particular conversion gives the R99 a western appearance.
+
+This conversion does NOT support the usage of Camos.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+
+ARC9.LoadAttachment(ATT, "tfr97_apex02")
+
+ATT = {}
+
+ATT.PrintName = "R99 ASSIM"
+ATT.FullColorIcon = true
+ATT.CompactName = "ASSIM"
+ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_assim_apex.mdl"
+ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_r97"
+ATT.Description = [[A successor to the popular R-97CN.
+This particular conversion gives the R99 a sci-fi appearance.
+
+This conversion does NOT support the usage of Camos.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+
+ARC9.LoadAttachment(ATT, "tfr97_apex03")
+
 -- Camos
 ATT = {}
 

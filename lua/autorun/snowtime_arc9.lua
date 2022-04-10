@@ -171,3 +171,87 @@ sound.Add(
 	pitch = { 98.5, 101.5 },
     sound = {"tf2/g7/fire.wav"}
 })
+
+sound.Add(
+{
+    name = "arc9.tfr97._UnEquip",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/r99/holster.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.Reload_PullMag",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/r99/magout.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.Reload_InsertMag",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/r99/magin.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.Reload_ChargeBack",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/r99/draw_bolt.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.Reload_ChargeForward",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/r99/draw_release.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.Reload_HandGrab",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"tf2/g2/reload_empty_grabmag.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.fire_start",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 100,
+	pitch = { 98.5, 101.5 },
+    sound = {"tf2/r99/fire.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.fire_loop",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    soundlevel = 100,
+	pitch = { 98.5, 101.5 },
+    sound = {"tf2/r99/fire_loop6.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.tfr97.fire_loop_end",
+    channel = CHAN_WEAPON,
+    volume = 1.0,
+    soundlevel = 100,
+	pitch = { 98.5, 101.5 },
+    sound = {"tf2/r99/fire_loopend.wav"}
+})
