@@ -84,7 +84,7 @@ SWEP.TracerColor = Color(255, 255, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "astw2_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "tfa_apex_muzzle_sniper" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 
@@ -254,7 +254,7 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
+SWEP.ShootSound = "arc9.tfg2.fire"
 SWEP.ShootSoundSilenced = ""
 
 	-- Positions --
@@ -329,24 +329,10 @@ SWEP.TTTWeight = 100
 SWEP.TTTAmmoType = nil
 
 SWEP.AttachmentBodygroups = {
-    -- ["name"] = {
-    --     VM = {
-    --         {
-    --             ind = 1,
-    --             bg = 1
-    --         }
-    --     },
-    --     WM = {
-    --         {
-    --             ind = 1,
-    --             bg = 1
-    --         }
-    --     },
-    -- }
 }
 
 -- Activate attachment elements by default.
-SWEP.DefaultElements = {}
+SWEP.DefaultElements = {""}
 
 SWEP.AttachmentElements = {
 }
@@ -372,6 +358,7 @@ SWEP.RejectAttachments = {
 }
 
 SWEP.CustomCamoScale = 6
+SWEP.HideBones = {} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 
 -- The big one
 SWEP.Attachments = {
@@ -383,59 +370,105 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo"},
     },
+	{
+        PrintName = "Conversion",
+        DefaultCompactName = "G2A5",
+        Bone = "def_c_base",
+        Pos = Vector(0, -2.5, 7.65),
+        Ang = Angle(0, 0, 0),
+        Category = {"apex_g2"},
+    },
 }
 
+SWEP.HideBones = {
+    "def_c_detailA",
+    "def_c_detailA",
+    "def_c_detailB",
+    "def_c_detailC"
+}
+
+SWEP.ReloadHideBoneTables = {
+    [1] = {
+        "def_c_magazine"
+    },
+    [2] = {
+        "def_c_detailA",
+        "def_c_magazine",
+        "def_c_detailC"
+    },
+	[3] = {
+        "def_c_detailA",
+        "def_c_detailC"
+    },
+	[4] = {
+        "def_c_magazine",
+        "def_c_detailA",
+        "def_c_detailB",
+        "def_c_detailC"
+    }
+}
+
+SWEP.Hook_TranslateAnimation = function(swep, anim)
+    local elements = swep:GetElements()
+
+    if elements["apex_g2"] then
+        return "apex_" ..anim
+    end
+end
+
+SWEP.Hook_ModifyBodygroups = function(self, data)
+
+    local vm = data.model
+    local attached = data.elements
+	
+    if attached["apex_g2"] then
+        vm:SetBodygroup(0,2)
+        vm:SetBodygroup(1,1)
+        vm:SetBodygroup(2,1)
+    end
+
+end
+
+
 SWEP.Animations = {
-	["draw"] = {
-        Source = "draw",
+	["idle"] = {
+        Source = "idle",
         Mult = 1,
 		EventTable = {
-            {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
-                c = CHAN_ITEM, -- sound channel
-                e = "", -- effect to emit
-            }
+			{hide = 4, t = 0}
+        },
+    },
+	["draw"] = {
+        Source = "draw_seq",
+        Time = 0.75,
+		EventTable = {
+			{hide = 4, t = 0}
         },
     },
 	["holster"] = {
-        Source = "draw",
-        Reverse = true,
-		Time = 0.5,
+        Source = "holster_seq",
+		Time = 0.75,
+		EventTable = {
+			{hide = 4, t = 0}
+        },
     },
     ["reload"] = {
         Source = {"reload_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
+		HideBoneIndex = 1,
         EventTable = {
-            {
-                t = 0, -- in seconds
-                mag = 100, -- with magnitude whatever this is
-                ind = 0, -- change bodygroup
-                bg = 0,
-                pp = "", -- pose parameter name
-                ppv = 0, -- pose parameter value
-                hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+			{hide = 0, t = 0},
+			{hide = 3, t = 1.1},
         },
-        MagSwapTime = 0.05, -- in seconds, how long before the new magazine replaces the old one.
-        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_empty"] = {
         Source = {"reload_empty_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
 		RareSource = "reload_empty_seq_rare", -- Has a small chance to play instead of normal source
-		RareSourceChance = 0.5, -- chance that rare source will play
+		RareSourceChance = 0.05, -- chance that rare source will play
         Mult = 1, -- multiplies time
         EventTable = {
-            {
-                t = 0, -- in seconds
-                mag = 100, -- with magnitude whatever this is
-                ind = 0, -- change bodygroup
-                bg = 0,
-                pp = "", -- pose parameter name
-                ppv = 0, -- pose parameter value
-                hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+			{hide = 0, t = 0},
+			{hide = 3, t = 1.1},
         },
         MagSwapTime = 0.3, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
@@ -444,13 +477,76 @@ SWEP.Animations = {
 	["enter_sprint"] = {
         Source = "reference",
         Time = 0.25,
+		EventTable = {
+			{hide = 4, t = 0}
+        },
     },
 	["idle_sprint"] = {
         Source = "sprint_seq",
-        Time = 30 / 85
+        Time = 30 / 60,
+		EventTable = {
+			{hide = 4, t = 0}
+        },
     },
 	["exit_sprint"] = {
         Source = "reference",
         Time = 0.8,
+		EventTable = {
+			{hide = 4, t = 0}
+        },
+    },
+	--apex
+	["apex_idle"] = {
+        Source = "apex_idle",
+        Mult = 1,
+		EventTable = {
+        },
+    },
+	["apex_draw"] = {
+        Source = "apex_draw_seq",
+        Time = 0.75,
+		EventTable = {
+        },
+    },
+	["apex_holster"] = {
+        Source = "apex_holster_seq",
+		Time = 0.75,
+		EventTable = {
+        },
+    },
+    ["apex_reload"] = {
+        Source = {"apex_reload_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+        },
+    },
+	["apex_reload_empty"] = {
+        Source = {"apex_reload_empty_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+		RareSource = "apex_reload_empty_seq_rare", -- Has a small chance to play instead of normal source
+		RareSourceChance = 0.05, -- chance that rare source will play
+        Mult = 1, -- multiplies time
+        EventTable = {
+        },
+        MagSwapTime = 0.3, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
+	["apex_enter_sprint"] = {
+        Source = "apex_reference",
+        Time = 0.25,
+		EventTable = {
+        },
+    },
+	["apex_idle_sprint"] = {
+        Source = "apex_sprint_seq",
+        Time = 30 / 60,
+		EventTable = {
+        },
+    },
+	["apex_exit_sprint"] = {
+        Source = "apex_reference",
+        Time = 0.8,
+		EventTable = {
+        },
     },
 }

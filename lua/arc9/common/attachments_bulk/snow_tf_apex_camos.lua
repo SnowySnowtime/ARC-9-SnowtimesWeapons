@@ -1,4 +1,22 @@
+-- I know it says camos but i want to put the apex stuff in here too
+-- Apex Legends 
 local ATT = {}
+
+ATT.PrintName = "G7 Scout"
+ATT.FullColorIcon = true
+ATT.CompactName = "G7 Scout"
+ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
+ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_g2"
+ATT.Description = [[A later variant of the renowned G2A5 which was simplified to be mass produced.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+ATT.Folder = "Weapon Skins"
+
+ARC9.LoadAttachment(ATT, "tfg2_apex01")
+
+-- Camos
+ATT = {}
 
 ATT.PrintName = "Yellow"
 ATT.FullColorIcon = true

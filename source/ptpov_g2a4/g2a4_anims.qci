@@ -37,7 +37,8 @@ $sequence "fire" {
 	activity "ACT_VM_PRIMARYATTACK" 1
 	addlayer firer
 	fadein 0
-	fadeout 0
+	fadeout 0.1
+	snap
 	rotate -90
 	fps 30
 }
@@ -47,7 +48,8 @@ $sequence "fire_ads" {
 	activity "ACT_VM_PRIMARYATTACK_ADS" 1
 	addlayer firer_ads
 	fadein 0
-	fadeout 0
+	fadeout 0.2
+	snap
 	rotate -90
 	fps 30
 }
@@ -89,8 +91,9 @@ $sequence "reload_empty_seq" {
 	{ event AE_WPN_FILLAMMO 62 "" }
 	{ event AE_WPN_RUMBLE 62 "reload_pilot_small" }
 	{ event AE_WPN_READYTOFIRE 72 "" }
-	fadein 0.2
+	fadein 0
 	fadeout 0.2
+	snap
 	node "twohanded"
 	rotate -90
 	fps 30

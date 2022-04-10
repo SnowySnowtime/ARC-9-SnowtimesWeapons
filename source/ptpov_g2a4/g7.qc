@@ -32,3 +32,4 @@ $bbox -9.951 -2.181 -67.93 30.685 2.446 -55.878
 
 $include "titanfall_hands.qci"
 $include "g2a4_anims.qci"
+$include "g2_coll.qci"

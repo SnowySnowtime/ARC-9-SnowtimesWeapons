@@ -3,8 +3,19 @@ $modelname "c_g2a4.mdl"
 $bodygroup "body"
 {
 	studio "tf_g2 1.smd"
+	studio "tf_g2 noskin.smd"
+	blank
 }
-
+$bodygroup "2"
+{
+	studio "tf_g2 2.smd"
+	blank
+}
+$bodygroup "3"
+{
+	studio "tf_g2 mag.smd"
+	studio "g7_apex 4.smd"
+}
 $surfaceprop "default"
 
 $contents "solid"
@@ -12,6 +23,7 @@ $contents "solid"
 $illumposition 0 0 0
 
 $cdmaterials "snowysnowtime/tf/g2"
+$cdmaterials "snowysnowtime/tf/g7"
 
 $attachment "muzzle_flash" "def_c_base" 0 3.39 28.91 rotate -90 0 0
 $attachment "shell" "def_c_base" -0.83 3.72 7.93 rotate 0 150 -180
@@ -24,3 +36,4 @@ $bbox -9.951 -2.181 -67.93 30.685 2.446 -55.878
 
 $include "titanfall_hands.qci"
 $include "g2a4_anims.qci"
+$include "g2_coll.qci"
