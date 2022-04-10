@@ -374,7 +374,7 @@ SWEP.Attachments = {
         PrintName = "Conversion",
         DefaultCompactName = "G2A5",
         Bone = "def_c_base",
-        Pos = Vector(0, -2.5, 7.65),
+        Pos = Vector(0, -2.5, 8),
         Ang = Angle(0, 0, 0),
         Category = {"apex_g2"},
     },
