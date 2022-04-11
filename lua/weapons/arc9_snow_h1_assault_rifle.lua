@@ -29,8 +29,8 @@ SWEP.MirrorVMWM = true
 SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModelOffset = {
-	Pos = Vector(0, 7, -19),
-	Ang = Angle(0, 0, 180),
+	Pos = Vector(-8, 2, -6),
+	Ang = Angle(-15, 0, 180),
 	Scale = 1
 }
 SWEP.Slot = 2
@@ -314,7 +314,7 @@ SWEP.CustomizeNoRotate = false
 SWEP.HeightOverBore = 1
 
 	-- Gestures --
-SWEP.HoldType = "shotgun"
+SWEP.HoldType = "smg"
 SWEP.HoldTypeSprint = "passive"
 SWEP.HoldTypeHolstered = nil
 SWEP.HoldTypeSights = "smg"
@@ -443,7 +443,7 @@ SWEP.Animations = {
 	["holster"] = {
         Source = "draw",
         Reverse = true,
-		Time = 0.5,
+		Mult = 0.25,
     },
     ["reload"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
