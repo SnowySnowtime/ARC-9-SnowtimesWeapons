@@ -82,7 +82,7 @@ ARC9.LoadAttachment(ATT, "skin_cear6")
 
 -- Titanfall 2/Apex Legends 
 	--G2A5
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "G7 Scout"
 ATT.FullColorIcon = true
@@ -149,3 +149,19 @@ This conversion does NOT support the usage of Camos.]]
 ATT.MenuCategory = "ARC-9 - Apex Legends"
 
 ARC9.LoadAttachment(ATT, "tfr97_apex02")
+
+ATT = {}
+
+ATT.PrintName = "R99 Zero Point"
+ATT.FullColorIcon = true
+ATT.CompactName = "R99-Zero"
+ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_assim_apex.mdl"
+ATT.Bonemerge = true
+ATT.Icon = Material("snowysnowtime/camos/camo_1")
+ATT.Category = "apex_r97"
+ATT.Description = [[A successor to the popular R-97CN.
+This particular conversion gives the R99 a sci-fi appearance.
+This conversion does NOT support the usage of Camos.]]
+ATT.MenuCategory = "ARC-9 - Apex Legends"
+
+ARC9.LoadAttachment(ATT, "tfr97_apex03")
