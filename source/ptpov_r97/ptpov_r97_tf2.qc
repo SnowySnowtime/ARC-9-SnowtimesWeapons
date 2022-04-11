@@ -15,7 +15,7 @@ $surfaceprop "default"
 
 $contents "solid"
 
-$illumposition 0.531 -4.632 -92.527
+$illumposition 0 0 0
 
 $cdmaterials "snowysnowtime/tf/r97"
 

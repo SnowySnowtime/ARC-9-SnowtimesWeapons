@@ -455,8 +455,6 @@ SWEP.Animations = {
     },
 	["reload_empty"] = {
         Source = {"reload_empty_seq"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
-		RareSource = "reload_empty_seq_rare", -- Has a small chance to play instead of normal source
-		RareSourceChance = 0.05, -- chance that rare source will play
         Mult = 1, -- multiplies time
         EventTable = {
 			{hide = 0, t = 0},

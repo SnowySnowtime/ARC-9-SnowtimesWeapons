@@ -51,9 +51,9 @@ ARC9.LoadAttachment(ATT, "tfr97_apex01")
 
 ATT = {}
 
-ATT.PrintName = "R99 LEG06"
+ATT.PrintName = "R99 Rule of Law"
 ATT.FullColorIcon = true
-ATT.CompactName = "legend06"
+ATT.CompactName = "R99-Law"
 ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_legendary06_apex.mdl"
 ATT.Bonemerge = true
 ATT.Icon = Material("snowysnowtime/camos/camo_1")
@@ -68,9 +68,9 @@ ARC9.LoadAttachment(ATT, "tfr97_apex02")
 
 ATT = {}
 
-ATT.PrintName = "R99 ASSIM"
+ATT.PrintName = "R99 Zero Point"
 ATT.FullColorIcon = true
-ATT.CompactName = "ASSIM"
+ATT.CompactName = "R99-Zero"
 ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_assim_apex.mdl"
 ATT.Bonemerge = true
 ATT.Icon = Material("snowysnowtime/camos/camo_1")

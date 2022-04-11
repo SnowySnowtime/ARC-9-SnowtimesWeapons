@@ -1,13 +1,13 @@
-$modelname "c_r97_legendary06_apex.mdl"
+$modelname "c_r97_apex.mdl"
 
 $bodygroup "ptpov_r97"
 {
-	studio "r97_legendary06.smd"
+	studio "r97_apex.smd"
 	blank
 }
 $bodygroup "r97_sight_rear"
 {
-	studio "r97_legendary06_sight.smd"
+	studio "r97_apex_sight.smd"
 	blank
 }
 
@@ -15,7 +15,7 @@ $surfaceprop "default"
 
 $contents "solid"
 
-$illumposition 0.531 -4.632 -92.527
+$illumposition 0 0 0
 
 $cdmaterials "snowysnowtime/tf/r99"
 
