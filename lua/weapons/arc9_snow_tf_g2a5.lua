@@ -358,6 +358,8 @@ SWEP.CustomCamoScale = 6
 SWEP.HideBones = {} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 
 -- The big one
+SWEP.DefaultBodygroups = "0000000000000"
+SWEP.DefaultSkin = 0
 SWEP.Attachments = {
     {
         PrintName = "Cosmetic",

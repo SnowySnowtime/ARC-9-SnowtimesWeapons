@@ -389,6 +389,8 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 end
 
 -- The big one
+SWEP.DefaultBodygroups = "0000000000000"
+SWEP.DefaultSkin = 0
 SWEP.Attachments = {
     {
         PrintName = "Cosmetic",

@@ -403,6 +403,8 @@ SWEP.CustomCamoTexture = "snowysnowtime/camos/camo483"
 SWEP.CustomCamoScale = 6
 
 -- The big one
+SWEP.DefaultBodygroups = "0000000000000"
+SWEP.DefaultSkin = 0
 SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
