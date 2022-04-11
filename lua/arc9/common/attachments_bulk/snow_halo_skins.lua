@@ -1,85 +1,44 @@
--- Halo CE
-	-- Assault Rifle
-local ATT = {}
 
-ATT.PrintName = "Gold"
-ATT.CompactName = "GOLD"
-ATT.FullColorIcon = true
-ATT.Description = [[We call it gold, but its actually coated with Titanium Nitride.]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
 
-ARC9.LoadAttachment(ATT, "skin_cear1")
+local fileslookedup = file.Find("materials/snowysnowtime/camos/*.vtf", "GAME", "nameasc")
 
-ATT = {}
+local lookup = {
+	["000"] = {
+		PrintName = "Cool Ass Paint Brush",
+		CompactName = "PAINBRUH",
+		Description = "Woah!!"
+	},
+	["001"] = {
+		PrintName = "Piss Yeller",
+		CompactName = "PISSYELL",
+		Description = "Swoosh!!!!!!"
+	},
+}
 
-ATT.PrintName = "The Great Journey"
-ATT.CompactName = "GREAT"
-ATT.FullColorIcon = true
-ATT.Description = [["... and you shall be set loose against this heresy with our blessing."]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
+for _, soup in ipairs(fileslookedup) do
+	local ATT = {}
+	local coolname = soup
+	coolname = string.sub(soup, 5, #soup-4)
 
-ARC9.LoadAttachment(ATT, "skin_cear2")
+	if #coolname == 1 then
+		coolname = "00" .. coolname
+	elseif #coolname == 2 then
+		coolname = "0" .. coolname
+	end
 
-ATT = {}
+	local override = lookup[tostring(coolname)] or {}
 
-ATT.PrintName = "Lucky Shot"
-ATT.CompactName = "LUCK"
-ATT.FullColorIcon = true
-ATT.Description = [["They let me pick. Did I ever tell you that? Choose whichever Spartan I wanted. You know me. I did my research, watched as you became the soldier we needed you to be... Like the others, you were strong; and swift and brave, a natural leader. But you had something they didn't. Something no one saw; but me. Can you guess?"
+	ATT.PrintName = override.PrintName or coolname
+	ATT.CompactName = override.CompactName or coolname
+	ATT.Description = override.Description or soup
+	ATT.MenuCategory = override.MenuCategory or "ARC-9 - Camos"
+	ATT.Folder = override.Folder or nil
+	ATT.Category = override.Category or "universal_camo"
+	
+	ATT.SortOrder = tonumber(coolname)
+	ATT.Icon = Material("snowysnowtime/camos/" .. soup)
+	ATT.CustomCamoTexture = "snowysnowtime/camos/" .. soup
+	ATT.FullColorIcon = true
 
-"Luck."
-
-- Cortana]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
-
-ARC9.LoadAttachment(ATT, "skin_cear3")
-
-ATT = {}
-
-ATT.PrintName = "Squirt Gun"
-ATT.CompactName = "SQUIRT"
-ATT.FullColorIcon = true
-ATT.Description = [[Not sure why you'd use this thing, Chief. It's a straight downgrade!]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
-
-ARC9.LoadAttachment(ATT, "skin_cear4")
-
-ATT = {}
-
-ATT.PrintName = "Desert"
-ATT.CompactName = "DESERT"
-ATT.FullColorIcon = true
-ATT.Description = [["...the corps issued me a rifle, not wings."]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
-
-ARC9.LoadAttachment(ATT, "skin_cear5")
-
-ATT = {}
-
-ATT.PrintName = "Woodland"
-ATT.CompactName = "WOOD"
-ATT.FullColorIcon = true
-ATT.Description = [[The rifle has a note on it.
-
-"Radio for VTOL, heavy lift gear. We're not leaving him here."
-"Yeah... you're not."
-"Crazy fool, why do you always jump!? One of these days, you're gonna land on something as stubborn as you are... and I don't do bits and pieces."
-"Where is she Chief? Where's Cortana?"
-"...She stayed behind."
-
-- Sgt. Johnson & Master Chief]]
-ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_skins"
-ATT.Folder = "Weapon Skins"
-
-ARC9.LoadAttachment(ATT, "skin_cear6")
+	ARC9.LoadAttachment(ATT, "snowycamo_" .. soup)
+end
