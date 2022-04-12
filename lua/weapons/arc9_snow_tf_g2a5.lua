@@ -354,7 +354,7 @@ SWEP.RejectAttachments = {
     -- ["att_name"] = true
 }
 
-SWEP.CustomCamoScale = 6
+SWEP.CustomCamoScale = 4
 SWEP.HideBones = {} -- bones to hide in third person and customize menu. {"list", "of", "bones"}
 
 -- The big one
