@@ -1,0 +1,40 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/2k/hce/m90/gj"
+	"$bumpmap" "snowysnowtime/2k/hce/m90/gj_n"
+	"$detail"   "snowysnowtime/cyborg_detail"
+	"$detailscale" "16"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "0.3"
+	"$selfillum" "1"
+	"$selfillummask" "snowysnowtime/2k/hce/m6d/magnum_emmissive"
+	"$color2" "[0.65 0.65 0.65]"
+	"$lightwarptexture"	"snowysnowtime/2k/hce/m6d/lw_pistol"
+	"$phong" "1" 
+	"$phongboost" "14"
+	"$phongexponenttexture" "snowysnowtime/2k/hce/m90/gj_exp"
+	"$phongwarptexture" "viper/shared/warps/phongwarp_refract"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 0.5 8]"
+	"$rimlight"	1
+	"$rimlightpower"	1
+	"$rimmask"	1
+	"$envmap"	"viper/shared/envmaps/envmap_fallback"
+	"$cubemappower"	0.5
+	"$envmaptint" "[ 1 1 1 ]"
+	"$cubemaptint"	"[ 1 0.25 1 ]"
+	"$basetexturealphaenvmapmask"	"1"
+	"$envmapfresnel"	"3"
+
+	"Proxies"
+	{
+		drc_ReflectionTint
+		{
+			resultVar $envmaptint
+		}
+		drc_ScalingRimLight
+		{
+			resultVar $rimlightboost
+		}
+	}
+}

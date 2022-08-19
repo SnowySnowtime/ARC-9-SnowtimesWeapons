@@ -8,8 +8,8 @@
     $detailblendfactor 1
 	"$color2" "[1 1 1]"
 	"$phong" "1" 
-	"$phongboost" "2"
-	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/ar_exp"
+	"$phongboost" "60"
+	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/lucky_exp"
 	"$phongwarptexture" "snowysnowtime/phongwarps/mw_phongwarp_refract"
 	"$phongalbedotint" "1"
 	"$phongfresnelranges" "[4 0.5 8]"
@@ -20,7 +20,7 @@
 	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
 	"$envmaptint" "[ 1 1 1 ]"
 	"$cubemaptint"	"[ 1 1 1 ]"
-	"$basetexturealphaenvmapmask"	"1"
+	"$normalmapalphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
 	"$cubemappower"	0.3
 

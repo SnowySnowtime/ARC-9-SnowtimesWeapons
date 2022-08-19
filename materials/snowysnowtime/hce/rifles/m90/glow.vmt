@@ -1,0 +1,33 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/2k/hce/m90/sg"
+	"$bumpmap" "snowysnowtime/2k/hce/m90/sg_n"
+	"$detail"   "snowysnowtime/cyborg_detail"
+	"$detailscale" "16"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "0.3"
+	"$selfillum" "1"
+	"$color2" "[3 3 3]"
+	"$phong" "1" 
+	"$phongboost" "1.5"
+	"$phongexponenttexture" "snowysnowtime/2k/hce/m90/sg_exp"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 0.5 8]"
+	"$rimlight"	1
+	"$rimlightpower"	1
+	"$rimmask"	1
+	"$envmap"	"env_cubemap"
+	"$basetexturealphaenvmapmask"	"1"
+	"$envmapfresnel"	"0.25"
+	"$envmaptint"	"[ .035 .035 .035 ]"
+
+	Proxies
+	{
+		MwEnvMapTint
+		{
+			min	"0"
+			max	"1.25"
+		}
+		MwCamo {}
+	}
+}

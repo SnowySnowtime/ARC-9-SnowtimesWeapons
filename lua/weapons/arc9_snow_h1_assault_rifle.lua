@@ -29,10 +29,14 @@ SWEP.MirrorVMWM = true
 SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModelOffset = {
-	Pos = Vector(-8, 2, -6),
+	Pos = Vector(-13, 3.6, -6),
 	Ang = Angle(-15, 0, 180),
 	Scale = 1
 }
+SWEP.ViewModelFOVBase = 70
+SWEP.TriggerDelay = 0
+SWEP.TriggerDelay = false
+SWEP.TriggerDelayTime = 0.0
 SWEP.Slot = 2
 -- SWEP.Material = ""
 SWEP.NoTPIK = false
@@ -84,7 +88,7 @@ SWEP.TracerColor = Color(255, 255, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "astw2_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectQCA = 2 -- which attachment to put the case effect on
@@ -409,8 +413,8 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "frame display",
-        Pos = Vector(5.8, 0, 1.15),
+        Bone = "ValveBiped.weapon_bone",
+        Pos = Vector(0, -7, 8),
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo","halo_skins"},
     },
@@ -419,10 +423,14 @@ SWEP.Attachments = {
 SWEP.Hook_ModifyBodygroups = function(self, data)
 
     local vm = data.model
+	local CUSTSTATE = self:GetCustomize()
     local attached = data.elements
 	
     if attached["universal_camo"] then
         vm:SetBodygroup(0,1)
+    end
+	if attached["cear_skin7"] then
+        vm:SetBodygroup(0,2)
     end
 
 end

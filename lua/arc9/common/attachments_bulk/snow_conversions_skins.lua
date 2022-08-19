@@ -80,88 +80,14 @@ ATT.Folder = "Weapon Skins"
 
 ARC9.LoadAttachment(ATT, "skin_cear6") 
 
--- Titanfall 2/Apex Legends 
-	--G2A5
 ATT = {}
 
-ATT.PrintName = "G7 Scout"
+ATT.PrintName = "Anniversary"
+ATT.CompactName = "ANNIV"
 ATT.FullColorIcon = true
-ATT.CompactName = "G7 Scout"
--- ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
--- ATT.Bonemerge = true
-ATT.Icon = Material("snowysnowtime/camos/camo_1")
-ATT.Category = "apex_g2"
-ATT.Description = [[A later variant of the renowned G2A5 which was simplified to be mass produced.
+ATT.Description = [["Keep your head down, there's two of us in here now remember?!"]]
+ATT.Icon = Material("snowysnowtime/camos/camo1")
+ATT.Category = "halo_skins"
+ATT.Folder = "Weapon Skins"
 
-This conversion supports the usage of Camos.]]
-ATT.MenuCategory = "ARC-9 - Apex Legends"
-
-ARC9.LoadAttachment(ATT, "tfg2_apex01")
-
-ATT = {}
-
-ATT.PrintName = "G2A5 Mastery"
-ATT.FullColorIcon = true
-ATT.CompactName = "Mastery"
--- ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_g7scout.mdl"
--- ATT.Bonemerge = true
-ATT.Icon = Material("snowysnowtime/camos/camo_1")
-ATT.Category = "apex_g2"
-ATT.Description = [[A variant of the G2A5 meant for the most elite of the elite.
-If you have this, you are a master G2 user.
-
-This Mastery skin does not support Camos.]]
-ATT.MenuCategory = "ARC-9 - Apex Legends"
-
-ARC9.LoadAttachment(ATT, "tfg2_apex02")
-
-	--R97
-
-ATT = {}
-
-ATT.PrintName = "R99"
-ATT.FullColorIcon = true
-ATT.CompactName = "R99"
-ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_apex.mdl"
-ATT.Bonemerge = true
-ATT.Icon = Material("snowysnowtime/camos/camo_1")
-ATT.Category = "apex_r97"
-ATT.Description = [[A successor to the popular R-97CN.
-
-This conversion supports the usage of Camos.]]
-ATT.MenuCategory = "ARC-9 - Apex Legends"
-
-ARC9.LoadAttachment(ATT, "tfr97_apex01")
-
-ATT = {}
-
-ATT.PrintName = "R99 Rule of Law"
-ATT.FullColorIcon = true
-ATT.CompactName = "R99-Law"
-ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_legendary06_apex.mdl"
-ATT.Bonemerge = true
-ATT.Icon = Material("snowysnowtime/camos/camo_1")
-ATT.Category = "apex_r97"
-ATT.Description = [[A successor to the popular R-97CN.
-This particular conversion gives the R99 a western appearance.
-
-This conversion does NOT support the usage of Camos.]]
-ATT.MenuCategory = "ARC-9 - Apex Legends"
-
-ARC9.LoadAttachment(ATT, "tfr97_apex02")
-
-ATT = {}
-
-ATT.PrintName = "R99 Zero Point"
-ATT.FullColorIcon = true
-ATT.CompactName = "R99-Zero"
-ATT.Model = "models/snowysnowtime/arc9/tf2/rifles/c_r97_assim_apex.mdl"
-ATT.Bonemerge = true
-ATT.Icon = Material("snowysnowtime/camos/camo_1")
-ATT.Category = "apex_r97"
-ATT.Description = [[A successor to the popular R-97CN.
-This particular conversion gives the R99 a sci-fi appearance.
-This conversion does NOT support the usage of Camos.]]
-ATT.MenuCategory = "ARC-9 - Apex Legends"
-
-ARC9.LoadAttachment(ATT, "tfr97_apex03")
+ARC9.LoadAttachment(ATT, "skin_cear7")

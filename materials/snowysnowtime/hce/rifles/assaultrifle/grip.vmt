@@ -5,7 +5,7 @@
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$color2" "[1 1 1]"
 	"$phong" "1" 
-	"$phongboost" "4"
+	"$phongboost" "30"
 	"$phongexponenttexture" "snowysnowtime/hce/rifles/assaultrifle/ar_exp"
 	"$phongwarptexture" "snowysnowtime/phongwarps/mw_phongwarp_sheen"
 	"$phongalbedotint" "1"
@@ -18,7 +18,7 @@
 	"$envmaptint" "[ 1 1 1 ]"
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
-	"$cubemappower"	0.7
+	"$cubemappower"	0.5
 
 	Proxies
 	{
