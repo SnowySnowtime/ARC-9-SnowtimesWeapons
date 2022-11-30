@@ -67,8 +67,8 @@ print(gamemode)
 if gamemode == "profiteers" then
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
-	SWEP.DamageMax = 18
-	SWEP.DamageMin = 12
+	SWEP.DamageMax = 30
+	SWEP.DamageMin = 25
 	SWEP.DamageRand = 0
 	-- Projectile --
 	SWEP.AlwaysPhysBullet = true
@@ -163,22 +163,22 @@ if gamemode == "profiteers" then
 	SWEP.SwayMultSights = 0.5
 		-- Positions --
 	SWEP.IronSights = {
-		Pos = Vector(-1, -6, 0),
+		Pos = Vector(0, -200, 0),
 		Ang = Angle(0, 0, 0),
-		Magnification = 1.15,
+		Magnification = 2,
 		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
 		CrosshairInSights = true,
 		---- FLAT SCOPES
 		-- These don't look very good; please use actual RT scopes if possible.
-		FlatScope = false,
-		FlatScopeOverlay = "hi.vmt", -- Material()
-		FlatScopeKeepVM = true,
+		FlatScope = true,
+		FlatScopeOverlay = Material("snowysnowtime/scopes/magnum_scope"), -- Material()
+		FlatScopeKeepVM = false,
 		FlatScopeBlackBox = false,
 		FlatScopeCC = nil -- Color correction table, see default.lua
 	}
 
 	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(0, 10, 0),
+		Pos = Vector(0, -200, 0),
 		Ang = Angle(0, 0, 0),
 	}
 	SWEP.HasSights = true
@@ -186,8 +186,8 @@ if gamemode == "profiteers" then
 else
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
-	SWEP.DamageMax = 20
-	SWEP.DamageMin = 15
+	SWEP.DamageMax = 25
+	SWEP.DamageMin = 20
 	SWEP.DamageRand = 0
 	-- Projectile --
 	SWEP.AlwaysPhysBullet = true
@@ -225,7 +225,7 @@ else
 	SWEP.RecoilDissipationRate = 80
 	SWEP.RecoilLookupTableOverrun = nil
 	SWEP.RecoilRandomSide = 0.15
-	SWEP.RecoilRandomUp = 0.01
+	SWEP.RecoilRandomUp = 0.1
 	SWEP.RecoilResetTime = 0.1
 	SWEP.RecoilSide = 0.5
 	SWEP.RecoilUp = 0.5
@@ -281,17 +281,17 @@ else
 	SWEP.SwayMultSights = 0.5
 		-- Positions --
 	SWEP.IronSights = {
-		Pos = Vector(0, 0, 0),
+		Pos = Vector(0, -200, 0),
 		Ang = Angle(0, 0, 0),
-		Magnification = 1,
+		Magnification = 2,
 		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = false,
+		CrosshairInSights = true,
 		---- FLAT SCOPES
 		-- These don't look very good; please use actual RT scopes if possible.
-		FlatScope = false,
-		FlatScopeOverlay = nil, -- Material()
+		FlatScope = true,
+		FlatScopeOverlay = Material("snowysnowtime/scopes/magnum_scope"), -- Material()
 		FlatScopeKeepVM = false,
-		FlatScopeBlackBox = true,
+		FlatScopeBlackBox = false,
 		FlatScopeCC = nil -- Color correction table, see default.lua
 	}
 
@@ -304,7 +304,7 @@ else
 end
 	
 	-- Tracers/Effects --
-SWEP.TracerColor = Color(255, 210, 0)
+SWEP.TracerColor = Color(255, 125, 140)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
