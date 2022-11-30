@@ -8,9 +8,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
-SWEP.PrintName = "MA5B"
-SWEP.TrueName = "MA5B Individual Combat Weapon System"
-SWEP.Class = "Assault Rifle"
+SWEP.PrintName = "M6D"
+SWEP.TrueName = "M6D"
+SWEP.Class = "Magnum"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
@@ -22,8 +22,8 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
-
+SWEP.Description = [[The M6D is an upscaled variant of the commonly employed M6G series "Magnums" which are often used by spartans.
+"I don't keep it loaded son you'll have to find ammo as you go." - Captain Keyes.
 
 
 
