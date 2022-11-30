@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo_reach/impact_soft_terrain_explosion"
+//	"$bumpmap" "effects/arc9ce/halo_reach/impact_soft_terrain_explosion_bump"
+	"$nodecal" 1
+	"$translucent"	1
+//	"$additive"	1
+	"$vertexcolor"	1
+//	"$vertexalpha"	1
+	"$decal" 1
+	"$decalscale" 15
+	"$decalfadeduration" 15.00
+	"$decalfadetime" 0.50
+	"$decalsecondpass" 1
+
+
+}

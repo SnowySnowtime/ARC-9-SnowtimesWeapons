@@ -3,9 +3,10 @@
 	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/ar"
 	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
-	"$detailscale" "5"
-	$detailblendmode 4
-    $detailblendfactor 1
+	"$detail"   "snowysnowtime/details/cyborg_detail"
+	"$detailscale" "16"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "0.5"
 	"$color2" "[1 1 1]"
 	"$phong" "1" 
 	"$phongboost" "60"

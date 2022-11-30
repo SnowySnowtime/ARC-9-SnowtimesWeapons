@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo2/covenant_beam"
+	"$vertexcolor"	1
+	"$vertexalpha"	1
+	"$additive"	1
+
+
+}

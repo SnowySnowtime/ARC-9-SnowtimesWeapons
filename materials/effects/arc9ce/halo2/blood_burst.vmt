@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo2/blood_burst"
+	"$additive"	1
+	"$vertexcolor"	1
+	"$vertexalpha"	1
+
+}

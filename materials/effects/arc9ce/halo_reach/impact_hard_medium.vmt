@@ -1,0 +1,23 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo_reach/impact_hard_medium"
+	"$bumpmap" "effects/arc9ce/halo_reach/impact_hard_medium_bump"
+	"$translucent" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$decal" 1
+	"$decalscale" 0.3
+	"$decalfadeduration" 20.00
+	"$decalfadetime" 0.00
+	"$decalsecondpass" 1
+//	$emissiveBlendEnabled 1
+//	$emissiveBlendTexture     	"effects/arc9ce/halo_reach/impact_hard_medium_add"
+//	$emissiveBlendBaseTexture		 "effects/arc9ce/halo_reach/impact_hard_add"
+//	$emissiveBlendFlowTexture     "effects/arc9ce/halo_reach/plasma_mask"
+//	$emissiveBlendTint "[28 5.5 1 ]"
+//	$emissiveBlendStrength 15
+//	$emissiveBlendScrollVector "[-0.15 -0.15]"
+	$color2		"[.5 .5 .5]"
+
+
+}

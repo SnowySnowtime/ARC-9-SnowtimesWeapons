@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo2/sentinel_contrail"
+	"$vertexcolor"	1
+	"$vertexalpha"	1
+	"$translucent"	1
+	"$color2"		"[2 2 2]"
+
+}

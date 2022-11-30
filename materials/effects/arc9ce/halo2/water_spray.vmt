@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo2/water_spray"
+	"$additive"	1
+	"$vertexcolor"	1
+	"$vertexalpha"	1
+
+}

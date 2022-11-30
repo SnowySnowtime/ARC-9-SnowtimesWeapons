@@ -1,0 +1,30 @@
+"UnlitGeneric"
+{
+//	"$additive" 1
+	"$translucent" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$decal" 1
+
+	"$alpha" 1	
+
+	"$basetexture" "effects\halo_reach\interlace_overlay"
+	"$basetexturetransform"	"center .5 .5 scale .5 .7 rotate 0  translate 0 0"
+			"Proxies" 
+	{
+		UniformNoise
+		{
+			resultVar	$alpha
+			minVal	.035
+			maxVal	.035
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" 0.05
+			"texturescrollangle" -90	
+		}
+	}
+
+
+}

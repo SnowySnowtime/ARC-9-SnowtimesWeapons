@@ -1,0 +1,20 @@
+"VertexlitGeneric"
+{
+	"$basetexture"	"effects/arc9ce/halo_reach/impact_hard"
+	"$bumpmap" "effects/arc9ce/halo_reach/impact_hard_bump"
+	"$nodecal" 1
+	$emissiveBlendEnabled 1
+	$emissiveBlendTexture     	"effects/arc9ce/halo_reach/impact_hard_add"
+	$emissiveBlendBaseTexture		 "effects/arc9ce/halo_reach/impact_hard"
+	$emissiveBlendFlowTexture     "effects/arc9ce/halo_reach/impact_hard_add"
+	$emissiveBlendTint "[28 5.5 1 ]"
+	$emissiveBlendStrength 15
+	$emissiveBlendScrollVector "[-0.15 -0.15]"
+	"$translucent"	1
+//	"$additive"	1
+	"$vertexcolor"	1
+//	"$vertexalpha"	1
+
+
+
+}

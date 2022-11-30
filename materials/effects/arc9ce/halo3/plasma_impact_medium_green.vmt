@@ -1,0 +1,16 @@
+"UnlitGeneric"
+{
+	// Original shader: DecalSelfIllumVertexAlphaBlend
+	"$translucent" 1
+	"$vertexcolor" 1
+	"$vertexalpha" 1
+	"$decal" 1
+	"$basetexture" "effects/arc9ce/halo3/plasma_impact_medium"
+	"$decalscale" 0.15
+	"$decalfadeduration" 4.00
+	"$decalfadetime" 0.00
+	"$decalsecondpass" 1
+	"$color2"		"[0.65 1.25 0.5]"
+
+}
+

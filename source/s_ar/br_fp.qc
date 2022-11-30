@@ -29,7 +29,7 @@ $contents "solid"
 $illumposition -2.073 -5.096 -10.058
 
 $attachment "muzzle" "frame gun" 20 0 5 rotate 0 0 0
-$attachment "1" "frame gun" 0 0 3.5 rotate 0 90 -180
+$attachment "eject" "frame gun" -4.00 0.00 5.5 rotate -10 -90 0
 
 $cbox 0 0 0 0 0 0
 

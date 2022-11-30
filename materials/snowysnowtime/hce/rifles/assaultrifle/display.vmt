@@ -5,7 +5,7 @@
 	"$detail" "snowysnowtime/hce/rifles/assaultrifle/display_illum"
 	"$detailblendmode" "0"
 	"$detailblendfactor" "1"
-	"$detailscale" "2"
+	"$detailscale" "1.25"
 	$model 1
 	Proxies
 	{

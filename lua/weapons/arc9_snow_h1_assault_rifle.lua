@@ -1,15 +1,16 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
 SWEP.Category = "ARC-9 - Snowtime's Armory"
+SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
-SWEP.PrintName = "#h1assaultrifle"
-SWEP.TrueName = "MA5B ICWS"
-SWEP.Class = "#h1assaultrifle"
+SWEP.PrintName = "MA5B"
+SWEP.TrueName = "MA5B Individual Combat Weapon System"
+SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
@@ -21,7 +22,12 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.]]
+SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
+
+
+
+
+This weapon has stat adjustments based on if you're in Profiteers or not.]]
 
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
@@ -47,10 +53,6 @@ SWEP.LauncherCrosshair = false
 SWEP.MissileCrosshair = false
 
 	-- Damage Profile --
-SWEP.ArmorPiercing = 0
-SWEP.DamageMax = 20
-SWEP.DamageMin = 15
-SWEP.DamageRand = 0
 SWEP.DamageType = DMG_BULLET
 SWEP.Num = 1
 SWEP.Penetration = 5
@@ -59,39 +61,257 @@ SWEP.RangeMin = 0
 SWEP.RicochetAngleMax = 45
 SWEP.RicochetChance = 0
 
-SWEP.BodyDamageMults = {
-    [HITGROUP_HEAD] = 1,
-    [HITGROUP_CHEST] = 1,
-    [HITGROUP_STOMACH] = 1,
-    [HITGROUP_LEFTARM] = 0.9,
-    [HITGROUP_RIGHTARM] = 0.9,
-    [HITGROUP_LEFTLEG] = 0.9,
-    [HITGROUP_RIGHTLEG] = 0.9,
-    [HITGROUP_GEAR] = 0.9,
-}
+-- Lets balance our shit based on if we're playing discount plunder or not.
+local gamemode = engine.ActiveGamemode()
+print(gamemode)
+if gamemode == "profiteers" then
+	-- Damage Profile --
+	SWEP.ArmorPiercing = 0
+	SWEP.DamageMax = 18
+	SWEP.DamageMin = 12
+	SWEP.DamageRand = 0
+	-- Projectile --
+	SWEP.AlwaysPhysBullet = true
+	SWEP.BulletGuidance = false
+	SWEP.BulletGuidanceAmount = 15000
+	SWEP.FancyBullets = true
+	SWEP.NeverPhysBullet = false
+	SWEP.PhysBulletDontInheritPlayerVelocity = false
+	SWEP.PhysBulletDrag = 0
+	SWEP.PhysBulletGravity = 1
+	SWEP.PhysBulletModel = nil
+	SWEP.PhysBulletModelStick = nil
+	SWEP.PhysBulletMuzzleVelocity = 15000
+	SWEP.BodyDamageMults = {
+		[HITGROUP_HEAD] = 2,
+		[HITGROUP_CHEST] = 1,
+		[HITGROUP_STOMACH] = 1,
+		[HITGROUP_LEFTARM] = 0.9,
+		[HITGROUP_RIGHTARM] = 0.9,
+		[HITGROUP_LEFTLEG] = 0.9,
+		[HITGROUP_RIGHTLEG] = 0.9,
+		[HITGROUP_GEAR] = 0.9,
+	}
+		-- Recoil --
+	SWEP.RecoilSeed = nil
+	SWEP.RecoilPatternDrift = 0
+	SWEP.RecoilLookupTable = nil
+	-- SWEP.RecoilLookupTable = {
+	--     15,
+	--     3,
+	-- }
+	SWEP.PushBackForce = 0 
+	SWEP.Recoil = 0.5
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilLookupTableOverrun = nil
+	SWEP.RecoilRandomSide = 0.5
+	SWEP.RecoilRandomUp = 0.2
+	SWEP.RecoilResetTime = 0.15
+	SWEP.RecoilSide = 0.5
+	SWEP.RecoilUp = 0.75
+	SWEP.RumbleDuration = 0.12
+	SWEP.RumbleHeavy = 30000
+	SWEP.RumbleLight = 30000
 
-	-- Phys Bullets --
-SWEP.AlwaysPhysBullet = true
-SWEP.BulletGuidance = false
-SWEP.BulletGuidanceAmount = 15000
-SWEP.FancyBullets = true
-SWEP.NeverPhysBullet = false
-SWEP.PhysBulletDontInheritPlayerVelocity = false
-SWEP.PhysBulletDrag = 0
-SWEP.PhysBulletGravity = 0
-SWEP.PhysBulletModel = nil
-SWEP.PhysBulletModelStick = nil
-SWEP.PhysBulletMuzzleVelocity = 150000
+		-- Visual Recoil --
+	SWEP.RecoilKick = 1
+	SWEP.UseVisualRecoil = true
+	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
+	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilMult = 1
+	SWEP.VisualRecoilPunch = 1.5
+	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilSide = 0.05
+	SWEP.VisualRecoilUp = 0.01
+
+		-- Spread --
+	SWEP.Spread = 0.002
+	SWEP.UsePelletSpread = false
+	SWEP.PelletSpread = 0.2
+	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
+	SWEP.SpreadAddBlindFire = 0
+	SWEP.SpreadAddCrouch = 0
+	SWEP.SpreadAddHipFire = 0.05
+	SWEP.SpreadAddMidAir = 0
+	SWEP.SpreadAddMove = 0
+	SWEP.SpreadAddRecoil = 0.02
+	SWEP.SpreadAddSighted = 0
+
+		-- Handling --
+	SWEP.AimDownSightsTime = 0.25
+	SWEP.CycleTime = 1
+	SWEP.DeployTime = 1
+	SWEP.FixTime = 1
+	SWEP.FreeAimRadius = 0
+	SWEP.FreeAimRadiusMultSights = 0.25
+	SWEP.HoldBreathTime = 5
+	SWEP.OverheatTime = 1
+	SWEP.ReloadTime = 1
+	SWEP.RestoreBreathTime = 5
+	SWEP.ShootWhileSprint = false
+	SWEP.Speed = 1
+	SWEP.SpeedMult = 1
+	SWEP.SpeedMultBlindFire = 1
+	SWEP.SpeedMultCrouch = 1
+	SWEP.SpeedMultMelee = 0.75
+	SWEP.SpeedMultShooting = 0.9
+	SWEP.SpeedMultSights = 0.75
+	SWEP.SprintToFireTime = 0.25
+	SWEP.Sway = 0
+	SWEP.SwayMultSights = 0.5
+		-- Positions --
+	SWEP.IronSights = {
+		Pos = Vector(-1, -6, 0),
+		Ang = Angle(0, 0, 0),
+		Magnification = 1.15,
+		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
+		CrosshairInSights = true,
+		---- FLAT SCOPES
+		-- These don't look very good; please use actual RT scopes if possible.
+		FlatScope = false,
+		FlatScopeOverlay = "hi.vmt", -- Material()
+		FlatScopeKeepVM = true,
+		FlatScopeBlackBox = false,
+		FlatScopeCC = nil -- Color correction table, see default.lua
+	}
+
+	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+		Pos = Vector(0, 10, 0),
+		Ang = Angle(0, 0, 0),
+	}
+	SWEP.HasSights = true
+	-- print("PROFITEERS BAL")
+else
+	-- Damage Profile --
+	SWEP.ArmorPiercing = 0
+	SWEP.DamageMax = 20
+	SWEP.DamageMin = 15
+	SWEP.DamageRand = 0
+	-- Projectile --
+	SWEP.AlwaysPhysBullet = true
+	SWEP.BulletGuidance = false
+	SWEP.BulletGuidanceAmount = 15000
+	SWEP.FancyBullets = true
+	SWEP.NeverPhysBullet = false
+	SWEP.PhysBulletDontInheritPlayerVelocity = false
+	SWEP.PhysBulletDrag = 0
+	SWEP.PhysBulletGravity = 0
+	SWEP.PhysBulletModel = nil
+	SWEP.PhysBulletModelStick = nil
+	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.BodyDamageMults = {
+		[HITGROUP_HEAD] = 1,
+		[HITGROUP_CHEST] = 1,
+		[HITGROUP_STOMACH] = 1,
+		[HITGROUP_LEFTARM] = 0.9,
+		[HITGROUP_RIGHTARM] = 0.9,
+		[HITGROUP_LEFTLEG] = 0.9,
+		[HITGROUP_RIGHTLEG] = 0.9,
+		[HITGROUP_GEAR] = 0.9,
+	}
+		-- Recoil --
+	SWEP.RecoilSeed = nil
+	SWEP.RecoilPatternDrift = 0
+	SWEP.RecoilLookupTable = nil
+	-- SWEP.RecoilLookupTable = {
+	--     15,
+	--     3,
+	-- }
+	SWEP.PushBackForce = 0 
+	SWEP.Recoil = 0.5
+	SWEP.RecoilAutoControl = 1
+	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilLookupTableOverrun = nil
+	SWEP.RecoilRandomSide = 0.15
+	SWEP.RecoilRandomUp = 0.01
+	SWEP.RecoilResetTime = 0.1
+	SWEP.RecoilSide = 0.5
+	SWEP.RecoilUp = 0.5
+	SWEP.RumbleDuration = 0.12
+	SWEP.RumbleHeavy = 30000
+	SWEP.RumbleLight = 30000
+
+		-- Visual Recoil --
+	SWEP.RecoilKick = 1
+	SWEP.UseVisualRecoil = true
+	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
+	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilMult = 1
+	SWEP.VisualRecoilPunch = 1.5
+	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilSide = 0.05
+	SWEP.VisualRecoilUp = 0.01
+
+		-- Spread --
+	SWEP.Spread = 0.005
+	SWEP.UsePelletSpread = false
+	SWEP.PelletSpread = 0.2
+	SWEP.PelletSpreadPattern = {}
+	SWEP.SpreadAddBlindFire = 0
+	SWEP.SpreadAddCrouch = 0
+	SWEP.SpreadAddHipFire = 0
+	SWEP.SpreadAddMidAir = 0
+	SWEP.SpreadAddMove = 0
+	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddSighted = 0
+
+		-- Handling --
+	SWEP.AimDownSightsTime = 0.25
+	SWEP.CycleTime = 1
+	SWEP.DeployTime = 1
+	SWEP.FixTime = 1
+	SWEP.FreeAimRadius = 0
+	SWEP.FreeAimRadiusMultSights = 0.25
+	SWEP.HoldBreathTime = 5
+	SWEP.OverheatTime = 1
+	SWEP.ReloadTime = 1
+	SWEP.RestoreBreathTime = 5
+	SWEP.ShootWhileSprint = false
+	SWEP.Speed = 1
+	SWEP.SpeedMult = 1
+	SWEP.SpeedMultBlindFire = 1
+	SWEP.SpeedMultCrouch = 1
+	SWEP.SpeedMultMelee = 0.75
+	SWEP.SpeedMultShooting = 0.9
+	SWEP.SpeedMultSights = 0.75
+	SWEP.SprintToFireTime = 0.25
+	SWEP.Sway = 0
+	SWEP.SwayMultSights = 0.5
+		-- Positions --
+	SWEP.IronSights = {
+		Pos = Vector(0, 0, 0),
+		Ang = Angle(0, 0, 0),
+		Magnification = 1,
+		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
+		CrosshairInSights = false,
+		---- FLAT SCOPES
+		-- These don't look very good; please use actual RT scopes if possible.
+		FlatScope = false,
+		FlatScopeOverlay = nil, -- Material()
+		FlatScopeKeepVM = false,
+		FlatScopeBlackBox = true,
+		FlatScopeCC = nil -- Color correction table, see default.lua
+	}
+
+	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+		Pos = Vector(-1, 15, -4),
+		Ang = Angle(0, 0, -35),
+	}
+	SWEP.HasSights = false
+	-- print("SANDBOX BAL")
+end
 	
 	-- Tracers/Effects --
-SWEP.TracerColor = Color(255, 255, 0)
+SWEP.TracerColor = Color(255, 210, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
-SWEP.CaseEffectQCA = 2 -- which attachment to put the case effect on
+SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
 SWEP.ProceduralViewQCA = 1
 
 	-- Magazine --
@@ -143,45 +363,6 @@ SWEP.AutoBurst = true
 SWEP.PostBurstDelay = 0.25
 SWEP.RunAwayBurst = true
 
-	-- Recoil --
-SWEP.RecoilSeed = 035902
-SWEP.RecoilPatternDrift = 15
-SWEP.RecoilLookupTable = nil
--- SWEP.RecoilLookupTable = {
---     15,
---     3,
--- }
-SWEP.PushBackForce = 0 
-SWEP.Recoil = 0.5
-SWEP.RecoilAutoControl = 1
-SWEP.RecoilDissipationRate = 80
-SWEP.RecoilLookupTableOverrun = nil
-SWEP.RecoilRandomSide = 0.15
-SWEP.RecoilRandomUp = 0.01
-SWEP.RecoilResetTime = 0.1
-SWEP.RecoilSide = 0.5
-SWEP.RecoilUp = 0.5
-SWEP.RumbleDuration = 0.12
-SWEP.RumbleHeavy = 30000
-SWEP.RumbleLight = 30000
-
-	-- Visual Recoil --
-SWEP.RecoilKick = 1
-SWEP.UseVisualRecoil = false
-SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-SWEP.VisualRecoilHipFire = false
-SWEP.VisualRecoilMult = 1
-SWEP.VisualRecoilPunch = 1.5
-SWEP.VisualRecoilRoll = 0.23
-SWEP.VisualRecoilSide = 0.05
-SWEP.VisualRecoilUp = 0.01
-
-	-- Spread --
-SWEP.Spread = 0.005
-SWEP.UsePelletSpread = false
-SWEP.PelletSpread = 0.2
-SWEP.PelletSpreadPattern = {}
-
 -- SWEP.PelletSpreadPattern = {
 --     {
 --         x = -1,
@@ -192,38 +373,6 @@ SWEP.PelletSpreadPattern = {}
 --         y = 1
 --     }
 -- }
-
-SWEP.PelletSpreadPatternOverrun = nil
-SWEP.SpreadAddBlindFire = 0
-SWEP.SpreadAddCrouch = 0
-SWEP.SpreadAddHipFire = 0
-SWEP.SpreadAddMidAir = 0
-SWEP.SpreadAddMove = 0
-SWEP.SpreadAddRecoil = 0.065
-SWEP.SpreadAddSighted = 0
-
-	-- Handling --
-SWEP.AimDownSightsTime = 0.25
-SWEP.CycleTime = 1
-SWEP.DeployTime = 1
-SWEP.FixTime = 1
-SWEP.FreeAimRadius = 0
-SWEP.FreeAimRadiusMultSights = 0.25
-SWEP.HoldBreathTime = 5
-SWEP.OverheatTime = 1
-SWEP.ReloadTime = 1
-SWEP.RestoreBreathTime = 5
-SWEP.ShootWhileSprint = false
-SWEP.Speed = 1
-SWEP.SpeedMult = 1
-SWEP.SpeedMultBlindFire = 1
-SWEP.SpeedMultCrouch = 1
-SWEP.SpeedMultMelee = 0.75
-SWEP.SpeedMultShooting = 0.9
-SWEP.SpeedMultSights = 0.75
-SWEP.SprintToFireTime = 0.25
-SWEP.Sway = 0
-SWEP.SwayMultSights = 0.5
 
 	-- Melee --
 SWEP.Bash = false
@@ -269,29 +418,8 @@ SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
 SWEP.ShootSound = "arc9.cear.fire"
-SWEP.ShootSoundSilenced = ""
-
+SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
-SWEP.IronSights = {
-    Pos = Vector(0, 0, 0),
-    Ang = Angle(0, 0, 0),
-    Magnification = 1,
-    AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-    CrosshairInSights = false,
-    ---- FLAT SCOPES
-    -- These don't look very good; please use actual RT scopes if possible.
-    FlatScope = false,
-    FlatScopeOverlay = nil, -- Material()
-    FlatScopeKeepVM = false,
-    FlatScopeBlackBox = true,
-    FlatScopeCC = nil -- Color correction table, see default.lua
-}
-
-SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-    Pos = Vector(-1, 15, -4),
-    Ang = Angle(0, 0, -35),
-}
-SWEP.HasSights = false
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-4, 1, -4)
@@ -418,6 +546,22 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo","halo_skins"},
     },
+	{
+        PrintName = "Optic",
+        DefaultCompactName = "Factory Issue",
+        Bone = "ValveBiped.weapon_bone",
+        Pos = Vector(0, -9, 6.5),
+        Ang = Angle(0, 0, 0),
+        Category = {"halo_optics"},
+    },
+	{
+        PrintName = "Muzzle",
+        DefaultCompactName = "Factory Issue",
+        Bone = "ValveBiped.attach_muzzle",
+        Pos = Vector(-1, -0.25, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"universal_muzzle","bo1_muzzle"},
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
@@ -453,6 +597,10 @@ SWEP.Animations = {
         Reverse = true,
 		Mult = 0.25,
     },
+	["bash"] = {
+        Source = "melee",
+		Mult = 0.7,
+    },
     ["reload"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
@@ -476,3 +624,132 @@ SWEP.Animations = {
         RestoreAmmo = 1 -- Restores ammunition to clip
     }
 }
+-- Locally Overwrite Crosshair
+
+function SWEP:ShouldDrawCrosshair()
+    if self:GetInSights() then
+        if self:GetSight().CrosshairInSights then
+            return true
+        else
+            return false
+        end
+    end
+    if (!self:GetProcessedValue("Crosshair") and !GetConVar("arc9_crosshair_force"):GetBool()) and !ARC9.ShouldThirdPerson() then return false end
+    if self:GetCustomize() then return false end
+
+    return true
+end
+
+local function drawshadowrect(x, y, w, h, col)
+    surface.SetDrawColor(col)
+    surface.DrawRect(x, y, w, h)
+    surface.SetDrawColor(0, 0, 0, col.a * 100 / 150)
+    surface.DrawOutlinedRect(x - 1, y - 1, w + 2, h + 2)
+end
+
+local lastgap = 0
+local lasthelperalpha = 0
+
+local gaA = 0
+
+local lerp = Lerp
+-- local arcticcolor = Color(255, 255, 255, 100)
+local ARC9ScreenScale = ARC9.ScreenScale
+
+function SWEP:DoDrawCrosshair(x, y)
+    if !GetConVar("arc9_cross_enable"):GetBool() then return end
+    local scrw, scrh = ScrW(), ScrH()
+    local owner = self:GetOwner()
+
+    if GetConVar("arc9_crosshair_static"):GetBool() then
+        x = scrw / 2
+        y = scrh / 2
+    else
+        local sp, sa = self:GetShootPos()
+
+        local endpos = sp + (sa:Forward() * 9000)
+        local toscreen = endpos:ToScreen()
+
+        x = toscreen.x
+        y = toscreen.y
+    end
+
+    local dotsize = ARC9ScreenScale(1)
+    local prong = ARC9ScreenScale(4)
+    local minigap = ARC9ScreenScale(2)
+    local miniprong_1 = ARC9ScreenScale(4)
+    local miniprong_2 = ARC9ScreenScale(2)
+    local gap = 0
+    local staticgap = ARC9ScreenScale(4)
+    local col = Color(255, 255, 255, 175)
+
+    col.r = GetConVar("arc9_cross_r"):GetFloat()
+    col.g = GetConVar("arc9_cross_g"):GetFloat()
+    col.b = GetConVar("arc9_cross_b"):GetFloat()
+
+    local d = self:GetSightDelta()
+
+    prong = lerp(d, prong, ARC9ScreenScale(6))
+    gap = lerp(d, gap, 0)
+    minigap = lerp(d, minigap, ARC9ScreenScale(1))
+    miniprong_1 = lerp(d, miniprong_1, ARC9ScreenScale(3))
+    miniprong_2 = lerp(d, miniprong_2, ARC9ScreenScale(1))
+
+    if owner:IsAdmin() and ARC9.Dev(2) and self:GetInSights() then
+        surface.SetDrawColor(255, 0, 0, 150)
+        surface.DrawLine(scrw / 2, 0, scrw / 2, scrh)
+        surface.DrawLine(0, scrh / 2, scrw, scrh / 2)
+    end
+
+    local helpertarget = 0
+
+    col.a = lasthelperalpha * col.a
+
+    if !self:ShouldDrawCrosshair() then
+        if owner:KeyDown(IN_USE) then
+            -- helpertarget = 1
+        end
+
+        lasthelperalpha = math.Approach(lasthelperalpha, helpertarget, FrameTime() / 0.1)
+
+        drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+
+        return true
+    else
+        helpertarget = 1
+
+        lasthelperalpha = math.Approach(lasthelperalpha, helpertarget, FrameTime() / 0.1)
+    end
+
+    local sp, sa = self:GetShootPos()
+
+    local endpos = sp + (sa:Forward() * 9000)
+    local toscreen = endpos:ToScreen()
+
+    if ARC9.ShouldThirdPerson() then
+        local tr = util.TraceLine({
+            start = sp,
+            endpos = endpos,
+            mask = MASK_SHOT,
+            filter = owner
+        })
+
+        toscreen = tr.HitPos:ToScreen()
+    end
+
+    x, y = toscreen.x, toscreen.y
+
+    cam.Start3D()
+        local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
+    cam.End3D()
+	if self.HaloAccuracy == 1 then
+		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+	end
+    if self:GetSprintAmount() > 0 then return true end
+    if self:GetReloading() then return true end
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetDrawColor( col )
+	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
+
+    return true
+end

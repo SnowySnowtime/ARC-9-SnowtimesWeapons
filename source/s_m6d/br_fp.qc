@@ -1,12 +1,14 @@
 $modelname "models/snowysnowtime/c_fp_cemagnum.mdl"
-
+$include "ar_coll.qci"
 $bodygroup "studio"
 {
 	studio "c_fp_magnum.smd"
+	studio "c_fp_magnum_camo.smd"
 	studio "c_fp_ceamagnum.smd"
 }
 
-$cdmaterials "snowysnowtime/2k/vmt"
+$cdmaterials "snowysnowtime/hce/pistols/m6d"
+$cdmaterials "snowysnowtime/hcea/pistols/m6d"
 
 $texturegroup "skinfamilies"
 {
@@ -52,7 +54,6 @@ $sequence "idle" {
 $sequence "fidget" {
 	"anims\fidget.smd"
 	activity "ACT_VM_FIDGET" 1
-	{ event 5004 0 "hce.m6fidget" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -84,7 +85,6 @@ $sequence "draw" {
 $sequence "reload" {
 	"anims\reload.smd"
 	activity "ACT_VM_RELOAD" 1
-	{ event 5004 0 "hce.m6reload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -93,7 +93,6 @@ $sequence "reload" {
 $sequence "reloadempty" {
 	"anims\reload_empty.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
-	{ event 5004 0 "hce.m6reload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -103,7 +102,6 @@ $sequence "reloadempty" {
 $sequence "melee" {
 	"anims\melee.smd"
 	activity "ACT_VM_HITCENTER" 1
-	{ event 5004 0 "hce.m6melee" }
 	fadein 0.0
 	fadeout 0.2
 	fps 30
@@ -112,7 +110,6 @@ $sequence "melee" {
 $sequence "h_reload" {
 	"anims\reload.smd"
 	activity "ACT_VM_RELOAD" 1
-	{ event 5004 0 "hcea.m6reload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -121,7 +118,6 @@ $sequence "h_reload" {
 $sequence "h_reloadempty" {
 	"anims\reload_empty.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
-	{ event 5004 0 "hcea.m6reload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -131,7 +127,6 @@ $sequence "h_reloadempty" {
 $sequence "h_melee" {
 	"anims\melee.smd"
 	activity "ACT_VM_HITCENTER" 1
-	{ event 5004 0 "hcea.m6melee" }
 	fadein 0.0
 	fadeout 0.2
 	fps 30
