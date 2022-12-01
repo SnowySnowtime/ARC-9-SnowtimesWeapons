@@ -8,9 +8,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
-SWEP.PrintName = "MA5B"
-SWEP.TrueName = "MA5B Individual Combat Weapon System"
-SWEP.Class = "Assault Rifle"
+SWEP.PrintName = "SRS99C"
+SWEP.TrueName = "SRS99C-S2 AM"
+SWEP.Class = "Sniper Rifle"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
@@ -63,7 +63,6 @@ SWEP.RicochetChance = 0
 
 -- Lets balance our shit based on if we're playing discount plunder or not.
 local gamemode = engine.ActiveGamemode()
-print(gamemode)
 if gamemode == "profiteers" then
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0

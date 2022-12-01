@@ -1,0 +1,19 @@
+"UnlitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/display_fp"
+	"$color2" "[.3294117647058824 1.333333333333333 1.662745098039216]"
+	"$detail" "snowysnowtime/hce/rifles/assaultrifle/display_illum"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "1"
+	"$detailscale" "1.25"
+	$model 1
+	Proxies
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 0.03
+		    "texturescrollangle" -270.00
+		}
+	}
+}

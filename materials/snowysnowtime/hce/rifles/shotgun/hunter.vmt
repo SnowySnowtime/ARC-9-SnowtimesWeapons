@@ -1,0 +1,33 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/shotgun/hunter"
+	"$bumpmap" "snowysnowtime/hce/rifles/shotgun/sg_n"
+	"$detail"   "snowysnowtime/details/cyborg_detail"
+	"$detailscale" "16"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "0.3"
+	"$lightwarptexture" "snowysnowtime/phongwarps/lightwarp_metallic"
+	"$phongwarptexture" "snowysnowtime/phongwarps/phongwarp_metal2"
+	"$phong" "1" 
+	"$phongboost" "60"
+	"$phongexponenttexture" "snowysnowtime/hce/rifles/shotgun/sg_exp"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 0.5 8]"
+	"$rimlight"	1
+	"$rimlightpower"	1
+	"$rimmask"	1
+	"$envmap"	"env_cubemap"
+	"$basetexturealphaenvmapmask"	"1"
+	"$envmapfresnel"	"0.75"
+	"$envmaptint"	"[ .035 .035 .035 ]"
+
+	Proxies
+	{
+		ClassicMwEnvMapTint
+		{
+			min	"0"
+			max	"1.25"
+		}
+		MwCamo {}
+	}
+}

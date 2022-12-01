@@ -1,0 +1,37 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/shotgun/camo"
+	"$bumpmap" "snowysnowtime/hce/rifles/shotgun/camo_n"
+	"$detailscale" "5"
+	"$detailblendmode" 4
+    "$detailblendfactor" 1
+	"$lightwarptexture" "snowysnowtime/phongwarps/lightwarp_metallic"
+	"$phongwarptexture" "snowysnowtime/phongwarps/phongwarp_metal2"
+	"$phong" "1" 
+	"$phongboost" "60"
+	"$phongexponenttexture" "snowysnowtime/hce/rifles/shotgun/sg_exp"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 0.5 8]"
+	"$rimlight"	1
+	"$rimlightpower"	1
+	"$rimmask"	1
+	"$envmap" "snowysnowtime/envmaps/envmap_fallback"
+	"$envmaptint" "[ 1 1 1 ]"
+	"$cubemaptint"	"[ 1 1 1 ]"
+	"$envmapfresnel"	"0.1"
+	"$cubemappower"	0.05
+
+	Proxies
+	{
+		drc_ReflectionTint
+		{
+			resultVar $envmaptint
+		}
+		CustomCamo
+		{
+			camoTexture $detail
+			camoScale $detailscale
+			blend $detailblendfactor
+		}
+	}
+}

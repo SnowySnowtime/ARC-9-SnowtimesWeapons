@@ -3,6 +3,8 @@ $modelname "models/snowysnowtime/c_fp_cesg.mdl"
 $bodygroup "studio"
 {
 	studio "c_fp_sg.smd"
+	studio "c_fp_sg_camo.smd"
+	studio "c_fp_sg_gj.smd"
 	studio "c_fp_cea_sg.smd"
 }
 
@@ -13,16 +15,16 @@ $contents "solid"
 
 $illumposition -2.073 -5.096 -10.058
 
-$cdmaterials "snowysnowtime/2k/vmt"
+$cdmaterials "snowysnowtime/hce/rifles/shotgun"
+$cdmaterials "snowysnowtime/hcea/rifles/shotgun"
 
 $texturegroup "skinfamilies"
 {
-	{ "shotgun" }
-	{ "sgdesert"  }
-	{ "sggold" }
-	{ "sggreatjourney"    }
-	{ "sghuntersblood"   }
-	{ "sgwoodlands"   }
+	{ "shotgun" "shotdull" } 
+	{ "shotgun" "desertdull" }
+	{ "gold" "shotdull" }
+	{ "shotgun" "hunterdull" }
+	{ "wl" "wldull" }
 }
 
 $attachment "muzzle" "frame gun" 18 0 0.9 rotate 0 0 0
@@ -33,8 +35,15 @@ $cbox 0 0 0 0 0 0
 $bbox -10.175 -15.883 -17.155 20.363 11.732 -2.96
 
 $include "bonemerge.qci"
+$include "sg_coll.qci"
 
 $sectionframes 30 132
+
+$sequence "neutral" {
+	"anims\neutral.smd"
+	snap
+	rotate -90
+}
 
 $sequence "idle" {
 	"anims\idle.smd"

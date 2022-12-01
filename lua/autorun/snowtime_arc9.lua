@@ -276,3 +276,79 @@ sound.Add(
     soundlevel = 80,
     sound = "hce/m6_reload.wav"
 })
+
+-- M90CE
+sound.Add(
+{
+    name = "arc9.m90.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 100,
+    sound = {"hce/shotgunfire.wav"}
+})
+
+-- Halo 3
+	-- Battle Rifle
+sound.Add( {
+	name = "arc9.halo_eject_rifle",
+	channel = CHAN_AUTO,
+	volume = 0.5,
+	level = 56,
+	pitch = { 98.5, 101.5 },
+	sound = { "snow/battle_rifle/eject_br/ejectshell.wav", 
+	"snow/battle_rifle/eject_br/ejectshell2.wav", 
+	"snow/battle_rifle/eject_br/ejectshell3.wav",
+	"snow/battle_rifle/eject_br/ejectshell4.wav", }
+} )
+
+sound.Add(
+{
+    name = "arc9.br.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound = {"snow/battle_rifle/fire_burst_h3/battle_rifle_fire2.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire3.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire4.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire5.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire6.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire7.wav",
+	"snow/battle_rifle/fire_burst_h3/battle_rifle_fire8.wav" }
+})
+
+sound.Add(
+{
+    name = "arc9.br.draw",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"h3/br_draw1.wav","h3/br_draw2.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.br.reload1",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"h3/br_reload1-1.wav","h3/br_reload2-1.wav","h3/br_reload3-1.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.br.reload2",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"h3/br_reload1-2.wav","h3/br_reload2-2.wav","h3/br_reload3-2.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.br.reload3",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"h3/br_reload1-3.wav","h3/br_reload2-3.wav","h3/br_reload3-3.wav"}
+})

@@ -1,16 +1,16 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
 SWEP.Category = "ARC-9 - Snowtime's Armory"
-SWEP.HaloAccuracy = 1
+SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
-SWEP.PrintName = "MA5B"
-SWEP.TrueName = "MA5B Individual Combat Weapon System"
-SWEP.Class = "Assault Rifle"
+SWEP.PrintName = "M90"
+SWEP.TrueName = "M90 CAWS"
+SWEP.Class = "Shotgun"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
@@ -32,8 +32,8 @@ This weapon has stat adjustments based on if you're in Profiteers or not.]]
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
 SWEP.MirrorVMWM = true
-SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
-SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
+SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cesg.mdl"
+SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cesg.mdl"
 SWEP.WorldModelOffset = {
 	Pos = Vector(-13, 3.6, -6),
 	Ang = Angle(-15, 0, 180),
@@ -54,7 +54,7 @@ SWEP.MissileCrosshair = false
 
 	-- Damage Profile --
 SWEP.DamageType = DMG_BULLET
-SWEP.Num = 1
+SWEP.Num = 12
 SWEP.Penetration = 5
 SWEP.RangeMax = 5000
 SWEP.RangeMin = 0
@@ -63,7 +63,6 @@ SWEP.RicochetChance = 0
 
 -- Lets balance our shit based on if we're playing discount plunder or not.
 local gamemode = engine.ActiveGamemode()
-print(gamemode)
 if gamemode == "profiteers" then
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
@@ -126,17 +125,17 @@ if gamemode == "profiteers" then
 	SWEP.VisualRecoilUp = 0.01
 
 		-- Spread --
-	SWEP.Spread = 0.002
+	SWEP.Spread = 0.2
 	SWEP.UsePelletSpread = false
-	SWEP.PelletSpread = 0.2
+	SWEP.PelletSpread = 0
 	SWEP.PelletSpreadPattern = {}
 	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.05
+	SWEP.SpreadAddHipFire = 0
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.02
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -308,7 +307,7 @@ SWEP.TracerColor = Color(255, 210, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_shotgun" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
@@ -321,7 +320,7 @@ SWEP.AutoReload = false
 SWEP.BottomlessClip = false
 SWEP.CanFireUnderwater = true
 SWEP.ChamberSize = 0 -- Halo Weapons DONT chamber rounds. PLEASE dont fucking enable this.
-SWEP.ClipSize = 60
+SWEP.ClipSize = 12
 SWEP.Disposable = false
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineModel = "models/snowysnowtime/arc9/hce/rifles/ar_mag.mdl"
@@ -342,18 +341,10 @@ SWEP.SupplyLimit = 5
 SWEP.TriggerDelay = 0
 
 	-- Fire Modes --
-SWEP.RPM = 900
+SWEP.RPM = 60
 SWEP.Firemodes = {
     {
         Mode = -1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 3,
         -- add other attachment modifiers
     },
 }
@@ -417,7 +408,7 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
+SWEP.ShootSound = "arc9.m90.fire"
 SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
 SWEP.ActivePos = Vector(0, 0, 0)
@@ -747,7 +738,7 @@ function SWEP:DoDrawCrosshair(x, y)
 	end
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sg"))
 	surface.SetDrawColor( col )
 	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
 

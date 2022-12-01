@@ -8,9 +8,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
-SWEP.PrintName = "MA5B"
-SWEP.TrueName = "MA5B Individual Combat Weapon System"
-SWEP.Class = "Assault Rifle"
+SWEP.PrintName = "BR55HB SR"
+SWEP.TrueName = "BR55HB SR"
+SWEP.Class = "Battle Rifle"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
 	Calibre = "7.62x51mm M118 FMJ-AP",
@@ -22,20 +22,14 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
-
-
-
-
-This weapon has stat adjustments based on if you're in Profiteers or not.]]
 
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
 SWEP.MirrorVMWM = true
-SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
-SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
+SWEP.ViewModel = "models/snowysnowtime/arc9/h3/rifles/c_hum_br55hb.mdl"
+SWEP.WorldModel = "models/snowysnowtime/arc9/h3/rifles/c_hum_br55hb.mdl"
 SWEP.WorldModelOffset = {
-	Pos = Vector(-13, 3.6, -6),
+	Pos = Vector(-8, 3.6, -6),
 	Ang = Angle(-15, 0, 180),
 	Scale = 1
 }
@@ -63,12 +57,11 @@ SWEP.RicochetChance = 0
 
 -- Lets balance our shit based on if we're playing discount plunder or not.
 local gamemode = engine.ActiveGamemode()
-print(gamemode)
 if gamemode == "profiteers" then
 	-- Damage Profile --
-	SWEP.ArmorPiercing = 0
-	SWEP.DamageMax = 18
-	SWEP.DamageMin = 12
+	SWEP.ArmorPiercing = 0.05
+	SWEP.DamageMax = 22
+	SWEP.DamageMin = 18
 	SWEP.DamageRand = 0
 	-- Projectile --
 	SWEP.AlwaysPhysBullet = true
@@ -81,9 +74,9 @@ if gamemode == "profiteers" then
 	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 15000
+	SWEP.PhysBulletMuzzleVelocity = 35000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
+		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -133,10 +126,10 @@ if gamemode == "profiteers" then
 	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.05
+	SWEP.SpreadAddHipFire = 0.03
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.02
+	SWEP.SpreadAddRecoil = 0.001
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -146,7 +139,7 @@ if gamemode == "profiteers" then
 	SWEP.FixTime = 1
 	SWEP.FreeAimRadius = 0
 	SWEP.FreeAimRadiusMultSights = 0.25
-	SWEP.HoldBreathTime = 5
+	SWEP.HoldBreathTime = 1
 	SWEP.OverheatTime = 1
 	SWEP.ReloadTime = 1
 	SWEP.RestoreBreathTime = 5
@@ -183,6 +176,12 @@ if gamemode == "profiteers" then
 	}
 	SWEP.HasSights = true
 	-- print("PROFITEERS BAL")
+	SWEP.Description = [[The BR55 is a standard issue battle rifle which boasts a three round burst. It is massively preferred over the M392 DMR by the UNSC.
+
+
+
+
+This weapon has been adjusted for Profiteers.]]
 else
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
@@ -251,10 +250,10 @@ else
 	SWEP.PelletSpreadPattern = {}
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0
+	SWEP.SpreadAddHipFire = 0.02	
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddRecoil = 0.01
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -285,7 +284,7 @@ else
 		Ang = Angle(0, 0, 0),
 		Magnification = 1,
 		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = false,
+		CrosshairInSights = true,
 		---- FLAT SCOPES
 		-- These don't look very good; please use actual RT scopes if possible.
 		FlatScope = false,
@@ -299,8 +298,14 @@ else
 		Pos = Vector(-1, 15, -4),
 		Ang = Angle(0, 0, -35),
 	}
-	SWEP.HasSights = false
+	SWEP.HasSights = true
 	-- print("SANDBOX BAL")
+	SWEP.Description = [[The BR55 is a standard issue battle rifle which boasts a three round burst. It is massively preferred over the M392 DMR by the UNSC.
+
+
+
+
+This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
@@ -308,7 +313,7 @@ SWEP.TracerColor = Color(255, 210, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "arc9ce_halo_3_muzzle_battle_rifle" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
@@ -321,7 +326,7 @@ SWEP.AutoReload = false
 SWEP.BottomlessClip = false
 SWEP.CanFireUnderwater = true
 SWEP.ChamberSize = 0 -- Halo Weapons DONT chamber rounds. PLEASE dont fucking enable this.
-SWEP.ClipSize = 60
+SWEP.ClipSize = 36
 SWEP.Disposable = false
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineModel = "models/snowysnowtime/arc9/hce/rifles/ar_mag.mdl"
@@ -345,23 +350,14 @@ SWEP.TriggerDelay = 0
 SWEP.RPM = 900
 SWEP.Firemodes = {
     {
-        Mode = -1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 1,
-        -- add other attachment modifiers
-    },
-	{
         Mode = 3,
         -- add other attachment modifiers
-    },
+    }
 }
 
 SWEP.Akimbo = false
-SWEP.AutoBurst = true
-SWEP.PostBurstDelay = 0.25
-SWEP.RunAwayBurst = true
+SWEP.RunawayBurst = true
+SWEP.PostBurstDelay = 0.3
 
 -- SWEP.PelletSpreadPattern = {
 --     {
@@ -417,10 +413,10 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
+SWEP.ShootSound = "arc9.br.fire"
 SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
-SWEP.ActivePos = Vector(0, 0, 0)
+SWEP.ActivePos = Vector(0, 0, -1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 SWEP.CrouchPos = Vector(-4, 1, -4)
 SWEP.CrouchAng = Angle(0, 0, -30)
@@ -541,26 +537,10 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -7, 8),
+        Bone = "gun",
+        Pos = Vector(3.75, 0, 5),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_skins"},
-    },
-	{
-        PrintName = "Optic",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -9, 6.5),
-        Ang = Angle(0, 0, 0),
-        Category = {"halo_optics"},
-    },
-	{
-        PrintName = "Muzzle",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.attach_muzzle",
-        Pos = Vector(-1, -0.25, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_muzzle","bo1_muzzle"},
+        Category = {"universal_camo","halo_br_skins"},
     },
 }
 
@@ -571,7 +551,10 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local attached = data.elements
 	
     if attached["universal_camo"] then
-        vm:SetBodygroup(0,1)
+        vm:SetBodygroup(1,1)
+        vm:SetBodygroup(2,1)
+        vm:SetBodygroup(3,1)
+        vm:SetBodygroup(4,1)
     end
 	if attached["cear_skin7"] then
         vm:SetBodygroup(0,2)
@@ -581,33 +564,37 @@ end
 
 SWEP.Animations = {
 	["draw"] = {
-        Source = "draw",
+        Source = "deploy",
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
+                t = 0, -- in seconds
+                s = "arc9.br.draw", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
         },
     },
 	["holster"] = {
-        Source = "draw",
+        Source = "deploy",
         Reverse = true,
-		Mult = 0.25,
+		Mult = 0.75,
     },
 	["bash"] = {
         Source = "melee",
 		Mult = 0.7,
+    },
+	["fire"] = {
+	    Source = {"fire1","fire2","fire3"},
+		Mult = 0.5,
     },
     ["reload"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
         EventTable = {
             {
-                t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                t = 0.2, -- in seconds
+                s = "arc9.br.reload1", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -617,12 +604,86 @@ SWEP.Animations = {
                 pp = "", -- pose parameter name
                 ppv = 0, -- pose parameter value
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+            },
+			{
+                t = 0.75, -- in seconds
+                s = "arc9.br.reload2", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 1.325, -- in seconds
+                s = "arc9.br.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
-    }
+    },
+	["reload_empty"] = {
+        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0.2, -- in seconds
+                s = "arc9.br.reload1", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 5, -- change bodygroup
+                bg = 1,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 0.75, -- in seconds
+                s = "arc9.br.reload2", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 5, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 1.325, -- in seconds
+                s = "arc9.br.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 5, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
 }
 -- Locally Overwrite Crosshair
 
@@ -743,13 +804,16 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+		drawshadowrect(x, y, dotsize / 2, dotsize / 2, col)
 	end
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_br"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
+	surface.DrawTexturedRect( x - (dotsize) - 27, y - (dotsize) - 27, 64, 64 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_br_dyn"))
+	surface.SetDrawColor( col )
+	surface.DrawTexturedRect( x - (dotsize) - 27, y - (dotsize) - 27, 64, 64 )
 
     return true
 end

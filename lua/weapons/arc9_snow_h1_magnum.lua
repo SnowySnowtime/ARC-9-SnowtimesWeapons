@@ -35,7 +35,7 @@ SWEP.MirrorVMWM = true
 SWEP.ViewModel = "models/snowysnowtime/arc9/hce/pistols/c_fp_cemagnum.mdl"
 SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModelOffset = {
-	Pos = Vector(-13, 3.6, -6),
+	Pos = Vector(-6, 3.6, -8),
 	Ang = Angle(-15, 0, 180),
 	Scale = 1
 }
@@ -63,7 +63,6 @@ SWEP.RicochetChance = 0
 
 -- Lets balance our shit based on if we're playing discount plunder or not.
 local gamemode = engine.ActiveGamemode()
-print(gamemode)
 if gamemode == "profiteers" then
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
