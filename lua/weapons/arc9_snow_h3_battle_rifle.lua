@@ -64,11 +64,11 @@ if gamemode == "profiteers" then
 	SWEP.DamageMin = 18
 	SWEP.DamageRand = 0
 	-- Projectile --
-	SWEP.AlwaysPhysBullet = true
+	SWEP.AlwaysPhysBullet = false
 	SWEP.BulletGuidance = false
 	SWEP.BulletGuidanceAmount = 15000
 	SWEP.FancyBullets = true
-	SWEP.NeverPhysBullet = false
+	SWEP.NeverPhysBullet = true
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
 	SWEP.PhysBulletGravity = 1
@@ -94,15 +94,15 @@ if gamemode == "profiteers" then
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
+	SWEP.Recoil = 0.2
 	SWEP.RecoilAutoControl = 0
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.5
-	SWEP.RecoilRandomUp = 0.2
-	SWEP.RecoilResetTime = 0.15
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.75
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0
+	SWEP.RecoilUp = 0.2
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -111,7 +111,7 @@ if gamemode == "profiteers" then
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
 	SWEP.VisualRecoilPunch = 1.5
 	SWEP.VisualRecoilRoll = 0.23
@@ -119,17 +119,17 @@ if gamemode == "profiteers" then
 	SWEP.VisualRecoilUp = 0.01
 
 		-- Spread --
-	SWEP.Spread = 0.002
+	SWEP.Spread = 0.001
 	SWEP.UsePelletSpread = false
 	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
 	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.03
+	SWEP.SpreadAddHipFire = 0.01
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.001
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -154,27 +154,6 @@ if gamemode == "profiteers" then
 	SWEP.SprintToFireTime = 0.25
 	SWEP.Sway = 0
 	SWEP.SwayMultSights = 0.5
-		-- Positions --
-	SWEP.IronSights = {
-		Pos = Vector(-1, -6, 0),
-		Ang = Angle(0, 0, 0),
-		Magnification = 1.15,
-		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = true,
-		---- FLAT SCOPES
-		-- These don't look very good; please use actual RT scopes if possible.
-		FlatScope = false,
-		FlatScopeOverlay = "hi.vmt", -- Material()
-		FlatScopeKeepVM = true,
-		FlatScopeBlackBox = false,
-		FlatScopeCC = nil -- Color correction table, see default.lua
-	}
-
-	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(0, 10, 0),
-		Ang = Angle(0, 0, 0),
-	}
-	SWEP.HasSights = true
 	-- print("PROFITEERS BAL")
 	SWEP.Description = [[The BR55 is a standard issue battle rifle which boasts a three round burst. It is massively preferred over the M392 DMR by the UNSC.
 
@@ -219,22 +198,22 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
+	SWEP.Recoil = 0
 	SWEP.RecoilAutoControl = 1
 	SWEP.RecoilDissipationRate = 80
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.15
-	SWEP.RecoilRandomUp = 0.01
+	SWEP.RecoilRandomSide = 0
+	SWEP.RecoilRandomUp = 0
 	SWEP.RecoilResetTime = 0.1
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.5
+	SWEP.RecoilSide = 0
+	SWEP.RecoilUp = 0
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
 
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
-	SWEP.UseVisualRecoil = true
+	SWEP.UseVisualRecoil = false
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
 	SWEP.VisualRecoilHipFire = false
 	SWEP.VisualRecoilMult = 1
@@ -278,27 +257,6 @@ else
 	SWEP.SprintToFireTime = 0.25
 	SWEP.Sway = 0
 	SWEP.SwayMultSights = 0.5
-		-- Positions --
-	SWEP.IronSights = {
-		Pos = Vector(0, 0, 0),
-		Ang = Angle(0, 0, 0),
-		Magnification = 1,
-		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = true,
-		---- FLAT SCOPES
-		-- These don't look very good; please use actual RT scopes if possible.
-		FlatScope = false,
-		FlatScopeOverlay = nil, -- Material()
-		FlatScopeKeepVM = false,
-		FlatScopeBlackBox = true,
-		FlatScopeCC = nil -- Color correction table, see default.lua
-	}
-
-	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(-1, 15, -4),
-		Ang = Angle(0, 0, -35),
-	}
-	SWEP.HasSights = true
 	-- print("SANDBOX BAL")
 	SWEP.Description = [[The BR55 is a standard issue battle rifle which boasts a three round burst. It is massively preferred over the M392 DMR by the UNSC.
 
@@ -608,6 +566,26 @@ SWEP.Animations = {
             }
         },
     },
+	["idle"] = {
+        Source = "idle",
+		Mult = 1,
+    },
+	["enter_sights"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
+	["exit_sights"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
+	["idle_sights"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
+	["fire_sights"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
 	["holster"] = {
         Source = "deploy",
         Reverse = true,
@@ -665,6 +643,28 @@ SWEP.Animations = {
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
             },
         },
+		IKTimeLine = {
+            {
+                t = 0,
+                lhik = 1,
+                rhik = 1
+            },
+            {
+                t = 0.1,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.85,
+                lhik = 1,
+                rhik = 1
+            },
+        },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
@@ -718,6 +718,27 @@ SWEP.Animations = {
         RestoreAmmo = 1 -- Restores ammunition to clip
     },
 }
+
+SWEP.IronSights = {
+	Pos = Vector(-0.15, -5.15, -1.15),
+	Ang = Angle(0, 0, 0),
+	Magnification = 1.15,
+	AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
+	CrosshairInSights = true,
+	---- FLAT SCOPES
+	-- These don't look very good; please use actual RT scopes if possible.
+	FlatScope = false,
+	FlatScopeOverlay = Material("snowysnowtime/scopes/magnum_scope"), -- Material()
+	FlatScopeKeepVM = false,
+	FlatScopeBlackBox = false,
+	FlatScopeCC = nil -- Color correction table, see default.lua
+}
+SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
+	Pos = Vector(0, 0, 0),
+	Ang = Angle(0, 0, 0),
+}
+SWEP.HasSights = true
+
 -- Locally Overwrite Crosshair
 
 function SWEP:ShouldDrawCrosshair()

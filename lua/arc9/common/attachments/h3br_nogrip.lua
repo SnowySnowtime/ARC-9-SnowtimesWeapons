@@ -21,7 +21,7 @@ ATT.Attachments = {
         Category = {"bo1_grips"},
     },
 	{
-        PrintName = "Lasers Probably.",
+        PrintName = "Grip|Tactical",
         Bone = "gun",
         Pos = Vector(-4, 0, 0.3),
         Ang = Angle(0, 0, 0),

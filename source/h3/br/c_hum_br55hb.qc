@@ -75,6 +75,16 @@ $sequence "idle" {
 	fps 30
 }
 
+$sequence "idle_lol" {
+	"c_hum_br55hb_anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	fadein 0.1
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
 $sequence "fire1" {
 	"c_hum_br55hb_anims\fire1.smd"
 	activity "ACT_VM_PRIMARYATTACK" 1

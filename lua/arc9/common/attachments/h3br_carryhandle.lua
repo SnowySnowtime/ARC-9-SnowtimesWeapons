@@ -16,10 +16,40 @@ ATT.Attachments = {
         PrintName = "Optic",
         Bone = "gun",
         Pos = Vector(5, 0, -2.2),
-        Ang = Angle(0, 0, 0),
+        Ang = Angle(-0.48, 0.16, 0),
+		CorrectiveAng = Angle(0, 0, 0), -- sometimes, the autosolver needs a little help. Try (-1, -1, 0)
         Icon_Offset = Vector(0, 0, 1.5),
-         Category = {"bo1_optic","h3scope"},
+		InstalledElements = {"a"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"b"},
+        Category = {"bo1_optic","h3scope"},
         Installed = "h3br_scope",
-        Integral = true,
-    }
+    },
+	{
+        PrintName = "Handle|Tactical",
+        Bone = "gun",
+        Pos = Vector(5, 0, -2),
+        Ang = Angle(0, 0, 180),
+		InstalledElements = {"b"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"a"},
+        Icon_Offset = Vector(5, 0, 1.5),
+        Category = {"bo1_tactical"},
+    },
+	{
+        PrintName = "Picatinny",
+        Bone = "gun",
+        Pos = Vector(6, -0.4, -0.5),
+        Ang = Angle(0, 0, 95),
+		CorrectiveAng = Angle(0, 0, 0), -- sometimes, the autosolver needs a little help. Try (-1, -1, 0)
+        Icon_Offset = Vector(0, -0.75, 0),
+        Category = {"bo1_rail_tactical"},
+    },
+	{
+        PrintName = "Picatinny2",
+        Bone = "gun",
+        Pos = Vector(6, 0.5, -0.5),
+        Ang = Angle(0, 0, -95),
+		CorrectiveAng = Angle(0, 0, 0), -- sometimes, the autosolver needs a little help. Try (-1, -1, 0)
+        Icon_Offset = Vector(0, 0.75, 0),
+        Category = {"bo1_rail_tactical"},
+    },
 }

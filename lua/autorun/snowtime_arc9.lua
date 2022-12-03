@@ -390,3 +390,21 @@ sound.Add(
     soundlevel = 80,
     sound = {"h3/br_reload1-3.wav","h3/br_reload2-3.wav","h3/br_reload3-3.wav"}
 })
+
+sound.Add(
+{
+    name = "arc9.br.zoomin",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "snow/battle_rifle/battle_rifle_zoom_in.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.br.zoomout",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "snow/battle_rifle/battle_rifle_zoom_out.wav"
+})
