@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/vgui/numbers_plate6"
+	"$basetexture" "snowysnowtime/h3/rifles/battle_rifle/vgui/numbers_plate3"
 	"$additive" "1"
 	$model 1
 	
@@ -8,8 +8,8 @@
 	{
 		snow_fesiug_ammo
 		{
-			resultVar 2
-			prefixstring "snowysnowtime/hce/rifles/assaultrifle/vgui/numbers_plate__"
+			resultVar 1
+			prefixstring "snowysnowtime/h3/rifles/battle_rifle/vgui/numbers_plate"
 		}
 	}
 }
