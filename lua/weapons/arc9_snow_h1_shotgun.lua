@@ -22,12 +22,6 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The M90 is a standard-issue shotgun that is part of the Weapon System Technologies' M90 Close Assault Weapon System.
-
-
-
-
-This weapon has stat adjustments based on if you're in Profiteers or not.]]
 
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
@@ -182,6 +176,12 @@ if gamemode == "profiteers" then
 	}
 	SWEP.HasSights = true
 	-- print("PROFITEERS BAL")
+	SWEP.Description = [[The M90 is a standard-issue shotgun that is part of the Weapon System Technologies' M90 Close Assault Weapon System.
+
+
+
+
+This weapon has been adjusted for Profiteers.]]
 else
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
@@ -300,6 +300,12 @@ else
 	}
 	SWEP.HasSights = false
 	-- print("SANDBOX BAL")
+	SWEP.Description = [[The M90 is a standard-issue shotgun that is part of the Weapon System Technologies' M90 Close Assault Weapon System.
+
+
+
+
+This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
