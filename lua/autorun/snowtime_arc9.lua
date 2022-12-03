@@ -287,6 +287,35 @@ sound.Add(
     sound = {"hce/shotgunfire.wav"}
 })
 
+sound.Add(
+{
+    name = "arc9.m90.draw",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/shotgun_deploy.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m90.reload",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"hce/shotgun_shellin_1.wav",
+	"hce/shotgun_shellin_2.wav",
+	"hce/shotgun_shellin_3.wav"}	
+})
+
+sound.Add(
+{
+    name = "arc9.m90.reloadfin",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/shotgun_reload_fin.wav"
+})
+
 -- Halo 3
 	-- Battle Rifle
 sound.Add( {

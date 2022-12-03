@@ -95,6 +95,7 @@ $sequence "reload1" {
 	fadein 0.2
 	fadeout 0.2
 	node "0"
+	snap
 	rotate -90
 	fps 30
 }
@@ -102,9 +103,10 @@ $sequence "reload1" {
 $sequence "reload2" {
 	"anims\reloadloop.smd"
 	activity "ACT_VM_RELOAD" 1
-	fadein 0.2
-	fadeout 0.2
+	fadein 0.06
+	fadeout 0.06
 	node "0"
+	snap
 	rotate -90
 	fps 30
 }
@@ -115,6 +117,7 @@ $sequence "reloadempty" {
 	fadein 0.2
 	fadeout 0.2
 	node "0"
+	snap
 	rotate -90
 	fps 30
 }

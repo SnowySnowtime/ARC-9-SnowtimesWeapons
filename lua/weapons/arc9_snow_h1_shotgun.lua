@@ -12,9 +12,9 @@ SWEP.PrintName = "M90"
 SWEP.TrueName = "M90 CAWS"
 SWEP.Class = "Shotgun"
 SWEP.Trivia = {
-	Manufacturer = "Misriah Armory",
-	Calibre = "7.62x51mm M118 FMJ-AP",
-	Mechanism = "Gas-Operated",
+	Manufacturer = "Weapon System Technologies",
+	Calibre = "8-Gauge Magnum",
+	Mechanism = "Pump-action",
 	Planet = "Mars",
 	Year = 2525
 }
@@ -22,7 +22,7 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
+SWEP.Description = [[The M90 is a standard-issue shotgun that is part of the Weapon System Technologies' M90 Close Assault Weapon System.
 
 
 
@@ -576,8 +576,8 @@ SWEP.Animations = {
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
+                t = 0, -- in seconds
+                s = "arc9.m90.draw", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -597,8 +597,8 @@ SWEP.Animations = {
         Mult = 1, -- multiplies time
         EventTable = {
             {
-                t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                t = 0.1, -- in seconds
+                s = "arc9.m90.reload", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -613,11 +613,11 @@ SWEP.Animations = {
 	},
 	["reload_insert_bullet_1"] = {
         Source = {"reload2"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
-        Mult = 1, -- multiplies time
+        Mult = 1.1, -- multiplies time
         EventTable = {
             {
                 t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                s = "arc9.m90.reload", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -636,7 +636,7 @@ SWEP.Animations = {
         EventTable = {
             {
                 t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                s = "arc9.m90.reloadfin", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
