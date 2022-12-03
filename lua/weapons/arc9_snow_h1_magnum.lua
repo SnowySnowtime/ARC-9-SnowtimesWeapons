@@ -13,8 +13,8 @@ SWEP.TrueName = "M6D"
 SWEP.Class = "Magnum"
 SWEP.Trivia = {
 	Manufacturer = "Misriah Armory",
-	Calibre = "7.62x51mm M118 FMJ-AP",
-	Mechanism = "Gas-Operated",
+	Calibre = "12.7x40mm SAP-HE",
+	Mechanism = "Recoil-Operated",
 	Planet = "Mars",
 	Year = 2525
 }
@@ -22,12 +22,6 @@ SWEP.Credits = {
 	Author = "Snowy Snowtime",
 	Contact = "https://steamcommunity.com/id/SnowySnowtime/",
 }
-SWEP.Description = [[The M6D is an upscaled variant of the commonly employed M6G series "Magnums" which are often used by spartans.
-"I don't keep it loaded son you'll have to find ammo as you go." - Captain Keyes.
-
-
-
-This weapon has stat adjustments based on if you're in Profiteers or not.]]
 
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
@@ -182,6 +176,12 @@ if gamemode == "profiteers" then
 	}
 	SWEP.HasSights = true
 	-- print("PROFITEERS BAL")
+	SWEP.Description = [[The M6D is an upscaled variant of the commonly employed M6G series "Magnums" which are often used by spartans.
+"I don't keep it loaded son you'll have to find ammo as you go." - Captain Keyes.
+
+
+
+This weapon has been adjusted for Profiteers.]]
 else
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
@@ -300,6 +300,12 @@ else
 	}
 	SWEP.HasSights = false
 	-- print("SANDBOX BAL")
+	SWEP.Description = [[The M6D is an upscaled variant of the commonly employed M6G series "Magnums" which are often used by spartans.
+"I don't keep it loaded son you'll have to find ammo as you go." - Captain Keyes.
+
+
+
+This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
