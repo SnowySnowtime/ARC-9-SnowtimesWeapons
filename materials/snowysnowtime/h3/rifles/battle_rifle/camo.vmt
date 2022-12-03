@@ -17,12 +17,12 @@
 	"$rimlight"	1
 	"$rimlightpower"	10
 	"$rimmask"	1
-	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
+	"$envmap" "snowysnowtime/envmaps/envmap_chrome"
 	"$envmaptint" "[ 1 1 1 ]"
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$normalmapalphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
-	"$cubemappower"	0.3
+	"$cubemappower"	0.4
 
 	Proxies
 	{

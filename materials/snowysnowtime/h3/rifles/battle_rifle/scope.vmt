@@ -7,7 +7,7 @@
 	"$detailscale" "16"
 	"$detailblendmode" "0"
 	"$detailblendfactor" "0.5"
-	"$color2" "[0.87 0.87 0.87]"
+	"$color2" "[0 10 100]"
 	"$phong" "1" 
 	"$phongboost" "60"
 	"$phongexponenttexture" "snowysnowtime/h3/rifles/battle_rifle/br_exp"
@@ -20,10 +20,10 @@
 	"$rimmask"	1
 	"$envmap" "snowysnowtime/envmaps/envmap_fallback"
 	"$envmaptint" "[ 1 1 1 ]"
-	"$cubemaptint"	"[ 1 1 1 ]"
+	"$cubemaptint"	"[ 0.3 1.5 7 ]"
 	"$basetexturealphaenvmapmask"	"1"
 	"$envmapfresnel"	"0.15"
-	"$cubemappower"	0.5
+	"$cubemappower"	1
 
 	Proxies
 	{

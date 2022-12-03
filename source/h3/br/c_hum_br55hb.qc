@@ -20,9 +20,9 @@ $bodygroup "carryhandle"
 }
 $bodygroup "scope"
 {
+	blank
 	studio "br_scope.smd"
 	studio "br_scope_camo.smd"
-	blank
 }
 $bodygroup "mag"
 {

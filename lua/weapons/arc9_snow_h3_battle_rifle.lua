@@ -542,6 +542,26 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo","halo_br_skins"},
     },
+	{
+        PrintName = "Foregrip",
+        DefaultCompactName = "Factory Issue",
+        Bone = "gun",
+        Pos = Vector(9.6, 0, 3.25),
+        Ang = Angle(0, 0, 0),
+        Category = {"h3br_grip"},
+		Installed = "h3br_foregrip",
+        Integral = true,
+    },
+	{
+        PrintName = "Carry Handle",
+        DefaultCompactName = "Factory Issue",
+        Bone = "gun",
+        Pos = Vector(9.6, 0, 5),
+        Ang = Angle(0, 0, 0),
+        Category = {"h3br_handle"},
+		Installed = "h3br_carryhandle",
+        Integral = true,
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
@@ -550,10 +570,23 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 	local CUSTSTATE = self:GetCustomize()
     local attached = data.elements
 	
+	if attached["h3br_grip_none"] then
+		vm:SetBodygroup(6,1)
+	end
+	if attached["h3scope"] && attached["universal_camo"] or attached["h3scope3d"] && attached["universal_camo"] then
+		vm:SetBodygroup(3,2)
+	end
+	if attached["h3scope"] && !attached["universal_camo"] or attached["h3scope3d"] && !attached["universal_camo"] then
+		vm:SetBodygroup(3,1)
+	end
+	if attached["h3br_handle"] && attached["universal_camo"] then
+		vm:SetBodygroup(2,1)
+	end
+	if attached["h3br_handle_none"] then
+		vm:SetBodygroup(2,2)
+	end
     if attached["universal_camo"] then
         vm:SetBodygroup(1,1)
-        vm:SetBodygroup(2,1)
-        vm:SetBodygroup(3,1)
         vm:SetBodygroup(4,1)
     end
 	if attached["cear_skin7"] then
