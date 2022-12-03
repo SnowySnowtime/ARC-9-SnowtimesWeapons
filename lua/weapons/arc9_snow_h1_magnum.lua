@@ -1,6 +1,6 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
-SWEP.Category = "ARC-9 - Snowtime's Armory"
+SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 1
 
 	-- Spawn Checks --
@@ -676,11 +676,15 @@ function SWEP:DoDrawCrosshair(x, y)
     local miniprong_2 = ARC9ScreenScale(2)
     local gap = 0
     local staticgap = ARC9ScreenScale(4)
-    local col = Color(255, 255, 255, 175)
+    local col = Color(255, 255, 255, 150)
+    local coldark = Color(255, 255, 255, 100)
 
     col.r = GetConVar("arc9_cross_r"):GetFloat()
     col.g = GetConVar("arc9_cross_g"):GetFloat()
     col.b = GetConVar("arc9_cross_b"):GetFloat()
+	coldark.r = GetConVar("arc9_cross_r"):GetFloat() / 2
+    coldark.g = GetConVar("arc9_cross_g"):GetFloat() / 2
+    coldark.b = GetConVar("arc9_cross_b"):GetFloat() / 2
 
     local d = self:GetSightDelta()
 
@@ -738,13 +742,16 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x - (dotsize / 4), y - (dotsize / 4), dotsize / 2, dotsize / 2, col)
+		drawshadowrect(x - (0), y - (0), dotsize / 2, dotsize / 2, col)
 	end
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_m6"))
+	surface.SetDrawColor( coldark )
+	surface.DrawTexturedRect( x - (dotsize) - 20, y - (dotsize) - 21, 51, 51 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_m6"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 21, y - (dotsize) - 21, 50, 50 )
+	surface.DrawTexturedRect( x - (dotsize) - 19, y - (dotsize) - 20, 49, 49 )
 
     return true
 end

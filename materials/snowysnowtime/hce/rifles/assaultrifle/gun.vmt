@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/ar"
+	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/desert"
 	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/lucky_n"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
 	"$detail"   "snowysnowtime/details/cyborg_detail"

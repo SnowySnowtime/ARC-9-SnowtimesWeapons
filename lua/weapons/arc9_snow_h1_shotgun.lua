@@ -1,6 +1,6 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
-SWEP.Category = "ARC-9 - Snowtime's Armory"
+SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
@@ -336,7 +336,7 @@ SWEP.ManualActionNoLastCycle = false
 SWEP.ReloadInSights = false
 SWEP.ReloadWhileSprint = true
 SWEP.SecondarySupplyLimit = 2
-SWEP.ShotgunReload = false
+SWEP.ShotgunReload = true
 SWEP.SupplyLimit = 5
 SWEP.TriggerDelay = 0
 
@@ -592,8 +592,8 @@ SWEP.Animations = {
         Source = "melee",
 		Mult = 0.7,
     },
-    ["reload"] = {
-        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+    ["reload_start_1"] = {
+        Source = {"reload1"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
         EventTable = {
             {
@@ -608,11 +608,46 @@ SWEP.Animations = {
                 pp = "", -- pose parameter name
                 ppv = 0, -- pose parameter value
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+            },
         },
-        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
-        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
+	},
+	["reload_insert_bullet_1"] = {
+        Source = {"reload2"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.cear.reload", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+	},
+	["reload_finish"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.cear.reload", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
     }
 }
 -- Locally Overwrite Crosshair
@@ -672,11 +707,15 @@ function SWEP:DoDrawCrosshair(x, y)
     local miniprong_2 = ARC9ScreenScale(2)
     local gap = 0
     local staticgap = ARC9ScreenScale(4)
-    local col = Color(255, 255, 255, 175)
+    local col = Color(255, 255, 255, 150)
+    local coldark = Color(255, 255, 255, 100)
 
     col.r = GetConVar("arc9_cross_r"):GetFloat()
     col.g = GetConVar("arc9_cross_g"):GetFloat()
     col.b = GetConVar("arc9_cross_b"):GetFloat()
+	coldark.r = GetConVar("arc9_cross_r"):GetFloat() / 2
+    coldark.g = GetConVar("arc9_cross_g"):GetFloat() / 2
+    coldark.b = GetConVar("arc9_cross_b"):GetFloat() / 2
 
     local d = self:GetSightDelta()
 
@@ -739,8 +778,11 @@ function SWEP:DoDrawCrosshair(x, y)
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sg"))
+	surface.SetDrawColor( coldark )
+	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sg"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
+	surface.DrawTexturedRect( x - (dotsize) - 58, y - (dotsize) - 59, 127, 127 )
 
     return true
 end

@@ -9,7 +9,7 @@ ATT.Pros = {
 }
 ATT.Cons = {}
 ATT.SortOrder = 4
-ATT.MenuCategory = "ARC-9 - Snowtime's Armory"
+ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = false
 -- ATT.Folder = "SCOPE"
 

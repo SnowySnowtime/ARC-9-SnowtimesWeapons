@@ -1,6 +1,6 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
-SWEP.Category = "ARC-9 - Snowtime's Armory"
+SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 1
 
 	-- Spawn Checks --

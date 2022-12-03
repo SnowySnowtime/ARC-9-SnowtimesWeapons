@@ -3,7 +3,7 @@ ATT.CompactName = [[HANDLE]]
 ATT.Icon = Material("snowysnowtime/camos/camo650")
 ATT.Description = [[Factory Issued carry handle for the BR55. Can be used to attach optics.]]
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC-9 - Snowtime's Armory Attachments"
+ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = true
 
 ATT.Ignore = false

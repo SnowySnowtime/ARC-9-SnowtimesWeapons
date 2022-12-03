@@ -1,6 +1,6 @@
 	-- Base & Category -- 
 SWEP.Base = "arc9_base"
-SWEP.Category = "ARC-9 - Snowtime's Armory"
+SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
@@ -679,12 +679,15 @@ function SWEP:DoDrawCrosshair(x, y)
     local miniprong_1 = ARC9ScreenScale(4)
     local miniprong_2 = ARC9ScreenScale(2)
     local gap = 0
-    local staticgap = ARC9ScreenScale(4)
-    local col = Color(255, 255, 255, 175)
+    local col = Color(255, 255, 255, 150)
+    local coldark = Color(255, 255, 255, 100)
 
     col.r = GetConVar("arc9_cross_r"):GetFloat()
     col.g = GetConVar("arc9_cross_g"):GetFloat()
     col.b = GetConVar("arc9_cross_b"):GetFloat()
+	coldark.r = GetConVar("arc9_cross_r"):GetFloat() / 2
+    coldark.g = GetConVar("arc9_cross_g"):GetFloat() / 2
+    coldark.b = GetConVar("arc9_cross_b"):GetFloat() / 2
 
     local d = self:GetSightDelta()
 
@@ -747,8 +750,11 @@ function SWEP:DoDrawCrosshair(x, y)
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetDrawColor( coldark )
+	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
+	surface.DrawTexturedRect( x - (dotsize) - 58, y - (dotsize) - 59, 127, 127 )
 
     return true
 end

@@ -3,7 +3,7 @@ ATT.CompactName = [[GRIP]]
 ATT.Icon = Material("snowysnowtime/camos/camo650")
 ATT.Description = [[Factory Issued foregrip for the BR55. Provides the standard experience. Can be removed for other attachments.]]
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC-9 - Snowtime's Armory Attachments"
+ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = true
 
 ATT.Ignore = false

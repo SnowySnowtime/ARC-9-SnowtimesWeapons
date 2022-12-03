@@ -3,7 +3,7 @@ ATT.CompactName = [[NONE]]
 ATT.Icon = Material("snowysnowtime/camos/camo650")
 ATT.Description = [[Removes the issued foregrip from the BR55. Allows for laser/flashlight and/or foregrip attachments.]]
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC-9 - Snowtime's Armory Attachments"
+ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = true
 
 ATT.Ignore = false

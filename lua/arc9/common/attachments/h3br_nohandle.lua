@@ -3,7 +3,7 @@ ATT.CompactName = [[NONE]]
 ATT.Icon = Material("snowysnowtime/camos/camo650")
 ATT.Description = [[Completely remove the carry handle from the BR55. Sights may or may not work.]]
 ATT.SortOrder = 0
-ATT.MenuCategory = "ARC-9 - Snowtime's Armory Attachments"
+ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = true
 
 ATT.Ignore = false

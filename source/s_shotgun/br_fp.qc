@@ -81,7 +81,6 @@ $sequence "fire" {
 $sequence "draw" {
 	"anims\deploy.smd"
 	activity "ACT_VM_DRAW" 1
-	{ event 5004 0 "hce.sgdeploy" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -93,7 +92,6 @@ $sequence "draw" {
 $sequence "reload1" {
 	"anims\reloadstart.smd"
 	activity "ACT_SHOTGUN_RELOAD_START" 1
-	{ event 5004 0 "hce.sgreloadstart" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -104,7 +102,6 @@ $sequence "reload1" {
 $sequence "reload2" {
 	"anims\reloadloop.smd"
 	activity "ACT_VM_RELOAD" 1
-	{ event 5004 0 "hce.sgreloadloop" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -115,7 +112,6 @@ $sequence "reload2" {
 $sequence "reloadempty" {
 	"anims\reloadexit.smd"
 	activity "ACT_SHOTGUN_RELOAD_FINISH" 1
-	{ event 5004 0 "hce.sgreloadexit" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -126,7 +122,6 @@ $sequence "reloadempty" {
 $sequence "melee" {
 	"anims\melee.smd"
 	activity "ACT_VM_HITCENTER" 1
-	{ event 5004 0 "hce.sgmelee" }
 	fadein 0.0
 	fadeout 0.2
 	rotate -90
