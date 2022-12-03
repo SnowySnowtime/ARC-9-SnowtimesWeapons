@@ -277,6 +277,15 @@ sound.Add(
     sound = "hce/m6_reload.wav"
 })
 
+sound.Add(
+{
+    name = "arc9.m6d.draw",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/m6_deploy.wav"
+})
+
 -- M90CE
 sound.Add(
 {

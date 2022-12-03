@@ -37,7 +37,7 @@ SWEP.ViewModelFOVBase = 70
 SWEP.TriggerDelay = 0
 SWEP.TriggerDelay = false
 SWEP.TriggerDelayTime = 0.0
-SWEP.Slot = 2
+SWEP.Slot = 1
 -- SWEP.Material = ""
 SWEP.NoTPIK = false
 
@@ -586,8 +586,8 @@ SWEP.Animations = {
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
+                t = 0, -- in seconds
+                s = "arc9.m6d.draw", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
