@@ -64,11 +64,11 @@ if gamemode == "profiteers" then
 	SWEP.DamageMin = 18
 	SWEP.DamageRand = 0
 	-- Projectile --
-	SWEP.AlwaysPhysBullet = false
+	SWEP.AlwaysPhysBullet = true
 	SWEP.BulletGuidance = false
 	SWEP.BulletGuidanceAmount = 15000
 	SWEP.FancyBullets = true
-	SWEP.NeverPhysBullet = true
+	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
 	SWEP.PhysBulletGravity = 1
@@ -376,13 +376,13 @@ SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
 SWEP.ActivePos = Vector(0, 0, -1)
 SWEP.ActiveAng = Angle(0, 0, 0)
-SWEP.CrouchPos = Vector(-4, 1, -4)
-SWEP.CrouchAng = Angle(0, 0, -30)
+SWEP.CrouchPos = Vector(-5, 1, -5)
+SWEP.CrouchAng = Angle(0, 0, -40)
 SWEP.RestPos = Vector(0.532, -6, 0)
 SWEP.RestAng = Angle(-4.633, 36.881, 0)
-SWEP.SprintPos = Vector(1.5,-1,1)
-SWEP.SprintAng = Angle(25,-10,-5)
-SWEP.TraversalSprintPos = Vector(2, 3, -13)
+SWEP.SprintPos = Vector(1.5,-1,-1.5)
+SWEP.SprintAng = Angle(35,-10,-5)
+SWEP.TraversalSprintPos = Vector(2, 3, -10)
 SWEP.TraversalSprintAng = Angle(0, 75, 0)
 SWEP.HolsterPos = Vector(0, 0, 0)
 SWEP.HolsterAng = Angle(0, 0, 0)

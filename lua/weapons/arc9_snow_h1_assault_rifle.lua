@@ -94,15 +94,15 @@ if gamemode == "profiteers" then
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
+	SWEP.Recoil = 0.3
 	SWEP.RecoilAutoControl = 0
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.5
-	SWEP.RecoilRandomUp = 0.2
-	SWEP.RecoilResetTime = 0.15
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.75
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
+	SWEP.RecoilUp = 0.3
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -110,13 +110,13 @@ if gamemode == "profiteers" then
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
-	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilCenter = Vector(0,100,0)
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilPunch = 0.75
+	SWEP.VisualRecoilRoll = 2
 	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
 	SWEP.Spread = 0.002
@@ -129,7 +129,7 @@ if gamemode == "profiteers" then
 	SWEP.SpreadAddHipFire = 0.05
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.02
+	SWEP.SpreadAddRecoil = 0.005
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -244,16 +244,16 @@ else
 	SWEP.VisualRecoilUp = 0.01
 
 		-- Spread --
-	SWEP.Spread = 0.005
+	SWEP.Spread = 0.00
 	SWEP.UsePelletSpread = false
-	SWEP.PelletSpread = 0.2
+	SWEP.PelletSpread = 0
 	SWEP.PelletSpreadPattern = {}
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
 	SWEP.SpreadAddHipFire = 0
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -320,6 +320,8 @@ SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
 SWEP.ProceduralViewQCA = 1
 
 	-- Magazine --
+SWEP.ShouldDropMag = true
+SWEP.ShouldDropMagEmpty = true
 SWEP.Ammo = "AR2"
 SWEP.AmmoPerShot = 1
 SWEP.AutoReload = false
@@ -425,14 +427,14 @@ SWEP.ShootPitchVariation = 0.05
 SWEP.ShootSound = "arc9.cear.fire"
 SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
-SWEP.ActivePos = Vector(0, 0, 0)
+SWEP.ActivePos = Vector(0, 0, 0.25)
 SWEP.ActiveAng = Angle(0, 0, 0)
-SWEP.CrouchPos = Vector(-4, 1, -4)
+SWEP.CrouchPos = Vector(-6, 0, -4)
 SWEP.CrouchAng = Angle(0, 0, -30)
 SWEP.RestPos = Vector(0.532, -6, 0)
 SWEP.RestAng = Angle(-4.633, 36.881, 0)
-SWEP.SprintPos = Vector(1.5,-1,1)
-SWEP.SprintAng = Angle(25,-10,-5)
+SWEP.SprintPos = Vector(1.5,-1,0)
+SWEP.SprintAng = Angle(35,-10,-5)
 SWEP.TraversalSprintPos = Vector(2, 3, -13)
 SWEP.TraversalSprintAng = Angle(0, 75, 0)
 SWEP.HolsterPos = Vector(0, 0, 0)

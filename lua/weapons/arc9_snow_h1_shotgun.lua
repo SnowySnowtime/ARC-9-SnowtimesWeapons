@@ -96,13 +96,13 @@ if gamemode == "profiteers" then
 	SWEP.PushBackForce = 0 
 	SWEP.Recoil = 0.5
 	SWEP.RecoilAutoControl = 0
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.5
-	SWEP.RecoilRandomUp = 0.2
-	SWEP.RecoilResetTime = 0.15
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.75
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
+	SWEP.RecoilUp = 0.5
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -111,12 +111,12 @@ if gamemode == "profiteers" then
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilPunch = 0.75
+	SWEP.VisualRecoilRoll = 2
 	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
 	SWEP.Spread = 0.2
@@ -423,7 +423,7 @@ SWEP.CrouchPos = Vector(-4, 1, -4)
 SWEP.CrouchAng = Angle(0, 0, -30)
 SWEP.RestPos = Vector(0.532, -6, 0)
 SWEP.RestAng = Angle(-4.633, 36.881, 0)
-SWEP.SprintPos = Vector(1.5,-1,1)
+SWEP.SprintPos = Vector(1.5,-1,0)
 SWEP.SprintAng = Angle(25,-10,-5)
 SWEP.TraversalSprintPos = Vector(2, 3, -13)
 SWEP.TraversalSprintAng = Angle(0, 75, 0)

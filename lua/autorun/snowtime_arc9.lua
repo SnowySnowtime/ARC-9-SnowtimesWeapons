@@ -1,7 +1,7 @@
 game.AddParticles( "particles/arc9_halo_flamethrower.pcf" )
 -- game.AddParticles( "particles/gravity_hammer_fx.pcf" )
 game.AddParticles( "particles/arc9_halo_pack_muzzle_effects.pcf" )
-game.AddParticles( "particles/arc9ce_halo_pack_muzzle_effects2.pcf" )
+game.AddParticles( "particles/arc9_halo_pack_muzzle_effects2.pcf" )
 game.AddParticles( "particles/arc9_halo_pack_muzzle_effects_human_spv3.pcf" )
 game.AddParticles( "particles/arc9_halo_pack_muzzle_effects_covie_spv3.pcf" )
 game.AddParticles( "particles/arc9_halo_pack_weapon_projectiles.pcf" )
