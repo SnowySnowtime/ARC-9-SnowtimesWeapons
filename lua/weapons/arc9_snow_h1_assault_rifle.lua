@@ -129,7 +129,7 @@ if gamemode == "profiteers" then
 	SWEP.SpreadAddHipFire = 0.05
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.005
+	SWEP.SpreadAddRecoil = 0.05
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -196,12 +196,12 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 0
+	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.PhysBulletMuzzleVelocity = 15000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1,
+		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -219,15 +219,15 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
-	SWEP.RecoilAutoControl = 1
-	SWEP.RecoilDissipationRate = 80
+	SWEP.Recoil = 0.3
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.15
-	SWEP.RecoilRandomUp = 0.01
-	SWEP.RecoilResetTime = 0.1
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.5
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
+	SWEP.RecoilUp = 0.3
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -235,25 +235,26 @@ else
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
-	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilCenter = Vector(0,100,0)
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilPunch = 0.75
+	SWEP.VisualRecoilRoll = 2
 	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
-	SWEP.Spread = 0.00
+	SWEP.Spread = 0.002
 	SWEP.UsePelletSpread = false
-	SWEP.PelletSpread = 0
+	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0
+	SWEP.SpreadAddHipFire = 0.05
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0
+	SWEP.SpreadAddRecoil = 0.05
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -280,25 +281,25 @@ else
 	SWEP.SwayMultSights = 0.5
 		-- Positions --
 	SWEP.IronSights = {
-		Pos = Vector(0, 0, 0),
+		Pos = Vector(-1, -6, 0),
 		Ang = Angle(0, 0, 0),
-		Magnification = 1,
+		Magnification = 1.15,
 		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = false,
+		CrosshairInSights = true,
 		---- FLAT SCOPES
 		-- These don't look very good; please use actual RT scopes if possible.
 		FlatScope = false,
-		FlatScopeOverlay = nil, -- Material()
-		FlatScopeKeepVM = false,
-		FlatScopeBlackBox = true,
+		FlatScopeOverlay = "hi.vmt", -- Material()
+		FlatScopeKeepVM = true,
+		FlatScopeBlackBox = false,
 		FlatScopeCC = nil -- Color correction table, see default.lua
 	}
 
 	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(-1, 15, -4),
-		Ang = Angle(0, 0, -35),
+		Pos = Vector(0, 10, 0),
+		Ang = Angle(0, 0, 0),
 	}
-	SWEP.HasSights = false
+	SWEP.HasSights = true
 	-- print("SANDBOX BAL")
 	SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
 

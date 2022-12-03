@@ -76,7 +76,7 @@ if gamemode == "profiteers" then
 	SWEP.PhysBulletModelStick = nil
 	SWEP.PhysBulletMuzzleVelocity = 15000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
+		[HITGROUP_HEAD] = 1,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -108,15 +108,15 @@ if gamemode == "profiteers" then
 	SWEP.RumbleLight = 30000
 
 		-- Visual Recoil --
-	SWEP.RecoilKick = 1
+	SWEP.RecoilKick = 2
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
 	SWEP.VisualRecoilHipFire = true
-	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 0.75
-	SWEP.VisualRecoilRoll = 2
-	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.3
+	SWEP.VisualRecoilMult = 0.3
+	SWEP.VisualRecoilPunch = 4
+	SWEP.VisualRecoilRoll = 100
+	SWEP.VisualRecoilSide = 0.1
+	SWEP.VisualRecoilUp = 0.1
 
 		-- Spread --
 	SWEP.Spread = 0.2
@@ -196,10 +196,10 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 0
+	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.PhysBulletMuzzleVelocity = 15000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 1,
 		[HITGROUP_CHEST] = 1,
@@ -220,40 +220,41 @@ else
 	-- }
 	SWEP.PushBackForce = 0 
 	SWEP.Recoil = 0.5
-	SWEP.RecoilAutoControl = 1
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.15
-	SWEP.RecoilRandomUp = 0.01
-	SWEP.RecoilResetTime = 0.1
-	SWEP.RecoilSide = 0.5
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
 	SWEP.RecoilUp = 0.5
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
 
 		-- Visual Recoil --
-	SWEP.RecoilKick = 1
+	SWEP.RecoilKick = 2
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
-	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
-	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilHipFire = true
+	SWEP.VisualRecoilMult = 0.3
+	SWEP.VisualRecoilPunch = 4
+	SWEP.VisualRecoilRoll = 100
+	SWEP.VisualRecoilSide = 0.1
+	SWEP.VisualRecoilUp = 0.1
 
 		-- Spread --
-	SWEP.Spread = 0.005
+	SWEP.Spread = 0.1
 	SWEP.UsePelletSpread = false
-	SWEP.PelletSpread = 0.2
+	SWEP.PelletSpread = 0
 	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
 	SWEP.SpreadAddHipFire = 0
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --

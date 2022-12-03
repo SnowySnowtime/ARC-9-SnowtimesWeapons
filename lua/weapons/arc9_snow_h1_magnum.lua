@@ -74,9 +74,9 @@ if gamemode == "profiteers" then
 	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 30000
+	SWEP.PhysBulletMuzzleVelocity = 35000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 2,
+		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -94,15 +94,15 @@ if gamemode == "profiteers" then
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
+	SWEP.Recoil = 0.2
 	SWEP.RecoilAutoControl = 0
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.5
-	SWEP.RecoilRandomUp = 0.2
-	SWEP.RecoilResetTime = 0.15
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.75
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0
+	SWEP.RecoilUp = 0.2
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -111,7 +111,7 @@ if gamemode == "profiteers" then
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
 	SWEP.VisualRecoilPunch = 1.5
 	SWEP.VisualRecoilRoll = 0.23
@@ -129,7 +129,7 @@ if gamemode == "profiteers" then
 	SWEP.SpreadAddHipFire = 0.01
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.005
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -196,12 +196,12 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 0
+	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.PhysBulletMuzzleVelocity = 35000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1,
+		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -219,15 +219,15 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
-	SWEP.RecoilAutoControl = 1
-	SWEP.RecoilDissipationRate = 80
+	SWEP.Recoil = 0.25
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.15
+	SWEP.RecoilRandomSide = 0.1
 	SWEP.RecoilRandomUp = 0.1
-	SWEP.RecoilResetTime = 0.1
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.5
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0
+	SWEP.RecoilUp = 0.25
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -236,7 +236,7 @@ else
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
 	SWEP.VisualRecoilPunch = 1.5
 	SWEP.VisualRecoilRoll = 0.23
@@ -244,16 +244,17 @@ else
 	SWEP.VisualRecoilUp = 0.01
 
 		-- Spread --
-	SWEP.Spread = 0.005
+	SWEP.Spread = 0.001
 	SWEP.UsePelletSpread = false
 	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0
+	SWEP.SpreadAddHipFire = 0.01
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -295,10 +296,10 @@ else
 	}
 
 	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(-1, 15, -4),
-		Ang = Angle(0, 0, -35),
+		Pos = Vector(0, -200, 0),
+		Ang = Angle(0, 0, 0),
 	}
-	SWEP.HasSights = false
+	SWEP.HasSights = true
 	-- print("SANDBOX BAL")
 	SWEP.Description = [[The M6D is an upscaled variant of the commonly employed M6G series "Magnums" which are often used by spartans.
 "I don't keep it loaded son you'll have to find ammo as you go." - Captain Keyes.

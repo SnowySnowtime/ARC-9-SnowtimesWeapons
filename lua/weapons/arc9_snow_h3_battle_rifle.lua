@@ -175,12 +175,12 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 0
+	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.PhysBulletMuzzleVelocity = 35000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1,
+		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -198,24 +198,24 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0
-	SWEP.RecoilAutoControl = 1
-	SWEP.RecoilDissipationRate = 80
+	SWEP.Recoil = 0.2
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0
-	SWEP.RecoilRandomUp = 0
-	SWEP.RecoilResetTime = 0.1
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
 	SWEP.RecoilSide = 0
-	SWEP.RecoilUp = 0
+	SWEP.RecoilUp = 0.2
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
 
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
-	SWEP.UseVisualRecoil = false
+	SWEP.UseVisualRecoil = true
 	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
 	SWEP.VisualRecoilPunch = 1.5
 	SWEP.VisualRecoilRoll = 0.23
@@ -223,16 +223,17 @@ else
 	SWEP.VisualRecoilUp = 0.01
 
 		-- Spread --
-	SWEP.Spread = 0.005
+	SWEP.Spread = 0.001
 	SWEP.UsePelletSpread = false
 	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.02	
+	SWEP.SpreadAddHipFire = 0.01
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.01
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -445,23 +446,41 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    ["skin_cear1"] = {
+    ["skin_h3br1"] = {
         Skin = 1,
     },
-	["skin_cear2"] = {
+	["skin_h3br2"] = {
         Skin = 2,
     },
-	["skin_cear3"] = {
+	["skin_h3br3"] = {
         Skin = 3,
     },
-	["skin_cear4"] = {
+	["skin_h3br4"] = {
         Skin = 4,
     },
-	["skin_cear5"] = {
+	["skin_h3br5"] = {
         Skin = 5,
     },
-	["skin_cear6"] = {
+	["skin_h3br6"] = {
         Skin = 6,
+    },
+	["skin_h3br7"] = {
+        Skin = 7,
+    },
+	["skin_h3br8"] = {
+        Skin = 8,
+    },
+	["skin_h3br9"] = {
+        Skin = 9,
+    },
+	["skin_h3br10"] = {
+        Skin = 10,
+    },
+	["skin_h3br11"] = {
+        Skin = 11,
+    },
+	["skin_h3br12"] = {
+        Skin = 12,
     },
 }
 
@@ -498,7 +517,7 @@ SWEP.Attachments = {
         Bone = "gun",
         Pos = Vector(3.75, 0, 5),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_br_skins"},
+        Category = {"universal_camo","h3br_skin"},
     },
 	{
         PrintName = "Foregrip",

@@ -47,10 +47,23 @@ $contents "solid"
 $illumposition 11.327 -13.973 -2.291
 
 $cdmaterials "snowysnowtime/h3/rifles/battle_rifle"
+$cdmaterials "snowysnowtime/h3/rifles/battle_rifle/skins"
 
 $texturegroup "skinfamilies"
 {
-    { "battle_rifle" }
+    { "metal" "rubber" }
+    { "fern" "fern_r" }
+    { "meanstreets" "meanstreets_r" }
+    { "hazardred" "hazardred_r" }
+    { "gj" "gj_r" }
+    { "desert" "desert_r" }
+    { "gold" "rubber" }
+    { "green" "green_r" }
+    { "hazpay" "hazpay_r" }
+    { "redflames" "redflames_r" }
+    { "rhine" "rhine_r" }
+    { "scorn" "scorn_r" }
+    { "vex" "vex_r" }
 }
 
 $attachment "muzzle" "gun" 24.8 0 4.9 rotate 0 0 0
@@ -78,6 +91,18 @@ $sequence "idle" {
 $sequence "idle_lol" {
 	"c_hum_br55hb_anims\idle.smd"
 	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	fadein 0.1
+	fadeout 0
+	rotate -90
+	fps 30
+}
+
+$sequence "fire_lol" {
+	"c_hum_br55hb_anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	{ event 6001 0 "1" }
+	{ event AE_CL_PLAYSOUND 0 "arc9.halo_eject_rifle" }
 	frame 1 1
 	fadein 0.1
 	fadeout 0
