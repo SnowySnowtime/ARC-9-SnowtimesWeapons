@@ -297,6 +297,33 @@ sound.Add(
     sound = "hce/m6_deploy.wav"
 })
 
+sound.Add(
+{
+    name = "arc9.forerunner.reload1",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "snow/freload1.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.forerunner.reload2",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "snow/freload2.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.forerunner.reload3",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "snow/freload3.wav"
+})
+
 -- M90CE
 sound.Add(
 {

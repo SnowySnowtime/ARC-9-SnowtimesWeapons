@@ -580,6 +580,16 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 	else return end
 end
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+
+    if anim == "reload" and attached["d2forerunner"] then
+        return "reload_forerunner"
+    end
+
+    return anim
+end
+
 SWEP.Animations = {
 	["draw"] = {
         Source = "draw",
@@ -623,7 +633,55 @@ SWEP.Animations = {
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
-    }
+    },
+	["reload_forerunner"] = {
+        Source = {"reload_forerunner"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 0.810126582278, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.forerunner.reload1", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 0.8, -- in seconds
+                s = "arc9.forerunner.reload2", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 1.6, -- in seconds
+                s = "arc9.forerunner.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
 }
 -- Locally Overwrite Crosshair
 

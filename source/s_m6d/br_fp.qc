@@ -61,6 +61,13 @@ $sequence "idle" {
 	loop
 }
 
+$sequence "lel" {
+	"anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	loop
+}
+
 $sequence "fidget" {
 	"anims\fidget.smd"
 	activity "ACT_VM_FIDGET" 1
@@ -103,6 +110,14 @@ $sequence "reload" {
 $sequence "reloadempty" {
 	"anims\reload_empty.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	fps 30
+}
+$sequence "reload_forerunner" {
+	"anims\reload_forerunner.smd"
+	activity "ACT_VM_RELOAD" 1
 	fadein 0.2
 	fadeout 0.2
 	node "0"
