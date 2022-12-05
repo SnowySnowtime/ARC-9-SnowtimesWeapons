@@ -493,23 +493,29 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    ["skin_cear1"] = {
+    ["skin_cepistol1"] = {
         Skin = 1,
     },
-	["skin_cear2"] = {
+	["skin_cepistol2"] = {
         Skin = 2,
     },
-	["skin_cear3"] = {
+	["skin_cepistol3"] = {
         Skin = 3,
     },
-	["skin_cear4"] = {
+	["skin_cepistol4"] = {
         Skin = 4,
     },
-	["skin_cear5"] = {
+	["skin_cepistol5"] = {
         Skin = 5,
     },
-	["skin_cear6"] = {
+	["skin_cepistol6"] = {
         Skin = 6,
+    },
+	["skin_cepistol7"] = {
+        Skin = 7,
+    },
+	["skin_cepistol8"] = {
+        Skin = 8,
     },
 }
 
@@ -543,26 +549,18 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -7, 8),
+        Bone = "frame gun",
+        Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_skins"},
+        Category = {"universal_camo","halo_m6d_skins"},
     },
 	{
-        PrintName = "Optic",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -9, 6.5),
+        PrintName = "sound",
+        DefaultCompactName = "None",
+        Bone = "frame gun",
+        Pos = Vector(-3, 0, 2.65),
         Ang = Angle(0, 0, 0),
-        Category = {"halo_optics"},
-    },
-	{
-        PrintName = "Muzzle",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.attach_muzzle",
-        Pos = Vector(-1, -0.25, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_muzzle","bo1_muzzle"},
+        Category = {"halo_m6d_snds"},
     },
 }
 
@@ -572,13 +570,14 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 	local CUSTSTATE = self:GetCustomize()
     local attached = data.elements
 	
-    if attached["universal_camo"] then
+    if attached["universal_camo"] or attached["skin_cepistol5"] and !attached["d2forerunner"] then
         vm:SetBodygroup(0,1)
     end
-	if attached["cear_skin7"] then
-        vm:SetBodygroup(0,2)
-    end
-
+	if attached["d2forerunner"] and !attached["universal_camo"] then
+		vm:SetBodygroup(0,3)
+	elseif attached["d2forerunner"] and attached["universal_camo"] then
+		vm:SetBodygroup(0,4)
+	else return end
 end
 
 SWEP.Animations = {

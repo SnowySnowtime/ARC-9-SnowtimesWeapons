@@ -610,6 +610,18 @@ SWEP.Animations = {
         Reverse = true,
 		Mult = 0.75,
     },
+	["enter_inspect"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
+	["idle_inspect"] = {
+        Source = "idle_lol",
+		Mult = 1,
+    },
+	["exit_inspect"] = {
+        Source = {"pose1","pose2"},
+		Mult = 1,
+    },
 	["bash"] = {
         Source = "melee",
 		Mult = 0.7,

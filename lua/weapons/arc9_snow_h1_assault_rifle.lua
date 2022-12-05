@@ -549,7 +549,7 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
+        Bone = "frame gun",
         Pos = Vector(0, -7, 8),
         Ang = Angle(0, 0, 0),
         Category = {"universal_camo","halo_skins"},
@@ -557,7 +557,7 @@ SWEP.Attachments = {
 	{
         PrintName = "Optic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
+        Bone = "frame gun",
         Pos = Vector(0, -9, 6.5),
         Ang = Angle(0, 0, 0),
         Category = {"halo_optics"},
@@ -565,7 +565,7 @@ SWEP.Attachments = {
 	{
         PrintName = "Muzzle",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.attach_muzzle",
+        Bone = "frame gun",
         Pos = Vector(-1, -0.25, 0),
         Ang = Angle(0, 0, 0),
         Category = {"universal_muzzle","bo1_muzzle"},

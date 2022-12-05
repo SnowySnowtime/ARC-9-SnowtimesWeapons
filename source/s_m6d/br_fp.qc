@@ -5,21 +5,31 @@ $bodygroup "studio"
 	studio "c_fp_magnum.smd"
 	studio "c_fp_magnum_camo.smd"
 	studio "c_fp_ceamagnum.smd"
+	studio "forerunner.smd"
+	studio "forerunner_camo.smd"
+}
+
+$bodygroup "forerunner_glow"
+{
+	blank
+	studio "forerunner_glow.smd"
 }
 
 $cdmaterials "snowysnowtime/hce/pistols/m6d"
+$cdmaterials "snowysnowtime/hce/pistols/m6d/forerunner"
 $cdmaterials "snowysnowtime/hcea/pistols/m6d"
 
 $texturegroup "skinfamilies"
 {
-	{ "pistol" }
-	{ "m6dblackcherry"  }
-	{ "m6ddesert" }
-	{ "m6dgold"    }
-	{ "m6dhazard"   }
-	{ "m6djourney"   }
-	{ "m6dtoysoldier"   }
-	{ "m6dwoodlands"   }
+	{ "pistol" "pistol_7" "camo" "pistol_illum" }
+	{ "m6dblackcherry" "cherry_7" "camo" "pistol_illum"  }
+	{ "m6ddesert" "desert_7" "camo" "pistol_illum" }
+	{ "m6dgold" "gold_7" "camo" "pistol_illum" }
+	{ "m6dhazardpay" "hazpay_7" "camo" "pistol_illum" }
+	{ "m6dgreatjourney" "gj_7" "gj_pink"  "pistol_illum" }
+	{ "m6dtoysoldier" "toy_7" "camo" "pistol_illum" }
+	{ "m6dwoodlands" "woodland_7" "camo" "pistol_illum" }
+	{ "m6dcodgold" "m6dcodgold" "m6dcodgold" "m6dcodgold"}
 }
 
 $surfaceprop "default"

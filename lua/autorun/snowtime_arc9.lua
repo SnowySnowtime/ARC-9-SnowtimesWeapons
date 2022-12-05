@@ -271,6 +271,16 @@ sound.Add(
 
 sound.Add(
 {
+    name = "arc9.forerunner.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound = {"snow/forerunner_fire.wav"}
+})
+
+sound.Add(
+{
     name = "arc9.m6d.reload",
     channel = CHAN_STATIC,
     volume = 1.0,
