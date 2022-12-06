@@ -21,15 +21,15 @@ $cdmaterials "snowysnowtime/hcea/pistols/m6d"
 
 $texturegroup "skinfamilies"
 {
-	{ "pistol" "pistol_7" "camo" "pistol_illum" }
-	{ "m6dblackcherry" "cherry_7" "camo" "pistol_illum"  }
-	{ "m6ddesert" "desert_7" "camo" "pistol_illum" }
-	{ "m6dgold" "gold_7" "camo" "pistol_illum" }
-	{ "m6dhazardpay" "hazpay_7" "camo" "pistol_illum" }
-	{ "m6dgreatjourney" "gj_7" "gj_pink"  "pistol_illum" }
-	{ "m6dtoysoldier" "toy_7" "camo" "pistol_illum" }
-	{ "m6dwoodlands" "woodland_7" "camo" "pistol_illum" }
-	{ "m6dcodgold" "m6dcodgold" "m6dcodgold" "m6dcodgold"}
+	{ "pistol" "pistol_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dblackcherry" "cherry_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel"  }
+	{ "m6ddesert" "desert_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dgold" "gold_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dhazardpay" "hazpay_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dgreatjourney" "gj_7" "gj_pink"  "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dtoysoldier" "toy_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "caramell_barrel" }
+	{ "m6dwoodlands" "woodland_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
+	{ "m6dcodgold" "m6dcodgold" "m6dcodgold" "m6dcodgold" "fbarrel_codgold" "fbarrel_codgold" "fstock_codgold" "camo_barrel"}
 }
 
 $surfaceprop "default"

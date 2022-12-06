@@ -58,6 +58,13 @@ $sequence "idle" {
 	loop
 }
 
+$sequence "lel" {
+	"anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	rotate -90
+}
+
 $sequence "fidget" {
 	"anims\fidget.smd"
 	activity "ACT_VM_FIDGET" 1

@@ -1,4 +1,4 @@
-$modelname "models/snowysnowtime/c_fp_cerocket.mdl"
+$modelname "c_fp_cerocket.mdl"
 
 $bodygroup "anniv"
 {
@@ -12,7 +12,8 @@ $contents "solid"
 
 $illumposition -2.073 -5.096 -10.058
 
-$cdmaterials "snowysnowtime/2k/vmt"
+$cdmaterials "snowysnowtime/hce/rifles/rocket"
+$cdmaterials "snowysnowtime/hcea/rifles/rocket"
 
 $texturegroup "skinfamilies"
 {
@@ -44,20 +45,37 @@ $sequence "idle" {
 	loop
 }
 
-$sequence "fidget" {
-	"anims\fidget.smd"
+$sequence "spin_start" {
+	"anims\spin_start.smd"
 	activity "ACT_VM_FIDGET" 1
 	fadein 0.2
 	fadeout 0.2
 	node "0"
-	rotate -90
+	fps 30
+}
+
+$sequence "spin" {
+	"anims\spin.smd"
+	activity "ACT_VM_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
+	fps 30
+	loop
+}
+
+$sequence "spin_end" {
+	"anims\spin_end.smd"
+	activity "ACT_VM_FIDGET" 1
+	fadein 0.2
+	fadeout 0.2
+	node "0"
 	fps 30
 }
 
 $sequence "fire" {
 	"anims\fire.smd"
 	activity "ACT_VM_PRIMARYATTACK" 1
-	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
 	fadein 0.2
 	fadeout 0.2
 	node "2"
@@ -69,7 +87,6 @@ $sequence "fire" {
 $sequence "draw" {
 	"anims\deploy.smd"
 	activity "ACT_VM_DRAW" 1
-	{ event 5004 0 "hce.rldeploy" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -81,7 +98,6 @@ $sequence "draw" {
 $sequence "reload" {
 	"anims\reload.smd"
 	activity "ACT_VM_RELOAD" 1
-	{ event 5004 0 "hce.rlreload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -91,7 +107,6 @@ $sequence "reload" {
 $sequence "reloadempty" {
 	"anims\reload_empty.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
-	{ event 5004 0 "hce.rlreloaddry" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -102,7 +117,6 @@ $sequence "reloadempty" {
 $sequence "melee" {
 	"anims\melee.smd"
 	activity "ACT_VM_HITCENTER" 1
-	{ event 5004 0 "hce.rlmelee" }
 	fadein 0.0
 	fadeout 0.2
 	rotate -90

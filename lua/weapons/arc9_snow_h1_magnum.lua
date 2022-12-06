@@ -196,7 +196,7 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 1
+	SWEP.PhysBulletGravity = 0
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
 	SWEP.PhysBulletMuzzleVelocity = 35000
@@ -511,6 +511,9 @@ SWEP.AttachmentElements = {
 	["skin_cepistol6"] = {
         Skin = 6,
     },
+	["skin_cepistolfunny"] = {
+        Skin = 6,
+    },
 	["skin_cepistol7"] = {
         Skin = 7,
     },
@@ -573,9 +576,9 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     if attached["universal_camo"] or attached["skin_cepistol5"] and !attached["d2forerunner"] then
         vm:SetBodygroup(0,1)
     end
-	if attached["d2forerunner"] and !attached["universal_camo"] then
+	if attached["d2forerunner"] and !attached["universal_camo"] and !attached["skin_cepistolfunny"] then
 		vm:SetBodygroup(0,3)
-	elseif attached["d2forerunner"] and attached["universal_camo"] then
+	elseif attached["d2forerunner"] and attached["universal_camo"] or attached["d2forerunner"] and attached["skin_cepistolfunny"] then
 		vm:SetBodygroup(0,4)
 	else return end
 end
@@ -583,8 +586,24 @@ end
 SWEP.Hook_TranslateAnimation = function (self, anim)
     local attached = self:GetElements()
 
+	if anim == "draw" and attached["d2forerunner"] then
+        return "draw_forerunner"
+    end
+	
     if anim == "reload" and attached["d2forerunner"] then
         return "reload_forerunner"
+    end
+	
+	if anim == "reload" and attached["m6d_sound_hd"] then
+        return "reload_hd"
+    end
+	
+	if anim == "draw" and attached["m6d_sound_hd"] then
+        return "draw_hd"
+    end
+	
+	if anim == "exit_inspect" and attached["m6d_sound_hd"] then
+        return "exit_inspect_hd"
     end
 
     return anim
@@ -603,10 +622,66 @@ SWEP.Animations = {
             }
         },
     },
+	["draw_forerunner"] = {
+        Source = "draw",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.forerunner.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["draw_hd"] = {
+        Source = "draw",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.drawhd", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
 	["holster"] = {
         Source = "draw",
         Reverse = true,
 		Mult = 0.25,
+    },
+	["enter_inspect"] = {
+        Source = "lel",
+		Mult = 1,
+    },
+	["idle_inspect"] = {
+        Source = "lel",
+		Mult = 1,
+    },
+	["exit_inspect"] = {
+        Source = "fidget",
+		Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.fidget", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["exit_inspect_hd"] = {
+        Source = "fidget",
+		Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.fidgethd", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
     },
 	["bash"] = {
         Source = "melee",
@@ -619,6 +694,28 @@ SWEP.Animations = {
             {
                 t = 0, -- in seconds
                 s = "arc9.m6d.reload", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            }
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
+	["reload_hd"] = {
+        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.reloadhd", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X

@@ -32,7 +32,7 @@ This weapon has stat adjustments based on if you're in Profiteers or not.]]
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
 SWEP.MirrorVMWM = true
-SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
+SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cesniperrifle.mdl"
 SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModelOffset = {
 	Pos = Vector(-13, 3.6, -6),
@@ -307,7 +307,7 @@ SWEP.TracerColor = Color(255, 210, 0)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_sniper_rifle" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
@@ -320,7 +320,7 @@ SWEP.AutoReload = false
 SWEP.BottomlessClip = false
 SWEP.CanFireUnderwater = true
 SWEP.ChamberSize = 0 -- Halo Weapons DONT chamber rounds. PLEASE dont fucking enable this.
-SWEP.ClipSize = 60
+SWEP.ClipSize = 4
 SWEP.Disposable = false
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineModel = "models/snowysnowtime/arc9/hce/rifles/ar_mag.mdl"
@@ -341,7 +341,7 @@ SWEP.SupplyLimit = 5
 SWEP.TriggerDelay = 0
 
 	-- Fire Modes --
-SWEP.RPM = 900
+SWEP.RPM = 120
 SWEP.Firemodes = {
     {
         Mode = -1,
@@ -416,8 +416,8 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
-SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
+SWEP.ShootSound = "arc9.cesr.fire"
+SWEP.ShootSoundSilenced = ""
 	-- Positions --
 SWEP.ActivePos = Vector(0, 0, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
@@ -570,7 +570,7 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local attached = data.elements
 	
     if attached["universal_camo"] then
-        vm:SetBodygroup(0,1)
+        vm:SetBodygroup(1,1)
     end
 	if attached["cear_skin7"] then
         vm:SetBodygroup(0,2)
@@ -585,7 +585,7 @@ SWEP.Animations = {
 		EventTable = {
             {
                 t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
+                s = "arc9.cesr.deploy", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -606,7 +606,7 @@ SWEP.Animations = {
         EventTable = {
             {
                 t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                s = "arc9.cesr.reload", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -621,7 +621,29 @@ SWEP.Animations = {
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
-    }
+    },
+	["reload_empty"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.cesr.reloade", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            }
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
 }
 -- Locally Overwrite Crosshair
 

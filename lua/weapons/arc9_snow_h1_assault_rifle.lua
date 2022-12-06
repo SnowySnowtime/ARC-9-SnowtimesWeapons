@@ -519,6 +519,24 @@ SWEP.AttachmentElements = {
     },
 }
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+	
+	if anim == "reload" and attached["ar_sound_hd"] then
+        return "reload_hd"
+    end
+	
+	if anim == "draw" and attached["ar_sound_hd"] then
+        return "draw_hd"
+    end
+	
+	if anim == "exit_inspect" and attached["ar_sound_hd"] then
+        return "exit_inspect_hd"
+    end
+
+    return anim
+end
+
 -- Use to override attachment table entry data.
 SWEP.AttachmentSlotMods = {
     -- ["name"] = {
@@ -570,6 +588,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"universal_muzzle","bo1_muzzle"},
     },
+	{
+        PrintName = "Sounds",
+        DefaultCompactName = "Factory Issue",
+        Bone = "frame gun",
+        Pos = Vector(0, -7, 8),
+        Ang = Angle(0, 0, 0),
+        Category = {"halo_ar_snds"},
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
@@ -595,6 +621,18 @@ SWEP.Animations = {
             {
                 t = 0.385, -- in seconds
                 s = "arc9.cear.deploy", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["draw_hd"] = {
+        Source = "draw",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0.385, -- in seconds
+                s = "arc9.cear.deployhd", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -630,7 +668,29 @@ SWEP.Animations = {
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
-    }
+    },
+	["reload_hd"] = {
+        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.cear.reloadhd", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            }
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
 }
 -- Locally Overwrite Crosshair
 

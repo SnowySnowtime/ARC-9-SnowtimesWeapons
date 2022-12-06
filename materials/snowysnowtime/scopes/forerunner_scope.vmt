@@ -1,0 +1,10 @@
+"UnlitGeneric"
+	{
+	"$basetexture" 	"snowysnowtime/scopes/forerunner_scope"
+	"$translucent" 1
+	"$alpha" 1
+	"$vertexcolor" 1
+	"$vertexalpha" "1"
+	"$ignorez"     "1"
+	"$no_fullbright" "1"
+}

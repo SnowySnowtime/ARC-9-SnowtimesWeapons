@@ -250,11 +250,29 @@ sound.Add(
 
 sound.Add(
 {
+    name = "arc9.cear.reloadhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"vuth/ma5b/reload0.wav","vuth/ma5b/reload1.wav"}
+})
+
+sound.Add(
+{
     name = "arc9.cear.deploy",
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
     sound = "hce/ar_deploy_new.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cear.deployhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/ma5b/ready.wav"
 })
 
 -- M6D
@@ -273,7 +291,7 @@ sound.Add(
 {
     name = "arc9.forerunner.fire",
     channel = CHAN_STATIC,
-    volume = 1.0,
+    volume = 0.5,
 	pitch = {99.4,101.5},
     soundlevel = 100,
     sound = {"snow/forerunner_fire.wav"}
@@ -290,11 +308,47 @@ sound.Add(
 
 sound.Add(
 {
+    name = "arc9.m6d.reloadhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/m6d/reload.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m6d.drawhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/m6d/ready.wav"
+})
+
+sound.Add(
+{
     name = "arc9.m6d.draw",
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
     sound = "hce/m6_deploy.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m6d.fidget",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/m6_fidget.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m6d.fidgethd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/m6d/pose.wav"
 })
 
 sound.Add(
@@ -336,11 +390,40 @@ sound.Add(
 
 sound.Add(
 {
+    name = "arc9.m90.firehd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound = {"vuth/m90ce/fire0.wav","vuth/m90ce/fire1.wav","vuth/m90ce/fire2.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.m90ce.pump",
+    channel = CHAN_ITEM,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 80,
+    sound = {"vuth/m90ce/pump.wav"}
+})
+
+sound.Add(
+{
     name = "arc9.m90.draw",
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
     sound = "hce/shotgun_deploy.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m90.drawhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/m90ce/ready.wav"
 })
 
 sound.Add(
@@ -356,11 +439,119 @@ sound.Add(
 
 sound.Add(
 {
+    name = "arc9.m90.reloadhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = {"vuth/m90ce/loop0.wav",
+	"vuth/m90ce/loop1.wav",
+	"vuth/m90ce/loop2.wav",
+	"vuth/m90ce/loop3.wav",
+	"vuth/m90ce/loop4.wav",
+	"vuth/m90ce/loop5.wav",
+	"vuth/m90ce/loop6.wav"}	
+})
+
+sound.Add(
+{
     name = "arc9.m90.reloadfin",
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
     sound = "hce/shotgun_reload_fin.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.m90.reloadfinhd",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "vuth/m90ce/reload_exit.wav"
+})
+
+	-- SRS99C --
+sound.Add(
+{
+    name = "arc9.cesr.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 100,
+    sound = {"hce/sniper_shoot.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.h3sr.fire", -- " HD " sound as well
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 100,
+    sound = {"hce/sniper_shoot.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.cesr.reload",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/sr_reload.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cesr.reloade",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/sniper_reload.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cesr.deploy",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/sr_deploy.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cesr.posing",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/sniper_posing.wav"
+})
+
+	-- SPNKR CE --
+	
+sound.Add(
+{
+    name = "arc9.cerl.spin_start",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "shared/rocket_spin_start.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.spin",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "shared/rocket_spin.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.spin_end",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "shared/rocket_spin_end.wav"
 })
 
 -- Halo 3

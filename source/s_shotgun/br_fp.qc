@@ -1,4 +1,4 @@
-$modelname "models/snowysnowtime/c_fp_cesg.mdl"
+$modelname "c_fp_cesg.mdl"
 
 $bodygroup "studio"
 {
@@ -56,6 +56,13 @@ $sequence "idle" {
 	loop
 }
 
+$sequence "lel" {
+	"anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	loop
+}
+
 $sequence "fidget" {
 	"anims\fidget.smd"
 	activity "ACT_VM_FIDGET" 1
@@ -69,7 +76,6 @@ $sequence "fidget" {
 $sequence "fire" {
 	"anims\fire.smd"
 	activity "ACT_VM_PRIMARYATTACK" 1
-	{ event AE_MUZZLEFLASH 0 "PISTOL MUZZLE" }
 	fadein 0.2
 	fadeout 0.2
 	node "2"

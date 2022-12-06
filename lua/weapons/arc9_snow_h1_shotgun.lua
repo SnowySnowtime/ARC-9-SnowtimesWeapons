@@ -560,6 +560,14 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
         Category = {"universal_muzzle","bo1_muzzle"},
     },
+	{
+        PrintName = "Sounds",
+        DefaultCompactName = "Factory Issue",
+        Bone = "frame gun",
+        Pos = Vector(0, -7, 8),
+        Ang = Angle(0, 0, 0),
+        Category = {"halo_m90ce_snds"},
+    },
 }
 
 SWEP.Hook_ModifyBodygroups = function(self, data)
@@ -577,6 +585,30 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 
 end
 
+SWEP.Hook_TranslateAnimation = function (self, anim)
+    local attached = self:GetElements()
+	
+	if anim == "fire" and attached["m90ce_sound_hd"] then
+        return "fire_hd"
+    end
+	
+	if anim == "draw" and attached["m90ce_sound_hd"] then
+        return "draw_hd"
+    end
+	
+	if anim == "reload_start_1" and attached["m90ce_sound_hd"] then
+        return "reload_start_1_hd"
+    end
+	if anim == "reload_insert_bullet_1" and attached["m90ce_sound_hd"] then
+        return "reload_insert_bullet_hd"
+    end
+	if anim == "reload_finish" and attached["m90ce_sound_hd"] then
+        return "reload_finish_hd"
+    end
+
+    return anim
+end
+
 SWEP.Animations = {
 	["draw"] = {
         Source = "draw",
@@ -585,6 +617,42 @@ SWEP.Animations = {
             {
                 t = 0, -- in seconds
                 s = "arc9.m90.draw", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["draw_hd"] = {
+        Source = "draw",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m90.drawhd", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["fire"] = {
+        Source = "fire",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+            }
+        },
+    },
+	["fire_hd"] = {
+        Source = "fire",
+        Mult = 1,
+		EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m90ce.pump", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -606,7 +674,26 @@ SWEP.Animations = {
             {
                 t = 0.1, -- in seconds
                 s = "arc9.m90.reload", -- sound to play
-                c = CHAN_ITEM, -- sound channel
+                c = CHAN_STATIC, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+	},
+	["reload_start_1_hd"] = {
+        Source = {"reload1"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0.1, -- in seconds
+                s = "arc9.m90.reloadhd", -- sound to play
+                c = CHAN_STATIC, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
                 mag = 100, -- with magnitude whatever this is
@@ -625,7 +712,26 @@ SWEP.Animations = {
             {
                 t = 0, -- in seconds
                 s = "arc9.m90.reload", -- sound to play
-                c = CHAN_ITEM, -- sound channel
+                c = CHAN_STATIC, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+	},
+	["reload_insert_bullet_hd"] = {
+        Source = {"reload2"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1.1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m90.reloadhd", -- sound to play
+                c = CHAN_STATIC, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
                 mag = 100, -- with magnitude whatever this is
@@ -644,6 +750,25 @@ SWEP.Animations = {
             {
                 t = 0, -- in seconds
                 s = "arc9.m90.reloadfin", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+        },
+    },
+	["reload_finish_hd"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m90.reloadfinhd", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X

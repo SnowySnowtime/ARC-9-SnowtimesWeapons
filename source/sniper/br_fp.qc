@@ -1,4 +1,4 @@
-$modelname "models/snowysnowtime/c_fp_cesniperrifle.mdl"
+$modelname "c_fp_cesniperrifle.mdl"
 
 $bodygroup "studio"
 {
@@ -6,7 +6,8 @@ $bodygroup "studio"
 	studio "c_fp_cea_sniperscopeless.smd"
 }
 
-$cdmaterials "snowysnowtime/2k/vmt"
+$cdmaterials "snowysnowtime/hce/rifles/shotgun"
+$cdmaterials "snowysnowtime/hcea/rifles/shotgun"
 
 $texturegroup "skinfamilies"
 {
@@ -46,6 +47,13 @@ $sequence "idle" {
 	loop
 }
 
+$sequence "lel" {
+	"anims\idle.smd"
+	activity "ACT_VM_IDLE" 1
+	frame 1 1
+	rotate -90
+}
+
 $sequence "fidget" {
 	"anims\fidget.smd"
 	activity "ACT_VM_FIDGET" 1
@@ -59,7 +67,6 @@ $sequence "fidget" {
 $sequence "fire" {
 	"anims\fire.smd"
 	activity "ACT_VM_PRIMARYATTACK" 1
-	{ event AE_MUZZLEFLASH 0 "sniperrifle MUZZLE" }
 	fadein 0.2
 	fadeout 0.2
 	node "2"
@@ -71,7 +78,6 @@ $sequence "fire" {
 $sequence "draw" {
 	"anims\deploy.smd"
 	activity "ACT_VM_DRAW" 1
-	{ event 5004 0 "hce.srdeploy" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -83,7 +89,6 @@ $sequence "draw" {
 $sequence "reload" {
 	"anims\reload.smd"
 	activity "ACT_VM_RELOAD" 1
-	{ event 5004 0 "hce.srreload" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -93,7 +98,6 @@ $sequence "reload" {
 $sequence "reloadempty" {
 	"anims\reload_empty.smd"
 	activity "ACT_VM_RELOAD_EMPTY" 1
-	{ event 5004 0 "hce.srreloaddry" }
 	fadein 0.2
 	fadeout 0.2
 	node "0"
@@ -104,7 +108,6 @@ $sequence "reloadempty" {
 $sequence "melee" {
 	"anims\melee.smd"
 	activity "ACT_VM_HITCENTER" 1
-	{ event 5004 0 "hce.srmelee" }
 	fadein 0.0
 	fadeout 0.2
 	rotate -90
