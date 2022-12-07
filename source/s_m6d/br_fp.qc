@@ -13,6 +13,14 @@ $bodygroup "forerunner_glow"
 {
 	blank
 	studio "forerunner_glow.smd"
+	studio "forerunner_glow_caramell.smd"
+}
+
+$bodygroup "slide"
+{
+	studio "slide_game.smd"
+	studio "slide_corrected.smd"
+	blank
 }
 
 $cdmaterials "snowysnowtime/hce/pistols/m6d"

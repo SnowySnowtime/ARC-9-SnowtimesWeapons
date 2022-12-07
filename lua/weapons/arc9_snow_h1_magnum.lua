@@ -558,10 +558,22 @@ SWEP.Attachments = {
         Category = {"universal_camo","halo_m6d_skins"},
     },
 	{
+        PrintName = "conversion",
+        DefaultCompactName = "None",
+        Bone = "frame gun",
+		InstalledElements = {"b"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"a"},
+        Pos = Vector(-3, 0, 2.65),
+        Ang = Angle(0, 0, 0),
+        Category = {"halo_m6d_conversions","halo_m6d_slide"},
+    },
+	{
         PrintName = "sound",
         DefaultCompactName = "None",
         Bone = "frame gun",
-        Pos = Vector(-3, 0, 2.65),
+		InstalledElements = {"a"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"b"},
+        Pos = Vector(3, 0, 2.65),
         Ang = Angle(0, 0, 0),
         Category = {"halo_m6d_snds"},
     },
@@ -576,10 +588,17 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     if attached["universal_camo"] or attached["skin_cepistol5"] and !attached["d2forerunner"] then
         vm:SetBodygroup(0,1)
     end
+	if attached["halo_m6d_slide"] and !attached["d2forerunner"] then
+        vm:SetBodygroup(2,1)
+    end
 	if attached["d2forerunner"] and !attached["universal_camo"] and !attached["skin_cepistolfunny"] then
 		vm:SetBodygroup(0,3)
+		vm:SetBodygroup(1,1)
+		vm:SetBodygroup(2,2)
 	elseif attached["d2forerunner"] and attached["universal_camo"] or attached["d2forerunner"] and attached["skin_cepistolfunny"] then
 		vm:SetBodygroup(0,4)
+		vm:SetBodygroup(1,2)
+		vm:SetBodygroup(2,2)
 	else return end
 end
 
@@ -596,6 +615,18 @@ SWEP.Hook_TranslateAnimation = function (self, anim)
 	
 	if anim == "reload" and attached["m6d_sound_hd"] then
         return "reload_hd"
+    end
+	
+	if anim == "reload_empty" and attached["d2forerunner"] then
+        return "reload_empty_forerunner"
+    end
+	
+	if anim == "reload" and attached["m6d_sound_hd"] then
+        return "reload_hd"
+    end
+	
+	if anim == "reload_empty" and attached["m6d_sound_hd"] then
+        return "reload_empty_hd"
     end
 	
 	if anim == "draw" and attached["m6d_sound_hd"] then
@@ -709,6 +740,28 @@ SWEP.Animations = {
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
     },
+	["reload_empty"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.reload", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            }
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
 	["reload_hd"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
@@ -731,9 +784,31 @@ SWEP.Animations = {
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
     },
-	["reload_forerunner"] = {
+	["reload_empty_hd"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+        Mult = 1, -- multiplies time
+        EventTable = {
+            {
+                t = 0, -- in seconds
+                s = "arc9.m6d.reloadhd", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            }
+        },
+        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
+        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
+        RestoreAmmo = 1 -- Restores ammunition to clip
+    },
+	["reload_empty_forerunner"] = {
         Source = {"reload_forerunner"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
-        Mult = 0.810126582278, -- multiplies time
+        Mult = 0.835443037975, -- multiplies time
         EventTable = {
             {
                 t = 0, -- in seconds

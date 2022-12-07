@@ -3,8 +3,6 @@
 	"$basetexture" "snowysnowtime/hce/pistols/m6d/forerunner/barrel"
 	"$bumpmap" "snowysnowtime/hce/pistols/m6d/forerunner/barrel_n"
 	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
-	"$selfillum" "1"
-	"$selfillummask" "snowysnowtime/hce/pistols/m6d/forerunner/barrel_illum"
 	"$detail"   "snowysnowtime/details/cyborg_detail"
 	"$detailscale" "16"
 	"$detailblendmode" "0"

@@ -2,7 +2,9 @@ $modelname "c_fp_cesniperrifle.mdl"
 
 $bodygroup "studio"
 {
+	studio "c_fp_sniper.smd"
 	studio "c_fp_sniperscopeless.smd"
+	studio "c_fp_cea_sniper.smd"
 	studio "c_fp_cea_sniperscopeless.smd"
 }
 

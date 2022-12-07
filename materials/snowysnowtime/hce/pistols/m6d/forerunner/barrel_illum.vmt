@@ -1,18 +1,13 @@
-VertexLitGeneric
+UnlitGeneric
 {
-	"$basetexture" "snowysnowtime/2k/hce/m6d/glass"
-	"$bumpmap" "snowysnowtime/2k/hce/m6d/glass"
+	"$basetexture" "snowysnowtime/hce/pistols/m6d/forerunner/barrel_illum"
+
 	"$translucent" "1"
-	"$additive" "1"
+	"$additive" "0"
 	"$decal" "1"
 
-                 "$phong" "1" 
-                "$phongexponent" "44"
-                 "$phongboost" "13"
-                 
-                 "$phongfresnelranges" "[ 0 0 0 ]" 
-
-	$detail 		"snowysnowtime/hce/pistols/m6d/forerunner/barrel_illum"
-	$detailscale	1
-	$detailblendmode	5
+	Proxies
+	{
+		caramell{}
+	}
 }

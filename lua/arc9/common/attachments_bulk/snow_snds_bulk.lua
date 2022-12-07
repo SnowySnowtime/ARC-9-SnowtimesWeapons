@@ -20,9 +20,29 @@ ATT.FullColorIcon = true
 ATT.Description = [[Uses higher quality sounds if applicable (source quality). Thanks to Vuthakral for finding and mixing these.]]
 ATT.Icon = Material("snowysnowtime/camos/camo1")
 ATT.Category = "halo_m6d_snds"
-ATT.Folder = "Sounds"
 
 ARC9.LoadAttachment(ATT, "m6d_sound_hd")
+
+local ATT = {}
+
+ATT.PrintName = "Corrected Slide"
+ATT.CompactName = "SLIDE"
+ATT.FullColorIcon = true
+ATT.Description = [[Uses the correct scale for the slide, rather than the one seen ingame for Halo CE.]]
+ATT.Icon = Material("snowysnowtime/camos/camo1")
+ATT.Category = "halo_m6d_slide"
+ATT.Attachments = {
+	{
+        PrintName = "sound",
+        DefaultCompactName = "None",
+        Bone = "frame gun",
+        Pos = Vector(-6, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Category = {"halo_m6d_snds"},
+    },
+}
+
+ARC9.LoadAttachment(ATT, "m6d_slide")
 
 local ATT = {}
 
@@ -47,8 +67,7 @@ Banshee-44 considered the relic on his workbench and the questions on his mind; 
 
 The form of the weapon suggested an oversized sidearm—a secondary weapon for a giant's hands. The function presented more so as an anti-material rifle. "Looks to be 12.7mm… it's like they were making a hand cannon but didn't know it yet."]]
 ATT.Icon = Material("snowysnowtime/camos/camo1")
-ATT.Category = "halo_m6d_snds"
-ATT.Folder = "Conversion"
+ATT.Category = "halo_m6d_conversions"
 ATT.MuzzleParticle = "arc9ce_halo_spv3_muzzle_brute_shot" -- Used for some muzzle effects.
 -- ATT.PhysBulletModel = "models/impulse/halo/projectiles/projectile_needle.mdl"
 ATT.PhysBulletModelStick = 5 -- The amount of time a physbullet model will stick on impact.
