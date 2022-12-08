@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/pr/gauge"
+	"$additive" 1
+	"$translucent" 1
+}

@@ -26,7 +26,7 @@ SWEP.Credits = {
 	-- The Nitty-Gritty --
 SWEP.DefaultSelectIcon = nil
 SWEP.MirrorVMWM = true
-SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
+SWEP.ViewModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_pr.mdl"
 SWEP.WorldModel = "models/snowysnowtime/arc9/hce/rifles/c_fp_cear.mdl"
 SWEP.WorldModelOffset = {
 	Pos = Vector(-13, 3.6, -6),
@@ -355,18 +355,10 @@ SWEP.SupplyLimit = 5
 SWEP.TriggerDelay = 0
 
 	-- Fire Modes --
-SWEP.RPM = 900
+SWEP.RPM = 360
 SWEP.Firemodes = {
     {
         Mode = -1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 3,
         -- add other attachment modifiers
     },
 }
@@ -430,8 +422,8 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
-SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
+SWEP.ShootSound = "arc9.cep.fire"
+SWEP.ShootSoundSilenced = ""
 	-- Positions --
 SWEP.ActivePos = Vector(0, 0, 0.25)
 SWEP.ActiveAng = Angle(0, 0, 0)
@@ -624,20 +616,8 @@ SWEP.Animations = {
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
-                c = CHAN_ITEM, -- sound channel
-                e = "", -- effect to emit
-            }
-        },
-    },
-	["draw_hd"] = {
-        Source = "draw",
-        Mult = 1,
-		EventTable = {
-            {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deployhd", -- sound to play
+                t = 0, -- in seconds
+                s = "arc9.cepr.deploy", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -659,28 +639,6 @@ SWEP.Animations = {
             {
                 t = 0, -- in seconds
                 s = "arc9.cear.reload", -- sound to play
-                c = CHAN_ITEM, -- sound channel
-                e = "", -- effect to emit
-                att = nil, -- on attachment point X
-                mag = 100, -- with magnitude whatever this is
-                ind = 0, -- change bodygroup
-                bg = 0,
-                pp = "", -- pose parameter name
-                ppv = 0, -- pose parameter value
-                hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
-        },
-        MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
-        MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
-    },
-	["reload_hd"] = {
-        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
-        Mult = 1, -- multiplies time
-        EventTable = {
-            {
-                t = 0, -- in seconds
-                s = "arc9.cear.reloadhd", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -824,10 +782,10 @@ function SWEP:DoDrawCrosshair(x, y)
 		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_pr"))
 	surface.SetDrawColor( coldark )
 	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_pr"))
 	surface.SetDrawColor( col )
 	surface.DrawTexturedRect( x - (dotsize) - 58, y - (dotsize) - 59, 127, 127 )
 

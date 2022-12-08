@@ -1,6 +1,6 @@
 
 $definebone "frame bone24" "" 0 0 0 0 0 0 0 0 0 0 0 0
-$definebone "frame l upperarm" "frame bone24" 0 9.399039 0 0 0 0 0 0 0 0 0 0
+$definebone "frame l upperarm" "frame bone24" 0 9.399039 0 0 90 0 0 0 0 0 0 0
 $definebone "frame l forearm" "frame l upperarm" 10.250686 0 0 0 0 0 0 0 0 0 0 0
 $definebone "frame l wriste" "frame l forearm" 10.893662 0 -0.000001 0 0 0 0 0 0 0 0 0
 $definebone "frame l index low" "frame l wriste" 3.46558 0.435442 1.515124 -7.99511 2.019677 -0.280979 0 0 0 0 0 0

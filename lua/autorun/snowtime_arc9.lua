@@ -643,6 +643,48 @@ sound.Add(
     sound = "hce/rocketlauncher_reload5.wav"
 })
 
+	-- CE Plasma Rifle --
+sound.Add(
+{
+    name = "arc9.cepr.deploy",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/prifle_deploy.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cepr.oh_start",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/plasmar_overheatenter.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cepr.oh_exit",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/plasmar_overheatexit.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cep.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound =  { "hce/plasma_fire_1.wav", 
+	"hce/plasma_fire_2.wav", 
+	"hce/plasma_fire_3.wav", 
+	"hce/plasma_fire_4.wav", 
+	"hce/plasma_fire_5.wav", }
+})
+
 -- Halo 3
 	-- Battle Rifle
 sound.Add( {

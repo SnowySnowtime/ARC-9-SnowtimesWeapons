@@ -824,12 +824,12 @@ function SWEP:DoDrawCrosshair(x, y)
 		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_pp"))
 	surface.SetDrawColor( coldark )
-	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.DrawTexturedRect( x - (dotsize) - 61, y - (dotsize) - 67, 129, 129 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_pp"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 58, y - (dotsize) - 59, 127, 127 )
+	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 66, 127, 127 )
 
     return true
 end
