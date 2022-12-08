@@ -1,0 +1,37 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/rocket/r_decal"
+	"$bumpmap" "snowysnowtime/hce/rifles/rocket/r_decal_n"
+	"$lightwarptexture"	"snowysnowtime/phongwarps/lightwarp_metallic"
+	"$translucent" "1"
+	"$decal" "1"
+	"$detail"   "snowysnowtime/details/cyborg_detail"
+	"$detailscale" "16"
+	"$detailblendmode" "0"
+	"$detailblendfactor" "0.5"
+	"$color2" "[0.87 0.87 0.87]"
+	"$phong" "1" 
+	"$phongboost" "60"
+	"$phongexponenttexture" "snowysnowtime/hce/rifles/rocket/r_decal_exp"
+	"$phongwarptexture" "snowysnowtime/phongwarps/phongwarp_sheen"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 0.5 8]"
+	"$phongdisablehalflambert" "1"
+	"$rimlight"	1
+	"$rimlightpower"	10
+	"$rimmask"	1
+	"$envmap" "snowysnowtime/envmaps/envmap_fallback"
+	"$envmaptint" "[ 1 1 1 ]"
+	"$cubemaptint"	"[ 1 1 1 ]"
+	"$basetexturealphaenvmapmask"	"1"
+	"$envmapfresnel"	"0.15"
+	"$cubemappower"	0.15
+
+	Proxies
+	{
+		drc_ReflectionTint
+		{
+			resultVar $envmaptint
+		}
+	}
+}

@@ -1,0 +1,19 @@
+Refract
+{
+	"$basetexture"	"snowysnowtime/h2a/pistols/needler/needle"
+  	"$normalmap"	"snowysnowtime/h2a/pistols/needler/needle_n"
+	"$normalmap2"	"snowysnowtime/h2a/pistols/needler/needle_normal"
+	"$bumptransform" "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+	"$bumptransform2" "center .5 .5 scale 4 4 rotate 0 translate 0 0"
+	"$nocull" "1"
+
+	$refracttint	"[ 6 3 6 ]"
+	$refracttinttexture "snowysnowtime/h2a/pistols/needler/crystal"
+	$refractamount	0.25
+	$bluramount	1
+	$envmap "snowysnowtime/envmaps/mw_envmap_fallback"
+	"$envmaptint" "[ 2 0 2 ]"
+
+	$model 1
+	$additive 0
+}

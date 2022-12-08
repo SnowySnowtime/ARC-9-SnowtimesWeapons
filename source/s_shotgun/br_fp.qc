@@ -7,7 +7,10 @@ $bodygroup "studio"
 	studio "c_fp_sg_gj.smd"
 	studio "c_fp_cea_sg.smd"
 }
-
+$bodygroup "hi"
+{
+	studio "shotshell.smd"
+}
 
 $surfaceprop "default"
 

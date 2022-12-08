@@ -4,7 +4,7 @@ SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
-SWEP.Spawnable = false
+SWEP.Spawnable = true
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --
@@ -49,7 +49,7 @@ SWEP.MissileCrosshair = false
 	-- Damage Profile --
 SWEP.DamageType = DMG_BULLET
 SWEP.Num = 1
-SWEP.Penetration = 5
+SWEP.Penetration = 0
 SWEP.RangeMax = 5000
 SWEP.RangeMin = 0
 SWEP.RicochetAngleMax = 45
@@ -126,10 +126,10 @@ if gamemode == "profiteers" then
 	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.05
+	SWEP.SpreadAddHipFire = 0
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.05
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -196,10 +196,10 @@ else
 	SWEP.NeverPhysBullet = false
 	SWEP.PhysBulletDontInheritPlayerVelocity = false
 	SWEP.PhysBulletDrag = 0
-	SWEP.PhysBulletGravity = 1
+	SWEP.PhysBulletGravity = 0
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 15000
+	SWEP.PhysBulletMuzzleVelocity = 2000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1,
@@ -219,7 +219,7 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.3
+	SWEP.Recoil = 0.9
 	SWEP.RecoilAutoControl = 0
 	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
@@ -244,17 +244,17 @@ else
 	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
-	SWEP.Spread = 0.002
+	SWEP.Spread = 0
 	SWEP.UsePelletSpread = false
 	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
 	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0.05
+	SWEP.SpreadAddHipFire = 0
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.05
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -310,11 +310,56 @@ This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
-SWEP.TracerColor = Color(255, 210, 0)
+SWEP.TracerColor = Color(255, 255, 255)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
+SWEP.ExplosionDamage = 350
+SWEP.ExplosionRadius = 256
+SWEP.PhysBulletModel = "models/snowysnowtime/arc9/projectiles/rocket_projectile.mdl"
+SWEP.ExplosionEffect = "arc9_halo_ce_explosion_rocket"
+SWEP.ImpactDecal = "Scorch"
+
+SWEP.SuppressSmokeTrail = false
+
+SWEP.RicochetChance = 0
+SWEP.HookC_DrawBullet = function(swep, bullet)
+    if swep:GetValue("SuppressSmokeTrail") then return end
+    if bullet.Imaginary then return end
+
+    local emitter = ParticleEmitter(bullet.Pos)
+    if !IsValid(emitter) then return end
+    local smoke = emitter:Add("effects/arc9ce/halo3/smoke_dark", bullet.Pos)
+    smoke:SetVelocity(VectorRand() * 50)
+    smoke:SetGravity(Vector(math.Rand(-25, 25), math.Rand(-25, 25), math.Rand(0, 0)))
+    smoke:SetDieTime(math.Rand(1, 1.5))
+    smoke:SetStartAlpha(255)
+    smoke:SetEndAlpha(0)
+    smoke:SetStartSize(5)
+    smoke:SetEndSize(math.Rand(45,45))
+    smoke:SetRoll(math.Rand(-180, 180))
+    smoke:SetRollDelta(math.Rand(-0.2, 0.2))
+    smoke:SetColor(255, 255, 255)
+    smoke:SetAirResistance(5)
+    smoke:SetPos(bullet.Pos)
+    smoke:SetLighting(false)
+	local smoke2 = emitter:Add("effects/arc9ce/halo3/thick_smoke_large", bullet.Pos)
+    smoke2:SetVelocity(VectorRand() * 50)
+    smoke2:SetGravity(Vector(math.Rand(-25, 25), math.Rand(-25, 25), math.Rand(-25, -25)))
+    smoke2:SetDieTime(math.Rand(0.25, 0.25))
+    smoke2:SetStartAlpha(255)
+    smoke2:SetEndAlpha(0)
+    smoke2:SetStartSize(10)
+    smoke2:SetEndSize(0)
+    smoke2:SetRoll(math.Rand(-180, 180))
+    smoke2:SetRollDelta(math.Rand(-0.2, 0.2))
+    smoke2:SetColor(255, 180, 100)
+    smoke2:SetAirResistance(5)
+    smoke2:SetPos(bullet.Pos)
+    smoke2:SetLighting(false)
+    emitter:Finish()
+end
 --SWEP.MuzzleEffect = "muzzleflash_4"
-SWEP.MuzzleParticle = "arc9ce_halo_ce_muzzle_assault_rifle" -- Used for some muzzle effects.
+SWEP.MuzzleParticle = "arc9ce_halo_2_muzzle_rocket_launcher" -- Used for some muzzle effects.
 
 SWEP.MuzzleEffectQCA = 1 -- which attachment to put the muzzle on
 SWEP.CaseEffectQCA = 5 -- which attachment to put the case effect on
@@ -329,11 +374,11 @@ SWEP.AutoReload = false
 SWEP.BottomlessClip = false
 SWEP.CanFireUnderwater = true
 SWEP.ChamberSize = 0 -- Halo Weapons DONT chamber rounds. PLEASE dont fucking enable this.
-SWEP.ClipSize = 60
+SWEP.ClipSize = 2
 SWEP.Disposable = false
 SWEP.DropMagazineAmount = 1
 SWEP.DropMagazineModel = "models/snowysnowtime/arc9/hce/rifles/ar_mag.mdl"
-SWEP.DropMagazineSounds = {"arc9.cear.deploy"}
+SWEP.DropMagazineSounds = {"arc9.cerl.deploy"}
 SWEP.DropMagazineTime = 1
 SWEP.ForceDefaultClip = nil
 SWEP.HybridReload = false
@@ -350,18 +395,10 @@ SWEP.SupplyLimit = 5
 SWEP.TriggerDelay = 0
 
 	-- Fire Modes --
-SWEP.RPM = 900
+SWEP.RPM = 30
 SWEP.Firemodes = {
     {
-        Mode = -1,
-        -- add other attachment modifiers
-    },
-	{
         Mode = 1,
-        -- add other attachment modifiers
-    },
-	{
-        Mode = 3,
         -- add other attachment modifiers
     },
 }
@@ -425,13 +462,13 @@ SWEP.ShootVolume = 125
 SWEP.ShootPitch = 100
 SWEP.ShootPitchVariation = 0.05
 
-SWEP.ShootSound = "arc9.cear.fire"
+SWEP.ShootSound = "arc9.cerl.fire"
 SWEP.ShootSoundSilenced = "arc9.cear.fire_sup"
 	-- Positions --
 SWEP.ActivePos = Vector(0, 0, 0.25)
 SWEP.ActiveAng = Angle(0, 0, 0)
-SWEP.CrouchPos = Vector(-6, 0, -4)
-SWEP.CrouchAng = Angle(0, 0, -30)
+SWEP.CrouchPos = Vector(0, 0, 0.5)
+SWEP.CrouchAng = Angle(0, 0, 0)
 SWEP.RestPos = Vector(0.532, -6, 0)
 SWEP.RestAng = Angle(-4.633, 36.881, 0)
 SWEP.SprintPos = Vector(1.5,-1,0)
@@ -499,43 +536,25 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    ["skin_cear1"] = {
+    ["universal_camo"] = {
         Skin = 1,
     },
-	["skin_cear2"] = {
-        Skin = 2,
-    },
-	["skin_cear3"] = {
-        Skin = 3,
-    },
-	["skin_cear4"] = {
-        Skin = 4,
-    },
-	["skin_cear5"] = {
+	["skin_cerl1"] = {
         Skin = 5,
     },
-	["skin_cear6"] = {
+	["skin_cerl2"] = {
+        Skin = 4,
+    },
+	["skin_cerl3"] = {
+        Skin = 3,
+    },
+	["skin_cerl4"] = {
         Skin = 6,
     },
+	["skin_cerl5"] = {
+        Skin = 2,
+    },
 }
-
-SWEP.Hook_TranslateAnimation = function (self, anim)
-    local attached = self:GetElements()
-	
-	if anim == "reload" and attached["ar_sound_hd"] then
-        return "reload_hd"
-    end
-	
-	if anim == "draw" and attached["ar_sound_hd"] then
-        return "draw_hd"
-    end
-	
-	if anim == "exit_inspect" and attached["ar_sound_hd"] then
-        return "exit_inspect_hd"
-    end
-
-    return anim
-end
 
 -- Use to override attachment table entry data.
 SWEP.AttachmentSlotMods = {
@@ -558,7 +577,7 @@ SWEP.RejectAttachments = {
 }
 
 SWEP.CustomCamoTexture = "snowysnowtime/camos/camo483"
-SWEP.CustomCamoScale = 6
+SWEP.CustomCamoScale = 16
 
 -- The big one
 SWEP.DefaultBodygroups = "0000000000000"
@@ -570,48 +589,9 @@ SWEP.Attachments = {
         Bone = "frame gun",
         Pos = Vector(0, -7, 8),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_skins"},
-    },
-	{
-        PrintName = "Optic",
-        DefaultCompactName = "Factory Issue",
-        Bone = "frame gun",
-        Pos = Vector(0, -9, 6.5),
-        Ang = Angle(0, 0, 0),
-        Category = {"halo_optics"},
-    },
-	{
-        PrintName = "Muzzle",
-        DefaultCompactName = "Factory Issue",
-        Bone = "frame gun",
-        Pos = Vector(-1, -0.25, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_muzzle","bo1_muzzle"},
-    },
-	{
-        PrintName = "Sounds",
-        DefaultCompactName = "Factory Issue",
-        Bone = "frame gun",
-        Pos = Vector(0, -7, 8),
-        Ang = Angle(0, 0, 0),
-        Category = {"halo_ar_snds"},
-    },
+        Category = {"universal_camo","halo_cerl_skins"},
+    }
 }
-
-SWEP.Hook_ModifyBodygroups = function(self, data)
-
-    local vm = data.model
-	local CUSTSTATE = self:GetCustomize()
-    local attached = data.elements
-	
-    if attached["universal_camo"] then
-        vm:SetBodygroup(0,1)
-    end
-	if attached["cear_skin7"] then
-        vm:SetBodygroup(0,2)
-    end
-
-end
 
 SWEP.Animations = {
 	["draw"] = {
@@ -619,20 +599,20 @@ SWEP.Animations = {
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deploy", -- sound to play
+                t = 0, -- in seconds
+                s = "arc9.cerl.deploy", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
         },
     },
-	["draw_hd"] = {
-        Source = "draw",
+	["fire_1"] = {
+        Source = "fire_1",
         Mult = 1,
 		EventTable = {
             {
-                t = 0.385, -- in seconds
-                s = "arc9.cear.deployhd", -- sound to play
+                t = 0.15, -- in seconds
+                s = "arc9.cerl.fire_foley", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
             }
@@ -688,8 +668,8 @@ SWEP.Animations = {
         Mult = 1, -- multiplies time
         EventTable = {
             {
-                t = 0, -- in seconds
-                s = "arc9.cear.reload", -- sound to play
+                t = 0.55, -- in seconds
+                s = "arc9.cerl.reload1", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -699,19 +679,71 @@ SWEP.Animations = {
                 pp = "", -- pose parameter name
                 ppv = 0, -- pose parameter value
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+            },
+			{
+                t = 0.86, -- in seconds
+                s = "arc9.cerl.reload2", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 2.1, -- in seconds
+                s = "arc9.cerl.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 2.45, -- in seconds
+                s = "arc9.cerl.reload4", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 2.75, -- in seconds
+                s = "arc9.cerl.reload5", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
         RestoreAmmo = 1 -- Restores ammunition to clip
     },
-	["reload_hd"] = {
-        Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
+	["reload_empty"] = {
+        Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
         Mult = 1, -- multiplies time
         EventTable = {
             {
-                t = 0, -- in seconds
-                s = "arc9.cear.reloadhd", -- sound to play
+                t = 0.8, -- in seconds
+                s = "arc9.cerl.reload1", -- sound to play
                 c = CHAN_ITEM, -- sound channel
                 e = "", -- effect to emit
                 att = nil, -- on attachment point X
@@ -721,7 +753,59 @@ SWEP.Animations = {
                 pp = "", -- pose parameter name
                 ppv = 0, -- pose parameter value
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
-            }
+            },
+			{
+                t = 1.11, -- in seconds
+                s = "arc9.cerl.reload2", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 2.35, -- in seconds
+                s = "arc9.cerl.reload3", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 2.7, -- in seconds
+                s = "arc9.cerl.reload4", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
+			{
+                t = 3, -- in seconds
+                s = "arc9.cerl.reload5", -- sound to play
+                c = CHAN_ITEM, -- sound channel
+                e = "", -- effect to emit
+                att = nil, -- on attachment point X
+                mag = 100, -- with magnitude whatever this is
+                ind = 0, -- change bodygroup
+                bg = 0,
+                pp = "", -- pose parameter name
+                ppv = 0, -- pose parameter value
+                hide = 1, -- hide reloadhidebonetables table, 0 for none
+            },
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
@@ -850,14 +934,14 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
+	    if self:GetReloading() then return true end
 		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
 	end
     if self:GetSprintAmount() > 0 then return true end
-    if self:GetReloading() then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_rl"))
 	surface.SetDrawColor( coldark )
 	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_rl"))
 	surface.SetDrawColor( col )
 	surface.DrawTexturedRect( x - (dotsize) - 58, y - (dotsize) - 59, 127, 127 )
 

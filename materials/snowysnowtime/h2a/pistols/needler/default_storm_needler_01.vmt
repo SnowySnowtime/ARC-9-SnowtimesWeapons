@@ -1,0 +1,32 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "snowysnowtime/h2a/pistols/needler/needler"
+	"$detail" "snowysnowtime/h2a/pistols/needler/needler_illum"
+	"$detailscale" "1"
+	"$detailblendmode" "1"
+	"$detailblendfactor" "2"
+	"$bumpmap" "snowysnowtime/h2a/pistols/needler/needler_n"
+	"$selfillum" "1"
+	"$selfillummask" "snowysnowtime/h2a/pistols/needler/needler_illum"
+	"$color2" "[1 1 1]"
+	"$lightwarptexture"	"snowysnowtime/phongwarp/mw_lightwarp"
+	"$phongwarptexture" "snowysnowtime/phongwarp/mw_phongwarp_refract"
+	"$rimmask"	1
+	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
+	"$envmaptint" "[ 1 1 1 ]"
+	"$cubemaptint"	"[ 1 1 1 ]"
+	"$cubemappower"	2.5
+	"$normalmapalphaenvmapmask"	"1"
+	"$phong" "1" 
+	"$phongboost" "2"
+	"$phongexponenttexture" "snowysnowtime/h2a/pistols/needler/needler_p"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[4 12 10]"
+	"Proxies"
+	{
+		drc_ReflectionTint
+		{
+			resultVar $envmaptint
+		}
+	}
+}

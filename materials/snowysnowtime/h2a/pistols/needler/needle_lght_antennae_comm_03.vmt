@@ -1,0 +1,36 @@
+"UnLitGeneric"
+{
+	"$basetexture" "snowysnowtime/h2a/pistols/needler/plasma"
+	"$detail" "snowysnowtime/h2a/pistols/needler/plasma"
+	"$additive" "1"
+	"$detailscale" "1"
+	"$detailblendfactor" "1"
+	"$detailblendmode" "1"
+	"$color2" "[1 0.7 1]"
+	"$detailtint" "[2 0 2]"
+	"$angle" 1
+	"$baseangle" 0.0
+	"$scale" "[1 1]"
+	"$basescale" "[1 1]"
+	"$center" "[1 1]"
+	"$basecenter" "[1 1]"
+	"$nocull" "1"
+
+	Proxies
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" 2
+		    "texturescrollangle" 90
+			"rotateVar"	"$angle"
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" 8
+		    "texturescrollangle" 90
+			"rotateVar"	"$baseangle"
+		}
+	}
+}

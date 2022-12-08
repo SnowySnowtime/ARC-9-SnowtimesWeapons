@@ -2,7 +2,7 @@ ATT.PrintName = "BR55 Scope"
 ATT.CompactName = [[BR55]]
 ATT.Icon = Material("snowysnowtime/camos/camo650")
 ATT.Description = [[
-    Factory issue sight for the BR55. Makes use of optics rather than neural link scope. (tl;dr, not 2d scope)
+    Factory issue sight for the BR55.
 ]]
 ATT.Pros = {
     "+ 2x Zoom"

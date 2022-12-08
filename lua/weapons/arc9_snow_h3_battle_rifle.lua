@@ -628,7 +628,7 @@ SWEP.Animations = {
     },
 	["fire"] = {
 	    Source = {"fire1","fire2","fire3"},
-		Mult = 0.5,
+		Mult = 1,
     },
     ["reload"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -893,7 +893,9 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x, y, dotsize / 2, dotsize / 2, col)
+	    if !self:GetReloading() then 
+		drawshadowrect(x - (0), y - (0), dotsize / 2, dotsize / 2, col)
+		end
 	end
     if self:GetSprintAmount() > 0 then return true end
     if self:GetReloading() then return true end

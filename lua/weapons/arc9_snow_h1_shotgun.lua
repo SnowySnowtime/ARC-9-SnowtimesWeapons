@@ -489,23 +489,20 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    ["skin_cear1"] = {
+    ["skin_cem901"] = {
         Skin = 1,
     },
-	["skin_cear2"] = {
+	["skin_cem902"] = {
         Skin = 2,
     },
-	["skin_cear3"] = {
+	["skin_cem903"] = {
         Skin = 3,
     },
-	["skin_cear4"] = {
+	["skin_cem904"] = {
         Skin = 4,
     },
-	["skin_cear5"] = {
-        Skin = 5,
-    },
-	["skin_cear6"] = {
-        Skin = 6,
+	["skin_cem905"] = {
+        Skin = 0,
     },
 }
 
@@ -539,26 +536,10 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -7, 8),
+        Bone = "frame gun",
+        Pos = Vector(0, -7, 0),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_skins"},
-    },
-	{
-        PrintName = "Optic",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
-        Pos = Vector(0, -9, 6.5),
-        Ang = Angle(0, 0, 0),
-        Category = {"halo_optics"},
-    },
-	{
-        PrintName = "Muzzle",
-        DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.attach_muzzle",
-        Pos = Vector(-1, -0.25, 0),
-        Ang = Angle(0, 0, 0),
-        Category = {"universal_muzzle","bo1_muzzle"},
+        Category = {"universal_camo","halo_m90ce_skins"},
     },
 	{
         PrintName = "Sounds",
@@ -576,10 +557,10 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
 	local CUSTSTATE = self:GetCustomize()
     local attached = data.elements
 	
-    if attached["universal_camo"] then
+    if attached["universal_camo"] and !attached["skin_cem905"] then
         vm:SetBodygroup(0,1)
     end
-	if attached["cear_skin7"] then
+	if attached["skin_cem905"] then
         vm:SetBodygroup(0,2)
     end
 
@@ -685,6 +666,7 @@ SWEP.Animations = {
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
             },
         },
+		RestoreAmmo = 1 -- Restores ammunition to clip
 	},
 	["reload_start_1_hd"] = {
         Source = {"reload1"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -704,6 +686,7 @@ SWEP.Animations = {
                 hide = 1, -- hide reloadhidebonetables table, 0 for none
             },
         },
+		RestoreAmmo = 1 -- Restores ammunition to clip
 	},
 	["reload_insert_bullet_1"] = {
         Source = {"reload2"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -905,10 +888,11 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+	    if !self:GetReloading() then 
+		drawshadowrect(x - (0), y - (0), dotsize / 2, dotsize / 2, col)
+		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-    if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sg"))
 	surface.SetDrawColor( coldark )
 	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )

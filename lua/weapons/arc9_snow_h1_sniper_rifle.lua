@@ -56,7 +56,7 @@ SWEP.MissileCrosshair = false
 SWEP.DamageType = DMG_BULLET
 SWEP.Num = 1
 SWEP.Penetration = 5
-SWEP.RangeMax = 5000
+SWEP.RangeMax = 10000
 SWEP.RangeMin = 0
 SWEP.RicochetAngleMax = 45
 SWEP.RicochetChance = 0
@@ -100,15 +100,15 @@ if gamemode == "profiteers" then
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
+	SWEP.Recoil = 0.3
 	SWEP.RecoilAutoControl = 0
-	SWEP.RecoilDissipationRate = 80
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.5
-	SWEP.RecoilRandomUp = 0.2
-	SWEP.RecoilResetTime = 0.15
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.75
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
+	SWEP.RecoilUp = 0.3
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -116,13 +116,13 @@ if gamemode == "profiteers" then
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
-	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilCenter = Vector(0,100,0)
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilPunch = 0.75
+	SWEP.VisualRecoilRoll = 2
 	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
 	SWEP.Spread = 0.002
@@ -135,7 +135,7 @@ if gamemode == "profiteers" then
 	SWEP.SpreadAddHipFire = 0.05
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.02
+	SWEP.SpreadAddRecoil = 0.05
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -182,11 +182,17 @@ if gamemode == "profiteers" then
 	}
 	SWEP.HasSights = true
 	-- print("PROFITEERS BAL")
+	SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
+
+
+
+
+This weapon has been adjusted for Profiteers.]]
 else
 	-- Damage Profile --
 	SWEP.ArmorPiercing = 0
-	SWEP.DamageMax = 20
-	SWEP.DamageMin = 15
+	SWEP.DamageMax = 70
+	SWEP.DamageMin = 70
 	SWEP.DamageRand = 0
 	-- Projectile --
 	SWEP.AlwaysPhysBullet = true
@@ -199,9 +205,9 @@ else
 	SWEP.PhysBulletGravity = 0
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 150000
+	SWEP.PhysBulletMuzzleVelocity = 45000
 	SWEP.BodyDamageMults = {
-		[HITGROUP_HEAD] = 1,
+		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1,
 		[HITGROUP_STOMACH] = 1,
 		[HITGROUP_LEFTARM] = 0.9,
@@ -219,15 +225,15 @@ else
 	--     3,
 	-- }
 	SWEP.PushBackForce = 0 
-	SWEP.Recoil = 0.5
-	SWEP.RecoilAutoControl = 1
-	SWEP.RecoilDissipationRate = 80
+	SWEP.Recoil = 0.3
+	SWEP.RecoilAutoControl = 0
+	SWEP.RecoilDissipationRate = 10
 	SWEP.RecoilLookupTableOverrun = nil
-	SWEP.RecoilRandomSide = 0.15
-	SWEP.RecoilRandomUp = 0.01
-	SWEP.RecoilResetTime = 0.1
-	SWEP.RecoilSide = 0.5
-	SWEP.RecoilUp = 0.5
+	SWEP.RecoilRandomSide = 0.1
+	SWEP.RecoilRandomUp = 0.1
+	SWEP.RecoilResetTime = 0.2
+	SWEP.RecoilSide = 0.05
+	SWEP.RecoilUp = 0.3
 	SWEP.RumbleDuration = 0.12
 	SWEP.RumbleHeavy = 30000
 	SWEP.RumbleLight = 30000
@@ -235,25 +241,26 @@ else
 		-- Visual Recoil --
 	SWEP.RecoilKick = 1
 	SWEP.UseVisualRecoil = true
-	SWEP.VisualRecoilCenter = Vector(2, 4, 2)
-	SWEP.VisualRecoilHipFire = false
+	SWEP.VisualRecoilCenter = Vector(0,100,0)
+	SWEP.VisualRecoilHipFire = true
 	SWEP.VisualRecoilMult = 1
-	SWEP.VisualRecoilPunch = 1.5
-	SWEP.VisualRecoilRoll = 0.23
+	SWEP.VisualRecoilPunch = 0.75
+	SWEP.VisualRecoilRoll = 2
 	SWEP.VisualRecoilSide = 0.05
-	SWEP.VisualRecoilUp = 0.01
+	SWEP.VisualRecoilUp = 0.3
 
 		-- Spread --
-	SWEP.Spread = 0.005
+	SWEP.Spread = 0.0001
 	SWEP.UsePelletSpread = false
 	SWEP.PelletSpread = 0.2
 	SWEP.PelletSpreadPattern = {}
+	SWEP.PelletSpreadPatternOverrun = nil
 	SWEP.SpreadAddBlindFire = 0
 	SWEP.SpreadAddCrouch = 0
-	SWEP.SpreadAddHipFire = 0
+	SWEP.SpreadAddHipFire = 0.05
 	SWEP.SpreadAddMidAir = 0
 	SWEP.SpreadAddMove = 0
-	SWEP.SpreadAddRecoil = 0.065
+	SWEP.SpreadAddRecoil = 0
 	SWEP.SpreadAddSighted = 0
 
 		-- Handling --
@@ -280,26 +287,32 @@ else
 	SWEP.SwayMultSights = 0.5
 		-- Positions --
 	SWEP.IronSights = {
-		Pos = Vector(0, 0, 0),
+		Pos = Vector(-1, -6, 0),
 		Ang = Angle(0, 0, 0),
-		Magnification = 1,
+		Magnification = 1.15,
 		AssociatedSlot = 0, -- Attachment slot to associate the sights with. Causes RT scopes to render.
-		CrosshairInSights = false,
+		CrosshairInSights = true,
 		---- FLAT SCOPES
 		-- These don't look very good; please use actual RT scopes if possible.
 		FlatScope = false,
-		FlatScopeOverlay = nil, -- Material()
-		FlatScopeKeepVM = false,
-		FlatScopeBlackBox = true,
+		FlatScopeOverlay = "hi.vmt", -- Material()
+		FlatScopeKeepVM = true,
+		FlatScopeBlackBox = false,
 		FlatScopeCC = nil -- Color correction table, see default.lua
 	}
 
 	SWEP.SightMidPoint = { -- Where the gun should be at the middle of it's irons
-		Pos = Vector(-1, 15, -4),
-		Ang = Angle(0, 0, -35),
+		Pos = Vector(0, 10, 0),
+		Ang = Angle(0, 0, 0),
 	}
-	SWEP.HasSights = false
+	SWEP.HasSights = true
 	-- print("SANDBOX BAL")
+	SWEP.Description = [[The MA5B is a standard-issue automatic rifle that is part of the Misriah Armory's MA5 Individual Combat Weapon System.
+
+
+
+
+This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
@@ -344,17 +357,13 @@ SWEP.TriggerDelay = 0
 SWEP.RPM = 120
 SWEP.Firemodes = {
     {
-        Mode = -1,
-        -- add other attachment modifiers
-    },
-	{
         Mode = 1,
         -- add other attachment modifiers
     },
 	{
-        Mode = 3,
+        Mode = -1,
         -- add other attachment modifiers
-    },
+    }
 }
 
 SWEP.Akimbo = false
@@ -490,23 +499,11 @@ SWEP.AttachmentBodygroups = {
 SWEP.DefaultElements = {}
 
 SWEP.AttachmentElements = {
-    ["skin_cear1"] = {
+    ["skin_cesr4"] = {
         Skin = 1,
     },
-	["skin_cear2"] = {
+	["skin_cesr6"] = {
         Skin = 2,
-    },
-	["skin_cear3"] = {
-        Skin = 3,
-    },
-	["skin_cear4"] = {
-        Skin = 4,
-    },
-	["skin_cear5"] = {
-        Skin = 5,
-    },
-	["skin_cear6"] = {
-        Skin = 6,
     },
 }
 
@@ -540,26 +537,31 @@ SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
+        Bone = "frame gun",
         Pos = Vector(0, -7, 8),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_camo","halo_skins"},
+        Category = {"universal_camo","halo_cesr_skins"},
     },
 	{
-        PrintName = "Optic",
+        PrintName = "Scope",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.weapon_bone",
+        Bone = "frame gun",
         Pos = Vector(0, -9, 6.5),
         Ang = Angle(0, 0, 0),
-        Category = {"halo_optics"},
+		InstalledElements = {"a"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"b"},
+        Category = {"hcescope"},
+		Installed = "hcesr_scope",
     },
 	{
-        PrintName = "Muzzle",
+        PrintName = "Rail",
         DefaultCompactName = "Factory Issue",
-        Bone = "ValveBiped.attach_muzzle",
-        Pos = Vector(-1, -0.25, 0),
+        Bone = "frame gun",
+        Pos = Vector(0, -9, 6.5),
         Ang = Angle(0, 0, 0),
-        Category = {"universal_muzzle","bo1_muzzle"},
+		InstalledElements = {"b"}, -- list of elements to activate when something is installed here
+		ExcludeElements = {"a"},
+        Category = {"bo1_rail_tactical"},
     },
 }
 
@@ -570,11 +572,23 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     local attached = data.elements
 	
     if attached["universal_camo"] then
+        vm:SetBodygroup(0,1)
+	elseif attached["skin_cesr1"] then
+		vm:SetBodygroup(0,6)
+	elseif attached["skin_cesr2"] then
+		vm:SetBodygroup(0,5)
+	elseif attached["skin_cesr3"] then
+		vm:SetBodygroup(0,4)
+    elseif attached["skin_cesr5"] then
+		vm:SetBodygroup(0,3)
+	end
+	if attached["hcescope"] and !attached["skin_cesr3"] and !attached["skin_cesr5"] then
         vm:SetBodygroup(1,1)
-    end
-	if attached["cear_skin7"] then
-        vm:SetBodygroup(0,2)
-    end
+    elseif attached["hcescope"] and attached["skin_cesr3"] and !attached["skin_cesr5"] then
+		vm:SetBodygroup(1,3)
+	elseif attached["hcescope"] and !attached["skin_cesr3"] and attached["skin_cesr5"] then
+		vm:SetBodygroup(1,4)
+	end
 
 end
 
@@ -702,11 +716,15 @@ function SWEP:DoDrawCrosshair(x, y)
     local miniprong_2 = ARC9ScreenScale(2)
     local gap = 0
     local staticgap = ARC9ScreenScale(4)
-    local col = Color(255, 255, 255, 175)
+    local col = Color(255, 255, 255, 150)
+    local coldark = Color(255, 255, 255, 100)
 
     col.r = GetConVar("arc9_cross_r"):GetFloat()
     col.g = GetConVar("arc9_cross_g"):GetFloat()
     col.b = GetConVar("arc9_cross_b"):GetFloat()
+	coldark.r = GetConVar("arc9_cross_r"):GetFloat() / 2
+    coldark.g = GetConVar("arc9_cross_g"):GetFloat() / 2
+    coldark.b = GetConVar("arc9_cross_b"):GetFloat() / 2
 
     local d = self:GetSightDelta()
 
@@ -764,13 +782,17 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+	    if !self:GetReloading() then 
+		drawshadowrect(x - (0), y - (0), dotsize / 2, dotsize / 2, col)
+		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-    if self:GetReloading() then return true end
-	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sr"))
+	surface.SetDrawColor( coldark )
+	surface.DrawTexturedRect( x - (dotsize) - 8, y - (dotsize) - 8, 26, 26 )
+	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_sr"))
 	surface.SetDrawColor( col )
-	surface.DrawTexturedRect( x - (dotsize) - 60, y - (dotsize) - 60, 128, 128 )
+	surface.DrawTexturedRect( x - (dotsize) - 7, y - (dotsize) - 7, 24, 24 )
 
     return true
 end

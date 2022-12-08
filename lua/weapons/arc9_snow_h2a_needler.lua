@@ -814,10 +814,11 @@ function SWEP:DoDrawCrosshair(x, y)
         local lool = ( EyePos() + ( EyeAngles():Forward() ) + ( (self:GetProcessedValue("Spread")) * EyeAngles():Up() ) ):ToScreen()
     cam.End3D()
 	if self.HaloAccuracy == 1 then
-		drawshadowrect(x - (dotsize / 2), y - (dotsize / 2), dotsize, dotsize, col)
+	    if !self:GetReloading() then 
+		drawshadowrect(x - (0), y - (0), dotsize / 2, dotsize / 2, col)
+		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-    if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_smg"))
 	surface.SetDrawColor( coldark )
 	surface.DrawTexturedRect( x - (dotsize) - 59, y - (dotsize) - 60, 129, 129 )

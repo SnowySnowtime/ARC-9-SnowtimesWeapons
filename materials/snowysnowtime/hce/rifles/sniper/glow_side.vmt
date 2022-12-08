@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/sniper/sr_decal"
+	"$translucent" 1
+	"$decal" "1"
+}

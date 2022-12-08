@@ -1,3 +1,8 @@
+ARC9:RegisterPhysBulletModel("models/snowysnowtime/arc9/projectiles/rocket_projectile.mdl")
+ARC9:RegisterPhysBulletModel("models/snowysnowtime/arc9/projectiles/needler_projectile.mdl")
+ARC9:RegisterPhysBulletModel("models/snowysnowtime/arc9/projectiles/pp_projectile.mdl")
+ARC9:RegisterPhysBulletModel("models/snowysnowtime/arc9/projectiles/pr_projectile.mdl")
+
 game.AddParticles( "particles/arc9_halo_flamethrower.pcf" )
 -- game.AddParticles( "particles/gravity_hammer_fx.pcf" )
 game.AddParticles( "particles/arc9_halo_pack_muzzle_effects.pcf" )
@@ -395,7 +400,7 @@ sound.Add(
     volume = 1.0,
 	pitch = {99.4,101.5},
     soundlevel = 100,
-    sound = {"vuth/m90ce/fire0.wav","vuth/m90ce/fire1.wav","vuth/m90ce/fire2.wav"}
+    sound = {"vuth/m90ce/fire0.wav","vuth/m90ce/fire2.wav"}
 })
 
 sound.Add(
@@ -552,6 +557,90 @@ sound.Add(
     volume = 1.0,
     soundlevel = 80,
     sound = "shared/rocket_spin_end.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.fire",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound = {"hce/rocket_1.wav","hce/rocket_2.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.explode",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 120,
+    sound = {"hce/grenade_expl_1.wav","hce/grenade_expl_2.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.fire_foley",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+	pitch = {99.4,101.5},
+    soundlevel = 100,
+    sound = {"hce/rocket_fire.wav"}
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.deploy",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocket_fire.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.reload1",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocketlauncher_reload1.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.reload2",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocketlauncher_reload2.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.reload3",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocketlauncher_reload3.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.reload4",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocketlauncher_reload4.wav"
+})
+
+sound.Add(
+{
+    name = "arc9.cerl.reload5",
+    channel = CHAN_STATIC,
+    volume = 1.0,
+    soundlevel = 80,
+    sound = "hce/rocketlauncher_reload5.wav"
 })
 
 -- Halo 3

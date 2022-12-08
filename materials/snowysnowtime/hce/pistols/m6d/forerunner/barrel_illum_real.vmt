@@ -1,8 +1,0 @@
-UnlitGeneric
-{
-	"$basetexture" "snowysnowtime/hce/pistols/m6d/forerunner/barrel_illum"
-
-	"$translucent" "1"
-	"$decal" "1"
-	"$color2" "[0 0.65 1]"
-}

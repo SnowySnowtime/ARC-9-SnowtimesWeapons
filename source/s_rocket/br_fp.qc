@@ -1,5 +1,5 @@
 $modelname "c_fp_cerocket.mdl"
-
+$include "ar_coll.qci"
 $bodygroup "anniv"
 {
 	studio "c_fp_rocket.smd"
@@ -17,10 +17,13 @@ $cdmaterials "snowysnowtime/hcea/rifles/rocket"
 
 $texturegroup "skinfamilies"
 {
-	{ "rocket" }
-	{ "rlcorrosion" }
-	{ "rldesert" }
-	{ "rlhuntersblood"    }
+	{ "rocket" "rocket_stock" "rocket_ends" "rocket_button" }
+	{ "camo" "rocket_stock" "rocket_ends" "rocket_button" }
+	{ "rlcorrosion" "rocket_stock_corrosion" "rocket_ends" "rocket_button" }
+	{ "rldesert" "rocket_stock" "rocket_ends" "rocket_button" }
+	{ "rlhuntersblood" "rocket_stock" "rocket_ends" "rocket_button"   }
+	{ "rlgold" "rocket_stock" "rocket_ends"  "rocket_button"  }
+	{ "rlcheese" "rocket_stock_gold" "rocket_ends_gold" "rocket_button_gold"   }
 }
 
 $attachment "muzzle" "frame tubes" 18 0 -1 rotate 0 0 0
@@ -73,8 +76,8 @@ $sequence "spin_end" {
 	fps 30
 }
 
-$sequence "fire" {
-	"anims\fire.smd"
+$sequence "fire_1" {
+	"anims\fire_1.smd"
 	activity "ACT_VM_PRIMARYATTACK" 1
 	fadein 0.2
 	fadeout 0.2
@@ -82,6 +85,14 @@ $sequence "fire" {
 	rotate -90
 	snap
 	fps 30
+}
+
+$sequence "fire" {
+	"anims\fire.smd"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	frame 1 1
+	rotate -90
+	snap
 }
 
 $sequence "draw" {
@@ -103,6 +114,7 @@ $sequence "reload" {
 	node "0"
 	rotate -90
 	fps 30
+	snap
 }
 $sequence "reloadempty" {
 	"anims\reload_empty.smd"
@@ -112,6 +124,7 @@ $sequence "reloadempty" {
 	node "0"
 	rotate -90
 	fps 30
+	snap
 }
 
 $sequence "melee" {

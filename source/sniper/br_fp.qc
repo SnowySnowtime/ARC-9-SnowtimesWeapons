@@ -1,24 +1,32 @@
 $modelname "c_fp_cesniperrifle.mdl"
-
+$include "ar_coll.qci"
 $bodygroup "studio"
 {
-	studio "c_fp_sniper.smd"
-	studio "c_fp_sniperscopeless.smd"
-	studio "c_fp_cea_sniper.smd"
-	studio "c_fp_cea_sniperscopeless.smd"
+	studio "new/c_fp_sniper.smd"
+	studio "new/camo.smd"
+	studio "new/c_fp_cea_sniperscopeless.smd"
+	studio "new/avalanche.smd"
+	studio "new/desert.smd"
+	studio "new/gj.smd"
+	studio "new/gold.smd"
+}
+$bodygroup "scopes"
+{
+	blank
+	studio "new/ce_sniper_scope.smd"
+	studio "new/cea_sniper_scope.smd"
+	studio "new/ce_sniper_scope_desert.smd"
+	studio "new/ce_sniper_scope_avalanche.smd"
 }
 
-$cdmaterials "snowysnowtime/hce/rifles/shotgun"
-$cdmaterials "snowysnowtime/hcea/rifles/shotgun"
+$cdmaterials "snowysnowtime/hce/rifles/sniper"
+$cdmaterials "snowysnowtime/hcea/rifles/sniper"
 
 $texturegroup "skinfamilies"
 {
 	{ "sniperrifle" }
-	{ "sravalanche"  }
-	{ "srdesert" }
-	{ "srgold"    }
-	{ "srgreatjourney"   }
-	{ "srwoodlands"   }
+	{ "srwoodlands" }
+	{ "srcheese" }
 }
 
 $surfaceprop "default"
