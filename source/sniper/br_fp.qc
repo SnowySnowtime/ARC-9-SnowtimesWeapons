@@ -4,7 +4,6 @@ $bodygroup "studio"
 {
 	studio "new/c_fp_sniper.smd"
 	studio "new/camo.smd"
-	studio "new/c_fp_cea_sniperscopeless.smd"
 	studio "new/avalanche.smd"
 	studio "new/desert.smd"
 	studio "new/gj.smd"
@@ -14,7 +13,6 @@ $bodygroup "scopes"
 {
 	blank
 	studio "new/ce_sniper_scope.smd"
-	studio "new/cea_sniper_scope.smd"
 	studio "new/ce_sniper_scope_desert.smd"
 	studio "new/ce_sniper_scope_avalanche.smd"
 }
@@ -27,6 +25,7 @@ $texturegroup "skinfamilies"
 	{ "sniperrifle" }
 	{ "srwoodlands" }
 	{ "srcheese" }
+	{ "srog" }
 }
 
 $surfaceprop "default"

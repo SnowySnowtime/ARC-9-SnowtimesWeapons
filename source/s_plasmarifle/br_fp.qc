@@ -25,6 +25,7 @@ $texturegroup "skinfamilies"
 	{ "ultra" "ultra_dull" "ultra_amber" "ultra_luminous" }
 	{ "zealot" "zealot_dull" "zealot_amber" "zealot_luminous" }
 	{ "codgold" "codgold" "codgold" "codgold" }
+	{ "og_gun" "og_dull" "og_amber" "og_luminous" }
 }
 
 $contents "solid"

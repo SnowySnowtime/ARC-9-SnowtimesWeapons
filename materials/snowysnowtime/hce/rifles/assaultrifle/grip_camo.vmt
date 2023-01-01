@@ -20,7 +20,7 @@
 	"$envmaptint" "[ 1 1 1 ]"
 	"$cubemaptint"	"[ 1 1 1 ]"
 	"$basetexturealphaenvmapmask"	"1"
-	"$cubemappower"	0.5
+	"$cubemappower"	0.1
 
 	Proxies
 	{

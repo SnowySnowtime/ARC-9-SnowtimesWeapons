@@ -205,7 +205,7 @@ else
 	SWEP.PhysBulletGravity = 0
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 45000
+	SWEP.PhysBulletMuzzleVelocity = 240000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1,
@@ -316,7 +316,7 @@ This weapon has been adjusted for Sandbox.]]
 end
 	
 	-- Tracers/Effects --
-SWEP.TracerColor = Color(255, 210, 0)
+SWEP.TracerColor = Color(255, 255, 255)
 SWEP.TracerEffect = "ARC9_tracer"
 SWEP.TracerNum = 1
 --SWEP.MuzzleEffect = "muzzleflash_4"
@@ -634,7 +634,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_empty"] = {
         Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -656,7 +655,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 }
 -- Locally Overwrite Crosshair

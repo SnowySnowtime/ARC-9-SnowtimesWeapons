@@ -5,7 +5,6 @@ $bodygroup "studio"
 {
 	studio "c_fp_cear.smd"
 	studio "c_fp_cear_camo.smd"
-	studio "c_fp_cea_ar.smd"
 }
 
 $cdmaterials "snowysnowtime/hce/rifles/assaultrifle"
@@ -13,13 +12,15 @@ $cdmaterials "snowysnowtime/hcea/rifles/assaultrifle"
 
 $texturegroup "skinfamilies"
 {
-    { "gun" "composite" "grip" "grippy" }
-    { "gold" "gold" "grip" "grippy" }
-    { "gj_dark" "gj" "gjgrip" "gjgrip" }
-    { "gun" "lucky_composite" "luckygrip" "grippy" }
-    { "squirt" "squirt" "squirtgrip" "squirtgrip"  }
-    { "gun" "desert_composite" "desertgrip" "grippy"  }
-    { "wl" "wl" "wlgrip" "grippy"  }
+    { "gun" "composite" "grip" "grippy" "gun_noskin" }
+    { "gold" "gold" "grip" "grippy" "gun_noskin" }
+    { "gj_dark" "gj" "gjgrip" "gjgrip" "gun_noskin" }
+    { "gun" "lucky_composite" "luckygrip" "grippy" "gun_noskin" }
+    { "squirt" "squirt" "squirtgrip" "squirtgrip" "gun_noskin"  }
+    { "gun" "desert_composite" "desertgrip" "grippy" "gun_noskin"  }
+    { "wl" "wl" "wlgrip" "grippy" "gun_noskin"  }
+    { "cheese" "cheese" "cheese" "cheese" "cheese"  }
+	{ "og" "og" "og_grip" "og_grip" "og" }
 }
 
 $surfaceprop "default"

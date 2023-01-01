@@ -4,7 +4,6 @@ $bodygroup "studio"
 {
 	studio "c_fp_magnum.smd"
 	studio "c_fp_magnum_camo.smd"
-	studio "c_fp_ceamagnum.smd"
 	studio "forerunner.smd"
 	studio "forerunner_camo.smd"
 }
@@ -38,6 +37,7 @@ $texturegroup "skinfamilies"
 	{ "m6dtoysoldier" "toy_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "caramell_barrel" }
 	{ "m6dwoodlands" "woodland_7" "camo" "pistol_illum" "barrel" "barrel_shiny" "stock" "camo_barrel" }
 	{ "m6dcodgold" "m6dcodgold" "m6dcodgold" "m6dcodgold" "fbarrel_codgold" "fbarrel_codgold" "fstock_codgold" "camo_barrel"}
+	{ "og" "og" "og" "og_illum" "barrel" "barrel_shiny" "stock" "barrel" }
 }
 
 $surfaceprop "default"

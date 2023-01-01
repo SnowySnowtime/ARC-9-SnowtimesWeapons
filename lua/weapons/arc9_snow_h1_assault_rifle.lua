@@ -199,7 +199,7 @@ else
 	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 15000
+	SWEP.PhysBulletMuzzleVelocity = 95000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2,
 		[HITGROUP_CHEST] = 1,
@@ -607,9 +607,6 @@ SWEP.Hook_ModifyBodygroups = function(self, data)
     if attached["universal_camo"] then
         vm:SetBodygroup(0,1)
     end
-	if attached["cear_skin7"] then
-        vm:SetBodygroup(0,2)
-    end
 
 end
 
@@ -667,7 +664,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_hd"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -689,7 +685,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 }
 -- Locally Overwrite Crosshair

@@ -5,7 +5,6 @@ $bodygroup "studio"
 	studio "c_fp_sg.smd"
 	studio "c_fp_sg_camo.smd"
 	studio "c_fp_sg_gj.smd"
-	studio "c_fp_cea_sg.smd"
 }
 $bodygroup "hi"
 {
@@ -23,11 +22,13 @@ $cdmaterials "snowysnowtime/hcea/rifles/shotgun"
 
 $texturegroup "skinfamilies"
 {
-	{ "shotgun" "shotdull" } 
-	{ "shotgun" "desertdull" }
-	{ "gold" "shotdull" }
-	{ "shotgun" "hunterdull" }
-	{ "wl" "wldull" }
+	{ "shotgun" "shotdull" "shotshell" } 
+	{ "shotgun" "desertdull" "shotshell" }
+	{ "gold" "shotdull" "shotshell" }
+	{ "shotgun" "hunterdull" "shotshell" }
+	{ "wl" "wldull" "shotshell" }
+	{ "cheese" "cheese" "shotshell"}
+	{ "og" "ogdull" "ogshell" }
 }
 
 $attachment "muzzle" "frame gun" 18 0 0.9 rotate 0 0 0

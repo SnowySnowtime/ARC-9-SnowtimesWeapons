@@ -1,0 +1,27 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "snowysnowtime/hce/rifles/assaultrifle/og"
+	"$bumpmap" "snowysnowtime/hce/rifles/assaultrifle/og_n"
+	"$lightwarptexture"	"snowysnowtime/phongwarps/mw_lightwarp"
+	"$phong" "1" 
+	"$phongboost" "0.5"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[3 5 8]"
+	"$phongdisablehalflambert" "1"
+	"$rimlight"	1
+	"$rimlightpower"	10
+	"$rimmask"	1
+	"$envmap" "snowysnowtime/envmaps/mw_envmap_fallback"
+	"$envmaptint" "[ 1 1 1 ]"
+	"$cubemaptint"	"[ 1 1 1 ]"
+	"$basetexturealphaenvmapmask"	"1"
+	"$cubemappower"	0.5
+
+	Proxies
+	{
+		drc_ReflectionTint
+		{
+			resultVar $envmaptint
+		}
+	}
+}

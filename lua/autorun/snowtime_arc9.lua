@@ -448,13 +448,13 @@ sound.Add(
     channel = CHAN_STATIC,
     volume = 1.0,
     soundlevel = 80,
-    sound = {"vuth/m90ce/loop0.wav",
-	"vuth/m90ce/loop1.wav",
-	"vuth/m90ce/loop2.wav",
-	"vuth/m90ce/loop3.wav",
-	"vuth/m90ce/loop4.wav",
-	"vuth/m90ce/loop5.wav",
-	"vuth/m90ce/loop6.wav"}	
+    sound = {")vuth/m90ce/loop0.wav",
+	")*vuth/m90ce/loop1.wav",
+	")*vuth/m90ce/loop2.wav",
+	")*vuth/m90ce/loop3.wav",
+	")*vuth/m90ce/loop4.wav",
+	")*vuth/m90ce/loop5.wav",
+	")*vuth/m90ce/loop6.wav"}	
 })
 
 sound.Add(

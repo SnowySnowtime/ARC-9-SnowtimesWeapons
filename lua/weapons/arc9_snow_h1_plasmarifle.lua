@@ -4,7 +4,7 @@ SWEP.Category = "ARC9 - Snowtime's Armory"
 SWEP.HaloAccuracy = 0
 
 	-- Spawn Checks --
-SWEP.Spawnable = true
+SWEP.Spawnable = false
 SWEP.AdminOnly = false
 
 	-- Naming/Trivia --

@@ -199,7 +199,7 @@ else
 	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 15000
+	SWEP.PhysBulletMuzzleVelocity = 45000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 1,
 		[HITGROUP_CHEST] = 1,

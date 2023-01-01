@@ -199,7 +199,7 @@ else
 	SWEP.PhysBulletGravity = 0
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 35000
+	SWEP.PhysBulletMuzzleVelocity = 125000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
@@ -782,7 +782,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_empty_hd"] = {
         Source = {"reloadempty"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -804,7 +803,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_forerunner"] = {
         Source = {"reload_forerunner"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -852,7 +850,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_empty_forerunner"] = {
         Source = {"reload_forerunner"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -900,7 +897,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 }
 -- Locally Overwrite Crosshair

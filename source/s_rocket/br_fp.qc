@@ -3,7 +3,6 @@ $include "ar_coll.qci"
 $bodygroup "anniv"
 {
 	studio "c_fp_rocket.smd"
-	studio "c_cea_spnkr.smd"
 }
 
 $surfaceprop "default"
@@ -24,6 +23,7 @@ $texturegroup "skinfamilies"
 	{ "rlhuntersblood" "rocket_stock" "rocket_ends" "rocket_button"   }
 	{ "rlgold" "rocket_stock" "rocket_ends"  "rocket_button"  }
 	{ "rlcheese" "rocket_stock_gold" "rocket_ends_gold" "rocket_button_gold"   }
+	{ "og" "og" "og_ends" "og_button" }
 }
 
 $attachment "muzzle" "frame tubes" 18 0 -1 rotate 0 0 0

@@ -178,7 +178,7 @@ else
 	SWEP.PhysBulletGravity = 1
 	SWEP.PhysBulletModel = nil
 	SWEP.PhysBulletModelStick = nil
-	SWEP.PhysBulletMuzzleVelocity = 35000
+	SWEP.PhysBulletMuzzleVelocity = 110000
 	SWEP.BodyDamageMults = {
 		[HITGROUP_HEAD] = 2.5,
 		[HITGROUP_CHEST] = 1,
@@ -698,7 +698,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 	["reload_empty"] = {
         Source = {"reload"}, -- QC sequence source, can be {"table", "of", "strings"} or "string"
@@ -746,7 +745,6 @@ SWEP.Animations = {
         },
         MagSwapTime = 0.5, -- in seconds, how long before the new magazine replaces the old one.
         MinProgress = 0.825, -- seconds that must pass before the reload is considered done
-        RestoreAmmo = 1 -- Restores ammunition to clip
     },
 }
 
@@ -898,7 +896,6 @@ function SWEP:DoDrawCrosshair(x, y)
 		end
 	end
     if self:GetSprintAmount() > 0 then return true end
-    if self:GetReloading() then return true end
 	surface.SetTexture(surface.GetTextureID("snowysnowtime/reticles/ret_br"))
 	surface.SetDrawColor( coldark )
 	surface.DrawTexturedRect( x - (dotsize) - 27, y - (dotsize) - 28, 65, 65 )

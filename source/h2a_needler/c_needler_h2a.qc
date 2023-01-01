@@ -1,4 +1,4 @@
-$modelname "valk/Halo_Rebirth/Covenant/Weapons/needler/c_needler.mdl"
+$modelname "c_needler.mdl"
 
 $bodygroup "needler"
 {
@@ -21,7 +21,7 @@ $contents "solid"
 
 $illumposition -1.673 -28.594 -4.281
 
-$cdmaterials "models\valk\Halo_Rebirth\Covenant\Weapons\needler\"
+$cdmaterials "snowysnowtime/h2a/pistols/needler"
 
 $attachment "muzzle" "gun" 12 0 0.5 rotate 0 0 0
 
