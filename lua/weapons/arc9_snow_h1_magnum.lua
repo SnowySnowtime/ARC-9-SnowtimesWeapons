@@ -551,10 +551,11 @@ SWEP.DefaultSkin = 0
 SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
-        DefaultCompactName = "Factory Issue",
+        DefaultCompactName = "Skin/Camo",
         Bone = "frame gun",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
+		CosmeticOnly = true,
         Category = {"universal_camo","halo_m6d_skins"},
     },
 	{

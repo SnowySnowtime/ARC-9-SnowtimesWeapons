@@ -513,11 +513,21 @@ SWEP.DefaultSkin = 0
 SWEP.Attachments = {
     {
         PrintName = "Cosmetic",
-        DefaultCompactName = "Factory Issue",
+        DefaultCompactName = "Skin/Camo",
         Bone = "gun",
         Pos = Vector(3.75, 0, 5),
         Ang = Angle(0, 0, 0),
+		CosmeticOnly = true,
         Category = {"universal_camo","h3br_skin"},
+    },
+	{
+        PrintName = "Stickers",
+        DefaultCompactName = "Stickerless",
+		StickerModel = "models/snowysnowtime/arc9/h3/rifles/c_hum_br55hb_sticker.mdl",
+        Bone = "gun",
+        Pos = Vector(3.75, 10, 5),
+        Ang = Angle(0, 0, 0),
+        Category = {"stickers"},
     },
 	{
         PrintName = "Foregrip",

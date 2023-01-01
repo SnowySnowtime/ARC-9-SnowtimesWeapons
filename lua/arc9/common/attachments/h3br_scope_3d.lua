@@ -13,7 +13,7 @@ ATT.MenuCategory = "ARC9 - Snowtime's Armory Attachments"
 ATT.Free = false
 -- ATT.Folder = "SCOPE"
 
-ATT.Category = {"h3scope"}
+ATT.Category = {"h3scope_wait"}
 ATT.ActivateElements = {"h3scope3d"}
 
 ATT.Model = "models/weapons/arc9/atts/bo1_pso.mdl"
